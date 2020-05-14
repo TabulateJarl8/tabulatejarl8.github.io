@@ -58,7 +58,8 @@ html {
 }
 
 #page-container{
-	margin:104px;
+	/*margin:104px;*/
+	margin:9.62962962962963%;
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
