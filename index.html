@@ -23,15 +23,21 @@
 </head>
 <body>
 
-	<div id="navbar"><nav class="navbar navbar-dark bg-dark"><a type="button" class="btn btn-warning" href="/nojs.html">No Javascript?</a></nav></div>
-
-	<div class="text-center">
-		<h2>Tabulate Official Website</h2>
+	<div id="navbar"><nav class="navbar navbar-dark bg-primary"><a type="button" class="btn btn-warning" href="/nojs.html">No Javascript?</a></nav></div>
+	<div id="page-container">
+	<div class="page-header">
+		<h1>Containers</h1>
+	</div>
+	<div class="jumbotron">
+		<h1 class="display-3">Hello, world!</h1>
+		<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+		<hr class="my-4">
+		<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+		<p class="lead">
+			<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+		</p>
 	</div>
 
-	<div class="progress">
-		<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow=75 aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
-	</div>
 	<!-- LOAD NAVBAR-->
 
 	<script>
@@ -39,5 +45,6 @@
 		$("#navbar").load("navbar.html");
 	});
 </script>
+</div>
 </body>
 </html>
