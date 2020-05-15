@@ -29,8 +29,13 @@
 			<button type="button" class="btn btn-primary" onclick='window.location.href="/mods"'>Mods</button>
 			<button type="button" class="btn btn-primary" onclick='window.location.href="/texturepacks"'>Texture Packs</button>
 			<button type="button" class="btn btn-primary" onclick='window.location.href="/python"'>Python Projects</button>
-			<button type="button" class="btn btn-primary" onclick='window.location.href="/login"'>Log in</button>
-			<button type="button" class="btn btn-primary" onclick='window.location.href="/register"'>Sign Up</button>
+			<div class="dropdown">
+			  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			    <a class="dropdown-item" href="/login">Log In</a>
+			    <a class="dropdown-item" href="/register">Sign Up</a>
+			  </div>
+			</div>
 		</div>
 	</div>
 	<img class="logo" src="/images/carpetbagger_profile.png" alt="Profile Picture"></img>
