@@ -4,7 +4,13 @@
 		height: auto;
 		max-width: 625px;
 		float: right;
-		display: block;
+		display: absolute;
+	}
+	/* dont show logo on mobile */
+	@media (max-width:629px) {
+	  .logo {
+	    display: none;
+	  }
 	}
 </style>
 <nav class="navbar navbar-dark bg-primary">
