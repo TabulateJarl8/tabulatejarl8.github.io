@@ -55,6 +55,7 @@
 						<label>Confirm Password</label>
 						<input id="txtConfirmPassword" type="password" placeholder="Confirm Password" maxlength="255" class="form-control" required />
 					</div>
+					<p id="warnings" class="text-danger"></p>
 					<hr class="my-4">
 					<div data-theme="dark" class="g-recaptcha" data-sitekey="6LeSm_cUAAAAAGUz8yarXTZgNwameIiW9nSZfO0s" style="display:inline-block"></div>
 					<br>
@@ -83,6 +84,31 @@
 					return true;
 				});
 			});
+
+			function getUrlVars() {
+				var vars = {};
+				var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+					vars[key] = value;
+				});
+				return vars;
+			}
+
+			function getUrlParam(parameter, defaultvalue){
+				var urlparameter = defaultvalue;
+				if(window.location.href.indexOf(parameter) > -1){
+					urlparameter = getUrlVars()[parameter];
+				}
+				return urlparameter;
+			}
+
+			var x = getUrlParam("success", "false");
+			if(x == "user"){
+				document.getElementById("warnings").innerHTML = "Username Taken";
+			}else if (x == "email") {
+				document.getElementById("warnings").innerHTML = "Email Taken";
+			}else if (x == "captchafail") {
+				document.getElementById("warnings").innerHTML = "ReCaptcha Failed. Please try again.";
+			}
 			</script>
 		</div>
 	</body>

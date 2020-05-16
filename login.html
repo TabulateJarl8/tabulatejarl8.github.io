@@ -50,11 +50,12 @@
 						<label>Password</label>
 						<input type="password" maxlength="255" placeholder="Password" name="password" class="form-control" required />
 					</div>
+					<p id="warnings" class="text-danger"></p>
 					<hr class="my-4">
 
 					<div class="form-group">
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="customCheck1" name="remember" value="yes">
+							<input type="checkbox" style="cursor:pointer; position:relative; z-index: 2" class="custom-control-input" id="customCheck1" name="remember" value="yes">
 							<label class="custom-control-label" for="customCheck1">Remember Me</label>
 						</div>
 					</div>
@@ -74,6 +75,27 @@
 		$(function() {
 			$("#navbar").load("navbar.html");
 		});
+
+		function getUrlVars() {
+			var vars = {};
+			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+				vars[key] = value;
+			});
+			return vars;
+		}
+
+		function getUrlParam(parameter, defaultvalue){
+			var urlparameter = defaultvalue;
+			if(window.location.href.indexOf(parameter) > -1){
+				urlparameter = getUrlVars()[parameter];
+			}
+			return urlparameter;
+		}
+
+		var x = getUrlParam("success", "false");
+		if(x == "user"){
+			document.getElementById("warnings").innerHTML = "Invalid Username/Password";
+		}
 		</script>
 	</div>
 </body>
