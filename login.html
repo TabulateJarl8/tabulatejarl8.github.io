@@ -2,80 +2,80 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" type="text/css" href="bootstrap.css">
-  <!--Favicons-->
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#36464b">
-  <link rel="shortcut icon" href="/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#2b5797">
-  <meta name="msapplication-config" content="/favicon/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
-  <title>Tabulate | Login</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <style>
-    input[type="text"]::placeholder,
-    input[type="email"]::placeholder,
-    input[type="password"]::placeholder {
-      text-align: center;
-      color: black;
-    }
-  </style>
-  <script src="bootstrap.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<!--Favicons-->
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/favicon/site.webmanifest">
+	<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#36464b">
+	<link rel="shortcut icon" href="/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-config" content="/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<title>Tabulate | Login</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style>
+	input[type="text"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="password"]::placeholder {
+		text-align: center;
+		color: black;
+	}
+	</style>
+	<script src="bootstrap.min.js"></script>
 </head>
 
 <body>
-  <div id="navbar">
-    <nav class="navbar navbar-dark bg-primary"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No Javascript?</a></nav>
-  </div>
-  <div id="page-container">
-    <div class="page-header">
-      <div class="text-center">
-      <h1>Login</h1>
-      </div>
-    </div>
-    <div class="jumbotron">
-      <div class="text-center">
-      <form action="https://tabulatephp.azurewebsites.net/validation.php" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-          <label>Username</label>
-          <input type="text" maxlength="255" placeholder="Username" name="user" class="form-control" required />
-          </div>
+	<div id="navbar">
+		<nav class="navbar navbar-dark bg-primary"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No Javascript?</a></nav>
+	</div>
+	<div id="page-container">
+		<div class="page-header">
+			<div class="text-center">
+				<h1>Login</h1>
+			</div>
+		</div>
+		<div class="jumbotron">
+			<div class="text-center">
+				<form action="https://tabulatephp.azurewebsites.net/validation.php" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<label>Username</label>
+						<input type="text" maxlength="255" placeholder="Username" name="user" class="form-control" required />
+					</div>
 
-           <div class="form-group">
-             <label>Password</label>
-             <input type="password" maxlength="255" placeholder="Password" name="password" class="form-control" required />
-           </div>
-      <hr class="my-4">
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" maxlength="255" placeholder="Password" name="password" class="form-control" required />
+					</div>
+					<hr class="my-4">
 
-        <div class="form-group">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck1" name="remember" value="yes">
-            <label class="custom-control-label" for="customCheck1">Remember Me</label>
-          </div>
-          </div>
-          <br>
+					<div class="form-group">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="customCheck1" name="remember" value="yes">
+							<label class="custom-control-label" for="customCheck1">Remember Me</label>
+						</div>
+					</div>
+					<br>
 
-      <p class="lead">
-        <button type="submit" class="btn btn-primary btn-lg">Login</button>
-      </p>
-      </form>
-      </div>
-    <a class="text-info" href="/register">Don't have an account? Register Here</a>
-    <br>
-    <a href="/passwordreset">Forgot Password?</a>
-    </div>
-    <!-- LOAD NAVBAR-->
-    <script>
-      $(function() {
-        $("#navbar").load("navbar.html");
-      });
-    </script>
-  </div>
+					<p class="lead">
+						<button type="submit" class="btn btn-primary btn-lg">Login</button>
+					</p>
+				</form>
+			</div>
+			<a class="text-info" href="/register">Don't have an account? Register Here</a>
+			<br>
+			<a href="/passwordreset">Forgot Password?</a>
+		</div>
+		<!-- LOAD NAVBAR-->
+		<script>
+		$(function() {
+			$("#navbar").load("navbar.html");
+		});
+		</script>
+	</div>
 </body>
 
 </html>
