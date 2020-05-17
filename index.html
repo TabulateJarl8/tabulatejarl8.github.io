@@ -21,6 +21,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="bootstrap.min.js"></script>
+	<script src="variables.js"></script>
 </head>
 <body>
 
@@ -46,25 +47,10 @@
 			$("#navbar").load("navbar.html");
 		});
 
-		function getUrlVars() {
-			var vars = {};
-			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-				vars[key] = value;
-			});
-			return vars;
-		}
-
-		function getUrlParam(parameter, defaultvalue){
-			var urlparameter = defaultvalue;
-			if(window.location.href.indexOf(parameter) > -1){
-				urlparameter = getUrlVars()[parameter];
-			}
-			return urlparameter;
-		}
-
 		var name = getUrlParam("name", "empty");
 		if(name != "empty"){
 			document.getElementById("hello").innerHTML = "Hello, " + name;
+			setCookie("username", name, 7);
 		}else{
 			document.getElementById("hello").innerHTML = "Hello, world!"
 		}
