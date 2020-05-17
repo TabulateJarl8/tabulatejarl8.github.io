@@ -46,18 +46,23 @@
 			$("#navbar").load("navbar.html");
 		});
 
-		function getCookie(name) {
-			var cookieArr = document.cookie.split(";");
-			for(var i = 0; i < cookieArr.length; i++) {
-				var cookiePair = cookieArr[i].split("=");
-				if(name == cookiePair[0].trim()) {
-					return decodeURIComponent(cookiePair[1]);
-				}
-			}
-			return null;
+		function getUrlVars() {
+			var vars = {};
+			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+				vars[key] = value;
+			});
+			return vars;
 		}
 
-		var name = getCookie("username");
+		function getUrlParam(parameter, defaultvalue){
+			var urlparameter = defaultvalue;
+			if(window.location.href.indexOf(parameter) > -1){
+				urlparameter = getUrlVars()[parameter];
+			}
+			return urlparameter;
+		}
+
+		var name = getUrlParam("name", null);
 		if(name != null){
 			document.getElementById("hello").innerHTML = "Hello, " + name;
 		}
