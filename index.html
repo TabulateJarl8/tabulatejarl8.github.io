@@ -62,8 +62,8 @@
 			return urlparameter;
 		}
 
-		var name = getUrlParam("name", null);
-		if(name != null){
+		var name = getUrlParam("name", "empty");
+		if(name != "empty"){
 			document.getElementById("hello").innerHTML = "Hello, " + name;
 		}else{
 			document.getElementById("hello").innerHTML = "Hello, world!"
