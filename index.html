@@ -30,7 +30,7 @@
 			<h1>Containers</h1>
 		</div>
 		<div class="jumbotron">
-			<h1 class="display-3">Hello, world!</h1>
+			<h1 id="hello" class="display-3">Hello, world!</h1>
 			<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
 			<hr class="my-4">
 			<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -45,6 +45,22 @@
 		$(function() {
 			$("#navbar").load("navbar.html");
 		});
+
+		function getCookie(name) {
+			var cookieArr = document.cookie.split(";");
+			for(var i = 0; i < cookieArr.length; i++) {
+				var cookiePair = cookieArr[i].split("=");
+				if(name == cookiePair[0].trim()) {
+					return decodeURIComponent(cookiePair[1]);
+				}
+			}
+			return null;
+		}
+
+		var name = getCookie("username");
+		if(name != null){
+			document.getElementById("hello").innerHTML = "Hello, " + name;
+		}
 		</script>
 	</div>
 </body>
