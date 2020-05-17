@@ -13,6 +13,7 @@
 		}
 	}
 </style>
+<script src="variables.js"></script>
 <nav class="navbar navbar-dark bg-primary">
 	<div class="row">
 		<div class="col-lg-12 col-xl-12 col-md-12 col-xs-2">
@@ -31,7 +32,7 @@
 			<button type="button" class="btn btn-primary" onclick='window.location.href="/python"'>Python Projects</button>
 			<div class="dropdown" style="display:inline-block">
 				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<div id="account" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 					<a class="dropdown-item" href="/login">Log In</a>
 					<a class="dropdown-item" href="/register">Sign Up</a>
 				</div>
@@ -40,3 +41,8 @@
 	</div>
 	<img class="logo" src="/images/carpetbagger_profile.png" alt="Profile Picture"></img>
 </nav>
+<script>
+  if(checkCookie("username")){
+    document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a>"
+  }
+</script>
