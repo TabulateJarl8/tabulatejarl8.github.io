@@ -20,7 +20,7 @@ function getCookie(name) {
 
 function checkCookie(name) {
 	var value = getCookie(name);
-	if(value != "") {
+	if(value != null) {
 		return true;
 	} else {
 		return false;
