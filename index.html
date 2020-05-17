@@ -51,6 +51,8 @@
 		if(name != "empty"){
 			document.getElementById("hello").innerHTML = "Hello, " + name;
 			setCookie("username", name, 7);
+		}else if checkCookie("username") == true{
+			document.getElementById("hello").innerHTML = "Hello, " + getCookie("username");
 		}else{
 			document.getElementById("hello").innerHTML = "Hello, world!"
 		}
