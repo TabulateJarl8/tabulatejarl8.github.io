@@ -42,7 +42,11 @@
 	<img class="logo" src="/images/carpetbagger_profile.png" alt="Profile Picture"></img>
 </nav>
 <script>
+function signOut(){
+  deleteCookie("username");
+  window.location.href = "/login";
+}
   if(checkCookie("username")){
-    document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a>"
+    document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a><a class='dropdown-item' onclick='signOut()'>Sign Out</a>"
   }
 </script>
