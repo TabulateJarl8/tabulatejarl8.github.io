@@ -13,7 +13,7 @@
 		}
 	}
 </style>
-<script src="variables.js"></script>
+<script src="scripts.js"></script>
 <nav class="navbar navbar-dark bg-primary">
 	<div class="row">
 		<div class="col-lg-12 col-xl-12 col-md-12 col-xs-2">
@@ -42,17 +42,9 @@
 	<img class="logo" src="/images/carpetbagger_profile.png" alt="Profile Picture"></img>
 </nav>
 <script>
-function signOut(cookies){
-  if(cookies == true){
-  deleteCookie("username");
-   window.location.href = "/login";
-  }else if(cookies == false){
-  sessionStorage.removeItem("username");
-  window.location.href = "/login";
-}
   if(checkCookie("username")){
     document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a><a class='dropdown-item' onclick='signOut(true)'>Sign Out</a>";
   }else if(sessionStorage.getItem("username") != null){
-  document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a><a class='dropdown-item' onclick='signOut(false)'>Sign Out</a>";
+  document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a><a class='dropdown-item' onclick='signOut(true)'>Sign Out</a>";
   }
 </script>

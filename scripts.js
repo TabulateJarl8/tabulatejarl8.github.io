@@ -46,3 +46,18 @@ function getUrlParam(parameter, defaultvalue){
 	}
 	return urlparameter;
 }
+
+function signOut(redirect) {
+  if (checkCookie("username")) {
+    deleteCookie("username");
+    if(redirect == true){
+      window.location.href = "/login";
+    }
+  } else if (sessionStorage.getItem("username") != null) {
+    sessionStorage.removeItem("username");
+  if(redirect == true){
+    window.location.href = "/login";
+  }
+    
+  }
+}

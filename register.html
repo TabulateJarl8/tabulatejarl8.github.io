@@ -20,7 +20,7 @@
 	<title>Tabulate | Register</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="bootstrap.min.js"></script>
-	<script src="variables.js"></script>
+	<script src="scripts.js"></script>
 	<script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 	<style>
 	input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder{
@@ -98,19 +98,11 @@
 				document.getElementById("warnings").innerHTML = "ReCaptcha Failed. Please try again.";
 			}
 			
-			function signOut(cookies){
-			if(cookies == true){
-			deleteCookie("username");
-			window.location.href = "/login";
-			}else if(cookies == false){
-			sessionStorage.removeItem("username");
-			window.location.href = "/login";
-			}
 			if(getCookie("username") != null){
 			document.getElementById("jumbotron").innerHTML = "Hi, " + getCookie("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(true)' class='btn-lg btn-primary'>Sign Out</button>";
 			document.getElementById("login").innerHTML = "";
 			}else if(sessionStorage.getItem("username") != null){
-			document.getElementById("jumbotron").innerHTML = "Hi, " + sessionStorage.getItem("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(false)' class='btn-lg btn-primary'>Sign Out</button>";
+			document.getElementById("jumbotron").innerHTML = "Hi, " + sessionStorage.getItem("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(true)' class='btn-lg btn-primary'>Sign Out</button>";
 			document.getElementById("login").innerHTML = "";
 			}
 			</script>
