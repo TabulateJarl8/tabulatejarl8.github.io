@@ -18,6 +18,7 @@
 	<title>Tabulate | Register</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="bootstrap.min.js"></script>
+	<script src="variables.js"></script>
 	<style>
 	input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder{
 		text-align: center;
@@ -37,7 +38,7 @@
 			</div>
 		</div>
 		<div class="jumbotron">
-			<div class="text-center">
+			<div id="jumbotron" class="text-center">
 				<form action="https://tabulatephp.azurewebsites.net/registration.php" method="POST" enctype="multipart/form-data">
 					<div class="form-group">
 						<label>Email</label>
@@ -65,7 +66,7 @@
 				</form>
 				<script src='https://www.google.com/recaptcha/api.js'></script>
 			</div>
-			<a href="/login">Already Have an Account? Log in Here</a>
+			<a id="login" href="/login">Already Have an Account? Log in Here</a>
 			<!-- LOAD NAVBAR-->
 			<script>
 			$(function() {
@@ -85,22 +86,6 @@
 				});
 			});
 
-			function getUrlVars() {
-				var vars = {};
-				var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-					vars[key] = value;
-				});
-				return vars;
-			}
-
-			function getUrlParam(parameter, defaultvalue){
-				var urlparameter = defaultvalue;
-				if(window.location.href.indexOf(parameter) > -1){
-					urlparameter = getUrlVars()[parameter];
-				}
-				return urlparameter;
-			}
-
 			var x = getUrlParam("success", "false");
 			if(x == "user"){
 				document.getElementById("warnings").innerHTML = "Username Taken";
@@ -108,6 +93,15 @@
 				document.getElementById("warnings").innerHTML = "Email Taken";
 			}else if (x == "captchafail") {
 				document.getElementById("warnings").innerHTML = "ReCaptcha Failed. Please try again.";
+			}
+			
+			function signOut(){
+			deleteCookie("username")
+			window.location.href = "/login";
+			}
+			if(getCookie("username") != null){
+			document.getElementById("jumbotron").innerHTML = "Hi, " + getCookie("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut()' class='btn-lg btn-primary'>Sign Out</button>";
+			document.getElementById("login").innerHTML = "";
 			}
 			</script>
 		</div>
