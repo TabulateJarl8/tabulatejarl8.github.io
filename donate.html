@@ -24,10 +24,6 @@
 		.jumbotron{
 			overflow: hidden;
 		}
-
-		/*.row{
-		margin: 20px;
-		}*/
 	}
 	.border-ethereum{
 		border-color: #5c7de9 !important;
@@ -41,10 +37,19 @@
 	.monero{
 		font-size: 10px;
 	}
+
+
 </style>
 </head>
 
 <body>
+	<div class="loading">
+		<div class="dot"></div>
+		<div class="dot"></div>
+		<div class="dot"></div>
+		<div class="dot"></div>
+		<div class="dot"></div>
+	</div>
 	<div id="navbar">
 		<nav class="navbar navbar-dark bg-primary"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No Javascript?</a></nav>
 	</div>
@@ -52,120 +57,114 @@
 		<div class="page-header">
 			<h1>Donate</h1>
 		</div>
-		<div class="jumbotron d-flex flex-column justify-content-around">
-			<div class="row">
-				<div class="card border-warning mb-3" style="max-width: 20rem;">
-					<div class="card-header">Bitcoin</div>
-					<div class="card-body">
-						<div class="text-center">
-							<img src="wallets/bitcoin.png" alt="Bitcoin QR Code" width="60%" height="60%" />
-						</div>
-						<br>
-						<p class="card-text">bc1qnjpcl0xtywcuxuc7fr9s5gsnhkugnpf0udcn00</p>
+		<div class="jumbotron d-flex flex-wrap justify-content-around">
+			<div class="card border-warning mb-3" style="max-width: 20rem;">
+				<div class="card-header">Bitcoin</div>
+				<div class="card-body">
+					<div class="text-center">
+						<img src="wallets/bitcoin.png" alt="Bitcoin QR Code" width="60%" height="60%" />
 					</div>
-				</div>
-
-				<div class="card border-success mb-3" style="max-width: 20rem;">
-					<div class="card-header">Bitcoin Cash</div>
-					<div class="card-body">
-						<div class="text-center">
-							<img src="wallets/cash.png" alt="Bitcoin Cash QR Code" width="60%" height="60%" />
-						</div>
-						<br>
-						<p class="card-text">qrrj4pcweu0v6vn37q4f6euqah6es5p93uqlcxr8kl</p>
-					</div>
-				</div>
-
-				<div class="card border-light mb-3" style="max-width: 20rem;">
-					<div class="card-header">Litecoin</div>
-					<div class="card-body">
-						<div class="text-center">
-							<img src="wallets/litecoin.png" alt="Litecoin QR Code" width="60%" height="60%" />
-						</div>
-						<br>
-						<p class="card-text">LSTzUWZbAVRCgDMHjc9fjPM5PFRndKxnkK</p>
-					</div>
-				</div>
-
-				<div class="card border-ethereum mb-3" style="max-width: 20rem;">
-					<div class="card-header">Ethereum</div>
-					<div class="card-body">
-						<div class="text-center">
-							<img src="wallets/ethereum.png" alt="Ethereum QR Code" width="60%" height="60%" />
-						</div>
-						<br>
-						<p class="card-text">0xe67F900395958c609Ad3098A0a85d8fCf19B6067</p>
-					</div>
+					<br>
+					<p class="card-text">bc1qnjpcl0xtywcuxuc7fr9s5gsnhkugnpf0udcn00</p>
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="card border-info mb-3" style="max-width: 20rem;">
-					<div class="card-header">XRP</div>
-					<div class="card-body">
-						<div class="text-center">
-							<img src="wallets/xrp.png" alt="XRP QR Code" width="60%" height="60%" />
-						</div>
-						<br>
-						<p class="card-text">rUS4KaEGr7Xdac5XAjeqEvSXpgewxHQjK1</p>
+			<div class="card border-success mb-3" style="max-width: 20rem;">
+				<div class="card-header">Bitcoin Cash</div>
+				<div class="card-body">
+					<div class="text-center">
+						<img src="wallets/cash.png" alt="Bitcoin Cash QR Code" width="60%" height="60%" />
 					</div>
-				</div>
-
-				<div class="card border-monero mb-3" style="max-width: 20rem;">
-					<div class="card-header">Monero</div>
-					<div class="card-body">
-						<div class="text-center">
-							<img src="wallets/monero.png" alt="Monero QR Code" width="60%" height="60%" />
-						</div>
-						<br>
-						<p class="card-text monero">4AvkGD1MNUhB8dLgAYEUUK1UJxJuj6zXC9DDPb2ywYpRCZ1Y6yWGaxFfD3q8HAgbPXXqnqaGxiZGqjFtjULbgGDhAiLBX6M</p>
-					</div>
-				</div>
-
-				<div class="card border-info mb-3" style="max-width: 20rem;">
-					<div class="card-header">Dash</div>
-					<div class="card-body">
-						<div class="text-center">
-							<img src="wallets/dash.png" alt="Dash QR Code" width="60%" height="60%" />
-						</div>
-						<br>
-						<p class="card-text">Xukc7xfRecEMMNuhDKb5Vb1MkoNe28Pson</p>
-					</div>
-				</div>
-
-				<div class="card border-warning mb-3" style="max-width: 20rem;">
-					<div class="card-header">ZCash</div>
-					<div class="card-body">
-						<div class="text-center">
-							<img src="wallets/zcash.png" alt="ZCash QR Code" width="60%" height="60%" />
-						</div>
-						<br>
-						<p class="card-text">t1PN1dwc8brKkKhzWqZahwuarngs5STa9fy</p>
-					</div>
+					<br>
+					<p class="card-text">qrrj4pcweu0v6vn37q4f6euqah6es5p93uqlcxr8kl</p>
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="card border-doge mb-3" style="max-width: 20rem;">
-					<div class="card-header">DogeCoin</div>
-					<div class="card-body">
-						<div class="text-center">
-							<img src="wallets/dogecoin.png" alt="DogeCoin QR Code" width="60%" height="60%" />
-						</div>
-						<br>
-						<p class="card-text">DR6gfyGh2txp9eMpvuweQwUqPzqWc7VJBN</p>
+			<div class="card border-light mb-3" style="max-width: 20rem;">
+				<div class="card-header">Litecoin</div>
+				<div class="card-body">
+					<div class="text-center">
+						<img src="wallets/litecoin.png" alt="Litecoin QR Code" width="60%" height="60%" />
 					</div>
+					<br>
+					<p class="card-text">LSTzUWZbAVRCgDMHjc9fjPM5PFRndKxnkK</p>
 				</div>
+			</div>
 
-				<div class="card border-warning mb-3" style="max-width: 20rem;">
-					<div class="card-header">Bitcoin Gold</div>
-					<div class="card-body">
-						<div class="text-center">
-							<img src="wallets/gold.png" alt="Bitcoin Gold QR Code" width="60%" height="60%" />
-						</div>
-						<br>
-						<p class="card-text">GTuJYM373DDa8qWYx4ryTwaDDpPkY5CxD9</p>
+			<div class="card border-ethereum mb-3" style="max-width: 20rem;">
+				<div class="card-header">Ethereum</div>
+				<div class="card-body">
+					<div class="text-center">
+						<img src="wallets/ethereum.png" alt="Ethereum QR Code" width="60%" height="60%" />
 					</div>
+					<br>
+					<p class="card-text">0xe67F900395958c609Ad3098A0a85d8fCf19B6067</p>
+				</div>
+			</div>
+
+			<div class="card border-info mb-3" style="max-width: 20rem;">
+				<div class="card-header">XRP</div>
+				<div class="card-body">
+					<div class="text-center">
+						<img src="wallets/xrp.png" alt="XRP QR Code" width="60%" height="60%" />
+					</div>
+					<br>
+					<p class="card-text">rUS4KaEGr7Xdac5XAjeqEvSXpgewxHQjK1</p>
+				</div>
+			</div>
+
+			<div class="card border-monero mb-3" style="max-width: 20rem;">
+				<div class="card-header">Monero</div>
+				<div class="card-body">
+					<div class="text-center">
+						<img src="wallets/monero.png" alt="Monero QR Code" width="60%" height="60%" />
+					</div>
+					<br>
+					<p class="card-text monero">4AvkGD1MNUhB8dLgAYEUUK1UJxJuj6zXC9DDPb2ywYpRCZ1Y6yWGaxFfD3q8HAgbPXXqnqaGxiZGqjFtjULbgGDhAiLBX6M</p>
+				</div>
+			</div>
+
+			<div class="card border-info mb-3" style="max-width: 20rem;">
+				<div class="card-header">Dash</div>
+				<div class="card-body">
+					<div class="text-center">
+						<img src="wallets/dash.png" alt="Dash QR Code" width="60%" height="60%" />
+					</div>
+					<br>
+					<p class="card-text">Xukc7xfRecEMMNuhDKb5Vb1MkoNe28Pson</p>
+				</div>
+			</div>
+
+			<div class="card border-warning mb-3" style="max-width: 20rem;">
+				<div class="card-header">ZCash</div>
+				<div class="card-body">
+					<div class="text-center">
+						<img src="wallets/zcash.png" alt="ZCash QR Code" width="60%" height="60%" />
+					</div>
+					<br>
+					<p class="card-text">t1PN1dwc8brKkKhzWqZahwuarngs5STa9fy</p>
+				</div>
+			</div>
+
+			<div class="card border-doge mb-3" style="max-width: 20rem;">
+				<div class="card-header">DogeCoin</div>
+				<div class="card-body">
+					<div class="text-center">
+						<img src="wallets/dogecoin.png" alt="DogeCoin QR Code" width="60%" height="60%" />
+					</div>
+					<br>
+					<p class="card-text">DR6gfyGh2txp9eMpvuweQwUqPzqWc7VJBN</p>
+				</div>
+			</div>
+
+			<div class="card border-warning mb-3" style="max-width: 20rem;">
+				<div class="card-header">Bitcoin Gold</div>
+				<div class="card-body">
+					<div class="text-center">
+						<img src="wallets/gold.png" alt="Bitcoin Gold QR Code" width="60%" height="60%" />
+					</div>
+					<br>
+					<p class="card-text">GTuJYM373DDa8qWYx4ryTwaDDpPkY5CxD9</p>
 				</div>
 			</div>
 		</div>
