@@ -26,7 +26,6 @@ function checkCookie(name) {
 		return false;
 		}
 	}
-}
 
 function deleteCookie(name){
 	document.cookie = name += "=; max-age=0";
