@@ -232,15 +232,15 @@
 						}, false);
 
 		function copy(id) {
-		  var text = id + "-text";
+		  var text = "#" + id + "-text";
 			var copyText = document.getElementById(id);
 			copyText.type = "text";
 			copyText.select();
 			document.execCommand("copy");
 			copyText.type = "hidden";
-			document.getElementById(text).title = "Copied!";
+			$(text).attr('title', 'Copied!').tooltip('_fixTitle').tooltip('show');
 			sleep(2000).then(() => {
-			  document.getElementById(text).title = "Click to Copy";
+			  $(text).attr('title', 'Click to Copy').tooltip('_fixTitle').tooltip('show');
 			});
 		}
 		</script>
