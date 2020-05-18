@@ -86,7 +86,7 @@
 		</div>
 		<div class="jumbotron d-flex flex-wrap justify-content-around">
 			<div class="card border-warning mb-3" style="max-width: 20rem;">
-				<div class="card-header">Bitcoin<span onclick="openSecondaryBtc()"><i class="fas fa-question-circle" style="float: right" data-toggle="tooltip" title="Not Working?" data-placement="left"></i></span></div>
+				<div class="card-header">Bitcoin<span onclick="openSecondaryBtc()" style="cursor:pointer"><i class="fas fa-question-circle" style="float: right" data-toggle="tooltip" title="Not Working?" data-placement="left"></i></span></div>
 				<div class="card-body">
 					<div class="text-center">
 						<img src="wallets/bitcoin.png" alt="Bitcoin QR Code" width="60%" height="60%" />
@@ -226,7 +226,7 @@
 			</div>
 		</div>
 
-<div id="secondaryBtc" class="modal">
+<div id="secondaryBtc" class="modal" style="overflow:hidden">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
