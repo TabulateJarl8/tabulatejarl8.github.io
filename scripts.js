@@ -71,6 +71,7 @@ xResponse: function(token, user) {
     url: 'https://tabulatephp.azurewebsites.net/checklogin.php',
     type: 'POST',
     dataType: 'text',
+    async: false,
     data: {token: token, name: user},
     success: function(response)
     {
