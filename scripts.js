@@ -65,25 +65,37 @@ function signOut(redirect) {
 }
 
 function checkLogin(){
-  //if(checkCookie("token")){
-    
-  //}else if(sessionStorage.getItem("token") != null){
-    
-  //}else{
-    //return false;
-  //}
-  document.write(verify(getCookie("token"), getCookie("username")));
+  if(checkCookie("token")){
+    if(checkCookie("username")){
+      var check = verify(getCookie("token"), getCookie("username"));
+      if(check != "false"){
+      document.cookie = "token=" + check;
+      return true;
+      }else{
+        return false;
+      }
+    }else{
+      return false;
+    }
+  }else if(sessionStorage.getItem("token") != null){
+    if(sessionStorage.getItem("username") != null){
+      var check = verify(sessionStorage.getItem("token"), sessionStorage.getItem("username"));
+      if(check != "false"){
+        sessionStorage.removeItem("token");
+        sessionStorage.setItem("token", check);
+        return true;
+      }else{
+        return false;
+      }
+    }else{
+      return false;
+    }
+  }else{
+    return false;
+  }
 }
 
 function verify(token, user){
-  //var xmlhttp = new XMLHttpRequest();
-  //xmlhttp.onreadystatechange = function(){
-    //if(this.readyState == 4 && this.status == 200){
-      //return this.responseText;
-    //}
-  //};
-  //xmlhttp.open("GET", "https://tabulatephp.azurewebsites.net/checklogin.php?token=" + token + "&name=" + user, true);
-  //xmlhttp.send();
   $.ajax(
   {
     url: 'https://tabulatephp.azurewebsites.net/checklogin.php',
@@ -92,7 +104,7 @@ function verify(token, user){
     data: { token: token, name: user},
     success: function(response)
     {
-        document.write(response);
+        return response;
     }
   });
 }
