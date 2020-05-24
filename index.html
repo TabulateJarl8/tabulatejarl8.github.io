@@ -55,7 +55,7 @@
 			document.getElementById("hello").innerHTML = "Hello, " + name;
 			setCookie("username", name, 30);
 			if(token != "empty"){
-			  setCookie("token", token);
+			  setCookie("token", token, 30);
 			}
 			window.location.href = "http://tabulate.tech";
 		}else if(checkCookie("username") == true){
