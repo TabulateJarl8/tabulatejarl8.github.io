@@ -60,6 +60,7 @@
 							<label class="custom-control-label" for="customCheck1">Remember Me</label>
 						</div>
 					</div>
+					<input type="hidden" value="no" id="redirect" name="redirect">
 					<br>
 
 					<p class="lead">
@@ -78,6 +79,8 @@
 		});
 
 		var x = getUrlParam("success", "false");
+		var redirect = getUrlParam("redirect", "empty");
+		document.getElementById("redirect").value = redirect;
 		if(x == "user"){
 			document.getElementById("warnings").innerHTML = "Invalid Username/Password";
 		}
