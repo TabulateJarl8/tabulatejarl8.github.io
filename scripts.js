@@ -70,7 +70,7 @@ function verify(token, user) {
     url: 'https://tabulatephp.azurewebsites.net/checklogin.php',
     type: 'POST',
     dataType: 'text',
-    data: { token: token, name: user },
+    data: {"token": token, "name": user },
     success: function(response)
     {
       return response;
