@@ -50,14 +50,39 @@ function getUrlParam(parameter, defaultvalue){
 function signOut(redirect) {
   if (checkCookie("username")) {
     deleteCookie("username");
+    deleteCookie("token");
     if(redirect == true){
       window.location.href = "/login";
     }
   } else if (sessionStorage.getItem("username") != null) {
     sessionStorage.removeItem("username");
+    sessionStorage.removeItem("token");
   if(redirect == true){
     window.location.href = "/login";
   }
     
   }
+}
+
+function checkLogin(){
+  //if(checkCookie("token")){
+    
+  //}else if(sessionStorage.getItem("token") != null){
+    
+  //}else{
+    //return false;
+  //}
+  console.log(verify(getCookie("token"), getCookie("username")));
+}
+
+function verify(token, user){
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+      var verified = this.responseText;
+    }
+  };
+  xmlhttp.open("GET", "https://tabulatephp.azurewebsites.net/checklogin.php?token=" + token + "&name=" + user, true);
+  xmlhttp.send();
+  return verified;
 }
