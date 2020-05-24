@@ -79,10 +79,9 @@ function verify(token, user){
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-      var verified = this.responseText;
+      return this.responseText;
     }
   };
   xmlhttp.open("GET", "https://tabulatephp.azurewebsites.net/checklogin.php?token=" + token + "&name=" + user, true);
   xmlhttp.send();
-  return verified;
 }
