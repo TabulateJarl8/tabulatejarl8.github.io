@@ -64,16 +64,22 @@ function signOut(redirect) {
   }
 }
 
-function verify(token, user) {
+function returnVerify(token, user) {
+  verify(token, user, function(d) {
+    return d;
+  });
+}
+
+function verify(token, user, callback) {
   $.ajax(
   {
     url: 'https://tabulatephp.azurewebsites.net/checklogin.php',
     type: 'POST',
     dataType: 'text',
-    data: {"token": token, "name": user },
+    data: {token: token, name: user },
     success: function(response)
     {
-      return response;
+      callback(response);
     }
   });
 }
@@ -81,7 +87,7 @@ function verify(token, user) {
 function checkLogin(){
   if(checkCookie("token")){
     if(checkCookie("username")){
-      var check = verify(getCookie("token"), getCookie("username"));
+      var check = returnVerify(getCookie("token"), getCookie("username"));
       if(check != "false"){
         console.log(check);
       setCookie("token", check, 30);
@@ -94,7 +100,7 @@ function checkLogin(){
     }
   }else if(sessionStorage.getItem("token") != null){
     if(sessionStorage.getItem("username") != null){
-      var check = verify(sessionStorage.getItem("token"), sessionStorage.getItem("username"));
+      var check = returnVerify(sessionStorage.getItem("token"), sessionStorage.getItem("username"));
       if(check != "false"){
         sessionStorage.removeItem("token");
         sessionStorage.setItem("token", check);
