@@ -48,16 +48,24 @@
 		});
 
 		var name = getUrlParam("name", "empty");
-		var tempName = getUrlParam("tempName", "empty")
+		var tempName = getUrlParam("tempName", "empty");
+		var token = getUrlParam("token", "empty");
+		var tempToken = getUrlParam("tempToken", "empty");
 		if(name != "empty"){
 			document.getElementById("hello").innerHTML = "Hello, " + name;
 			setCookie("username", name, 30);
+			if(token != "empty"){
+			  setCookie("token", token);
+			}
 			window.location.href = "http://tabulate.tech";
 		}else if(checkCookie("username") == true){
 			document.getElementById("hello").innerHTML = "Hello, " + getCookie("username");
 		}else if(tempName != "empty"){
 		  document.getElementById("hello").innerHTML = "Hello, " + tempName;
 		  sessionStorage.setItem("username", tempName);
+		  if(tempToken != "empty"){
+		    sessionStorage.setItem("token", tempToken);
+		  }
 		  window.location.href = "http://tabulate.tech";
 		  }else if(sessionStorage.getItem("username") != null){
 		  document.getElementById("hello").innerHTML = "Hello, " + sessionStorage.getItem("username");
