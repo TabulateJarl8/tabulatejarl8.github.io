@@ -72,7 +72,7 @@ function checkLogin(){
   //}else{
     //return false;
   //}
-  console.log(verify(getCookie("token"), getCookie("username")));
+  document.write(verify(getCookie("token"), getCookie("username")));
 }
 
 function verify(token, user){
