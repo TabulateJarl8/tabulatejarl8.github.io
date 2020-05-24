@@ -86,11 +86,11 @@
 		}
 
 		if(getCookie("username") != null){
-			document.getElementById("jumbotron").innerHTML = "Hi, " + getCookie("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(true)' class='btn-lg btn-primary'>Sign Out</button>";
+			document.getElementById("jumbotron").innerHTML = "Hi, " + getCookie("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(\"https://tabulate.tech\")' class='btn-lg btn-primary'>Sign Out</button>";
 			document.getElementById("no-account").innerHTML = "";
 			document.getElementById("forgot-password").innerHTML = "";
 		}else if(sessionStorage.getItem("username") != null){
-		document.getElementById("jumbotron").innerHTML = "Hi, " + sessionStorage.getItem("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(true)' class='btn-lg btn-primary'>Sign Out</button>";
+		document.getElementById("jumbotron").innerHTML = "Hi, " + sessionStorage.getItem("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(\"https://tabulate.tech\")' class='btn-lg btn-primary'>Sign Out</button>";
 		document.getElementById("no-account").innerHTML = "";
 		document.getElementById("forgot-password").innerHTML = "";
 		}

@@ -10,13 +10,13 @@
 </head>
 
 <body>
-
+<div id="signin"></div>
 </body>
 <script>
   if(checkLogin()){
     document.write("logged in");
   }else{
-    document.write("not logged in");
+    document.getElementById("signin").innerHTML = "<a href='/login?redirect=" + window.location.href + "'>Log In</a>";
   }
 </script>
 
