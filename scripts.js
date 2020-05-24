@@ -20,14 +20,10 @@ function getCookie(name) {
 
 function checkCookie(name) {
 	var value = getCookie(name);
-	if(value) {
-		return true;
-	} else {
-	  if(value == false){
-	    return true;
-	  }else{
+	if(value == null) {
 		return false;
-	  }
+	} else {
+	    return true;
 		}
 	}
 
@@ -74,7 +70,7 @@ function checkLogin(){
       var check = verify(getCookie("token"), getCookie("username"));
       if(check != "false"){
         console.log(check);
-      document.cookie = "token=" + check;
+      setCookie("token", check, 30);
       return true;
       }else{
         return false;
