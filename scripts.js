@@ -76,12 +76,23 @@ function checkLogin(){
 }
 
 function verify(token, user){
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-      return this.responseText;
+  //var xmlhttp = new XMLHttpRequest();
+  //xmlhttp.onreadystatechange = function(){
+    //if(this.readyState == 4 && this.status == 200){
+      //return this.responseText;
+    //}
+  //};
+  //xmlhttp.open("GET", "https://tabulatephp.azurewebsites.net/checklogin.php?token=" + token + "&name=" + user, true);
+  //xmlhttp.send();
+  $.ajax(
+  {
+    url: 'https://tabulatephp.azurewebsites.net/checklogin.php',
+    type: 'POST',
+    dataType: 'text',
+    data: { token: token, name: user},
+    success: function(response)
+    {
+        document.write(response);
     }
-  };
-  xmlhttp.open("GET", "https://tabulatephp.azurewebsites.net/checklogin.php?token=" + token + "&name=" + user, true);
-  xmlhttp.send();
+  });
 }
