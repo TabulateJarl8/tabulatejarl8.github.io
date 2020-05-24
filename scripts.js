@@ -51,14 +51,14 @@ function signOut(redirect) {
   if (checkCookie("username")) {
     deleteCookie("username");
     deleteCookie("token");
-    if(redirect == true){
-      window.location.href = "/login";
+    if(redirect != false){
+      window.location.href = "/login?redirect=" + redirect;
     }
   } else if (sessionStorage.getItem("username") != null) {
     sessionStorage.removeItem("username");
     sessionStorage.removeItem("token");
-  if(redirect == true){
-    window.location.href = "/login";
+  if(redirect != false){
+    window.location.href = "/login?redirect=" + redirect;
   }
     
   }
