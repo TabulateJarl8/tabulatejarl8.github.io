@@ -20,10 +20,14 @@ function getCookie(name) {
 
 function checkCookie(name) {
 	var value = getCookie(name);
-	if(value === null || value === undefined) {
-		return false;
-	} else {
+	if(value) {
 		return true;
+	} else {
+	  if(value == false){
+	    return true;
+	  }else{
+		return false;
+	  }
 		}
 	}
 
