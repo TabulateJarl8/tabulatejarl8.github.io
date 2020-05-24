@@ -64,6 +64,20 @@ function signOut(redirect) {
   }
 }
 
+function verify(token, user) {
+  $.ajax(
+  {
+    url: 'https://tabulatephp.azurewebsites.net/checklogin.php',
+    type: 'POST',
+    dataType: 'text',
+    data: { token: token, name: user },
+    success: function(response)
+    {
+      return response;
+    }
+  });
+}
+
 function checkLogin(){
   if(checkCookie("token")){
     if(checkCookie("username")){
@@ -96,16 +110,3 @@ function checkLogin(){
   }
 }
 
-function verify(token, user){
-  $.ajax(
-  {
-    url: 'https://tabulatephp.azurewebsites.net/checklogin.php',
-    type: 'POST',
-    dataType: 'text',
-    data: { token: token, name: user},
-    success: function(response)
-    {
-        return response;
-    }
-  });
-}
