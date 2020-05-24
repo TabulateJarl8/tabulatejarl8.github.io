@@ -73,6 +73,7 @@ function checkLogin(){
     if(checkCookie("username")){
       var check = verify(getCookie("token"), getCookie("username"));
       if(check != "false"){
+        console.log(check);
       document.cookie = "token=" + check;
       return true;
       }else{
