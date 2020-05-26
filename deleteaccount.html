@@ -116,6 +116,9 @@
       var x = getUrlParam("success", "false");
       if(x == "user"){
         document.getElementById("warnings").innerHTML = "Invalid Username/Password";
+      }else if(x == "true"){
+        signOut(false);
+        document.getElementById("jumbotron").innerHTML = "Account Deleted";
       }
 
       if(checkLogin() == false){
