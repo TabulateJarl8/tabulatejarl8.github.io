@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<!--Favicons-->
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/favicon/site.webmanifest">
+	<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#36464b">
+	<link rel="shortcut icon" href="/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-config" content="/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<title>Tabulate | Delete Account</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+	<style>
+	input[type="text"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="password"]::placeholder {
+		text-align: center;
+		color: black;
+	}
+	</style>
+	<script src="bootstrap.min.js"></script>
+	<script src="scripts.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167553203-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'UA-167553203-1');
+	</script>
+</head>
+
+<body>
+	<div id="navbar"><nav class="navbar navbar-dark bg-primary" style="overflow: visable"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No JavaScript?</a><p class="text-warning">Please enable javascript in your browser or some critical features may not function.</p></nav></div>
+	<div id="page-container">
+		<div class="page-header">
+			<div class="text-center">
+				<h1>Delete Account</h1>
+			</div>
+		</div>
+		<div class="jumbotron">
+			<div id="jumbotron" class="text-center">
+				<form action="https://tabulatephp.azurewebsites.net/deleteaccount.php" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<label>Username</label>
+						<input type="text" maxlength="255" placeholder="Username" name="user" class="form-control" required />
+					</div>
+
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" maxlength="255" placeholder="Password" name="password" class="form-control" data-toggle="password" required />
+					</div>
+          <div class="form-group">
+						<label>Confirm Password</label>
+						<input type="password" maxlength="255" placeholder="Confirm Password" class="form-control" data-toggle="password" required />
+					</div>
+					<p id="warnings" class="text-danger"></p>
+					<hr class="my-4">
+
+					<div class="form-group">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" style="cursor:pointer; position:relative; z-index: 2" class="custom-control-input" id="customCheck1" required>
+							<label class="custom-control-label" for="customCheck1">I'm sure</label>
+						</div>
+					</div>
+					<br>
+
+					<p class="lead">
+						<button type="submit" class="btn btn-danger btn-lg">Delete Account</button>
+					</p>
+				</form>
+			</div>
+		</div>
+		<!-- LOAD NAVBAR-->
+		<script>
+		$(function() {
+			$("#navbar").load("./navbar.html");
+		});
+
+		var x = getUrlParam("success", "false");
+		if(x == "user"){
+			document.getElementById("warnings").innerHTML = "Invalid Username/Password";
+		}
+
+		if(checkLogin() == false){
+      document.getElementById("jumbotron").innerHTML = "You are not logged in";
+    }
+		</script>
+	</div>
+</body>
+
+</html>
