@@ -2,22 +2,22 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="scripts.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="scripts.js"></script>
 </head>
 
 <body>
-<div id="signin"></div>
+  <div id="signin"></div>
 </body>
 <script>
-  if(checkLogin()){
-    document.write("logged in");
-  }else{
-    document.getElementById("signin").innerHTML = "<a href='/login?redirect=" + window.location.href + "'>Log In</a>";
-  }
+if(checkLogin()){
+  document.write("logged in");
+}else{
+  document.getElementById("signin").innerHTML = "<a href='/login?redirect=" + window.location.href + "'>Log In</a>";
+}
 </script>
 
 </html>
