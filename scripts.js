@@ -23,9 +23,9 @@ function checkCookie(name) {
 	if(value == null) {
 		return false;
 	} else {
-	    return true;
-		}
+		return true;
 	}
+}
 
 function deleteCookie(name){
 	document.cookie = name += "=; max-age=0";
@@ -48,69 +48,68 @@ function getUrlParam(parameter, defaultvalue){
 }
 
 function signOut(redirect) {
-  if (checkCookie("username")) {
-    deleteCookie("username");
-    deleteCookie("token");
-    if(redirect != false){
-      window.location.href = "/login?redirect=" + redirect;
-    }
-  } else if (sessionStorage.getItem("username") != null) {
-    sessionStorage.removeItem("username");
-    sessionStorage.removeItem("token");
-  if(redirect != false){
-    window.location.href = "/login?redirect=" + redirect;
-  }
-    
-  }
+	if (checkCookie("username")) {
+		deleteCookie("username");
+		deleteCookie("token");
+		if(redirect != false){
+			window.location.href = "/login?redirect=" + redirect;
+		}
+	} else if (sessionStorage.getItem("username") != null) {
+		sessionStorage.removeItem("username");
+		sessionStorage.removeItem("token");
+		if(redirect != false){
+			window.location.href = "/login?redirect=" + redirect;
+		}
+
+	}
 }
 $.extend({
-xResponse: function(token, user) {
-  var responseText = null;
-  $.ajax(
-  {
-    url: 'https://tabulatephp.azurewebsites.net/checklogin.php',
-    type: 'POST',
-    dataType: 'text',
-    async: false,
-    data: {token: token, name: user},
-    success: function(response)
-    {
-      responseText = response;
-    }
-  });
-  return responseText;
-}
-});
+	xResponse: function(token, user) {
+		var responseText = null;
+		$.ajax(
+			{
+				url: 'https://tabulatephp.azurewebsites.net/checklogin.php',
+				type: 'POST',
+				dataType: 'text',
+				async: false,
+				data: {token: token, name: user},
+				success: function(response)
+				{
+					responseText = response;
+				}
+			});
+			return responseText;
+		}
+	});
 
-function checkLogin(){
-  if(checkCookie("token")){
-    if(checkCookie("username")){
-      var check = $.xResponse(getCookie("token"), getCookie("username"));
-      if(check != "false"){
-        console.log(check);
-      setCookie("token", check, 30);
-      return true;
-      }else{
-        return false;
-      }
-    }else{
-      return false;
-    }
-  }else if(sessionStorage.getItem("token") != null){
-    if(sessionStorage.getItem("username") != null){
-      var check = $.xResponse(sessionStorage.getItem("token"), sessionStorage.getItem("username"));
-      if(check != "false"){
-        sessionStorage.removeItem("token");
-        sessionStorage.setItem("token", check);
-        return true;
-      }else{
-        return false;
-      }
-    }else{
-      return false;
-    }
-  }else{
-    return false;
-  }
-}
-
+	function checkLogin(){
+		if(checkCookie("token")){
+			if(checkCookie("username")){
+				var check = $.xResponse(getCookie("token"), getCookie("username"));
+				if(check != "false"){
+					console.log(check);
+					setCookie("token", check, 30);
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				return false;
+			}
+		}else if(sessionStorage.getItem("token") != null){
+			if(sessionStorage.getItem("username") != null){
+				var check = $.xResponse(sessionStorage.getItem("token"), sessionStorage.getItem("username"));
+				if(check != "false"){
+					sessionStorage.removeItem("token");
+					sessionStorage.setItem("token", check);
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				return false;
+			}
+		}else{
+			return false;
+		}
+	}

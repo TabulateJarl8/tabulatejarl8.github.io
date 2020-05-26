@@ -28,16 +28,16 @@
 		color: black;
 	}
 	</style>
-	
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167553203-1"></script>
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	
-	  function gtag() { dataLayer.push(arguments); }
-	  gtag('js', new Date());
-	
-	  gtag('config', 'UA-167553203-1');
+	window.dataLayer = window.dataLayer || [];
+
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'UA-167553203-1');
 	</script>
 </head>
 
@@ -68,17 +68,17 @@
 						<label>Confirm Password</label>
 						<input id="txtConfirmPassword" type="password" placeholder="Confirm Password" maxlength="255" class="form-control" data-toggle="password" required />
 					</div>
-					
+
 					<p id="warnings" class="text-danger"></p>
 					<hr class="my-4">
-					
-										<div class="form-group">
-										  <div class="custom-control custom-checkbox">
-										    <input type="checkbox" style="cursor:pointer; position:relative; z-index: 2" class="custom-control-input" id="tosaccept" required>
-										    <label class="custom-control-label" for="tosaccept">I accept the <a href="/legal?tab=tou">Terms of Service</a></label>
-										  </div>
-										</div>
-					
+
+					<div class="form-group">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" style="cursor:pointer; position:relative; z-index: 2" class="custom-control-input" id="tosaccept" required>
+							<label class="custom-control-label" for="tosaccept">I accept the <a href="/legal?tab=tou">Terms of Service</a></label>
+						</div>
+					</div>
+
 					<div data-theme="dark" class="g-recaptcha" data-sitekey="6LeSm_cUAAAAAGUz8yarXTZgNwameIiW9nSZfO0s" style="display:inline-block"></div>
 					<br>
 					<p class="lead">
@@ -88,7 +88,7 @@
 				<script src='https://www.google.com/recaptcha/api.js'></script>
 			</div>
 			<a id="login" href="/login">Already Have an Account? Log in Here</a>
-			
+
 			<!-- LOAD NAVBAR-->
 			<script>
 			$(function() {
@@ -116,13 +116,13 @@
 			}else if (x == "captchafail") {
 				document.getElementById("warnings").innerHTML = "ReCaptcha Failed. Please try again.";
 			}
-			
+
 			if(getCookie("username") != null){
-			document.getElementById("jumbotron").innerHTML = "Hi, " + getCookie("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(\"https://tabulate.tech\")' class='btn-lg btn-primary'>Sign Out</button>";
-			document.getElementById("login").innerHTML = "";
+				document.getElementById("jumbotron").innerHTML = "Hi, " + getCookie("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(\"https://tabulate.tech\")' class='btn-lg btn-primary'>Sign Out</button>";
+				document.getElementById("login").innerHTML = "";
 			}else if(sessionStorage.getItem("username") != null){
-			document.getElementById("jumbotron").innerHTML = "Hi, " + sessionStorage.getItem("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(\"https://tabulate.tech\")' class='btn-lg btn-primary'>Sign Out</button>";
-			document.getElementById("login").innerHTML = "";
+				document.getElementById("jumbotron").innerHTML = "Hi, " + sessionStorage.getItem("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(\"https://tabulate.tech\")' class='btn-lg btn-primary'>Sign Out</button>";
+				document.getElementById("login").innerHTML = "";
 			}
 			</script>
 		</div>

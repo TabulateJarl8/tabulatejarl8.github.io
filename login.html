@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<!--Favicons-->
 	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -18,7 +18,7 @@
 	<meta name="theme-color" content="#ffffff">
 	<title>Tabulate | Login</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 	<style>
 	input[type="text"]::placeholder,
 	input[type="email"]::placeholder,
@@ -29,16 +29,16 @@
 	</style>
 	<script src="bootstrap.min.js"></script>
 	<script src="scripts.js"></script>
-	
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167553203-1"></script>
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	
-	  function gtag() { dataLayer.push(arguments); }
-	  gtag('js', new Date());
-	
-	  gtag('config', 'UA-167553203-1');
+	window.dataLayer = window.dataLayer || [];
+
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'UA-167553203-1');
 	</script>
 </head>
 
@@ -101,9 +101,9 @@
 			document.getElementById("no-account").innerHTML = "";
 			document.getElementById("forgot-password").innerHTML = "";
 		}else if(sessionStorage.getItem("username") != null){
-		document.getElementById("jumbotron").innerHTML = "Hi, " + sessionStorage.getItem("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(\"https://tabulate.tech\")' class='btn-lg btn-primary'>Sign Out</button>";
-		document.getElementById("no-account").innerHTML = "";
-		document.getElementById("forgot-password").innerHTML = "";
+			document.getElementById("jumbotron").innerHTML = "Hi, " + sessionStorage.getItem("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(\"https://tabulate.tech\")' class='btn-lg btn-primary'>Sign Out</button>";
+			document.getElementById("no-account").innerHTML = "";
+			document.getElementById("forgot-password").innerHTML = "";
 		}
 		</script>
 	</div>

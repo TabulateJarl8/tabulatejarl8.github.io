@@ -18,20 +18,20 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<title>Tabulate | Home</title>
-
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="bootstrap.min.js"></script>
 	<script src="scripts.js"></script>
-	
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167553203-1"></script>
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	
-	  function gtag() { dataLayer.push(arguments); }
-	  gtag('js', new Date());
-	
-	  gtag('config', 'UA-167553203-1');
+	window.dataLayer = window.dataLayer || [];
+
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'UA-167553203-1');
 	</script>
 </head>
 <body>
@@ -67,29 +67,29 @@
 			document.getElementById("hello").innerHTML = "Hello, " + name;
 			setCookie("username", name, 30);
 			if(token != "empty"){
-			  setCookie("token", token, 30);
+				setCookie("token", token, 30);
 			}
 			if(redirect == "empty"){
-			window.location.href = "http://tabulate.tech";
+				window.location.href = "http://tabulate.tech";
 			}else{
-			  window.location.href = redirect;
+				window.location.href = redirect;
 			}
 		}else if(checkCookie("username") == true){
 			document.getElementById("hello").innerHTML = "Hello, " + getCookie("username");
 		}else if(tempName != "empty"){
-		  document.getElementById("hello").innerHTML = "Hello, " + tempName;
-		  sessionStorage.setItem("username", tempName);
-		  if(tempToken != "empty"){
-		    sessionStorage.setItem("token", tempToken);
-		  }
-		  if(redirect == "empty"){
-		  window.location.href = "http://tabulate.tech";
-		  }else{
-		    window.location.href = redirect;
-		  }
-		  }else if(sessionStorage.getItem("username") != null){
-		  document.getElementById("hello").innerHTML = "Hello, " + sessionStorage.getItem("username");
-		  }else{
+			document.getElementById("hello").innerHTML = "Hello, " + tempName;
+			sessionStorage.setItem("username", tempName);
+			if(tempToken != "empty"){
+				sessionStorage.setItem("token", tempToken);
+			}
+			if(redirect == "empty"){
+				window.location.href = "http://tabulate.tech";
+			}else{
+				window.location.href = redirect;
+			}
+		}else if(sessionStorage.getItem("username") != null){
+			document.getElementById("hello").innerHTML = "Hello, " + sessionStorage.getItem("username");
+		}else{
 			document.getElementById("hello").innerHTML = "Hello, world!";
 		}
 		</script>

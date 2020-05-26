@@ -19,8 +19,8 @@
 	<title>Tabulate | Donate</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-		<script src="jquery.ui.touch-punch.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="jquery.ui.touch-punch.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 	<script src="bootstrap.min.js"></script>
 	<script src="scripts.js"></script>
@@ -46,50 +46,50 @@
 		cursor: pointer;
 	}
 	#overlay{
-	position:fixed;
-	z-index:99999;
-	top:0;
-	left:0;
-	bottom:0;
-	right:0;
-	background:rgba(0,0,0,0.9);
-	transition: 1s 0.4s;
+		position:fixed;
+		z-index:99999;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		background:rgba(0,0,0,0.9);
+		transition: 1s 0.4s;
 	}
 	#progress{
-	height:1px;
-	background:#fff;
-	position:absolute;
-	width:0;
-	top:50%;
+		height:1px;
+		background:#fff;
+		position:absolute;
+		width:0;
+		top:50%;
 	}
 	#progstat{
-	font-size:0.7em;
-	letter-spacing: 3px;
-	position:absolute;
-	top:50%;
-	margin-top:-40px;
-	width:100%;
-	text-align:center;
-	color:#fff;
+		font-size:0.7em;
+		letter-spacing: 3px;
+		position:absolute;
+		top:50%;
+		margin-top:-40px;
+		width:100%;
+		text-align:center;
+		color:#fff;
 	}
 </style>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167553203-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
 
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
 
-  gtag('config', 'UA-167553203-1');
+gtag('config', 'UA-167553203-1');
 </script>
 </head>
 <body>
-  <div id="overlay">
-    <div id="progstat"></div>
-    <div id="progress"></div>
-  </div>
+	<div id="overlay">
+		<div id="progstat"></div>
+		<div id="progress"></div>
+	</div>
 	<div id="navbar"><nav class="navbar navbar-dark bg-primary" style="overflow: visable"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No JavaScript?</a><p class="text-warning">Please enable javascript in your browser or some critical features may not function.</p></nav></div>
 	<div id="page-container">
 		<div class="page-header">
@@ -104,7 +104,7 @@
 					</div>
 					<br>
 					<div class="text-center">
-					<a id="bitcoin-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">bc1qnjpcl0xtywcuxuc7fr9s5gsnhkugnpf0udcn00</a>
+						<a id="bitcoin-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">bc1qnjpcl0xtywcuxuc7fr9s5gsnhkugnpf0udcn00</a>
 					</div>
 					<input id="bitcoin" width="1px" height="1px" type="hidden" value="bc1qnjpcl0xtywcuxuc7fr9s5gsnhkugnpf0udcn00" />
 				</div>
@@ -118,7 +118,7 @@
 					</div>
 					<br>
 					<div class="text-center">
-					<a id="cash-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">qrrj4pcweu0v6vn37q4f6euqah6es5p93uqlcxr8kl</a>
+						<a id="cash-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">qrrj4pcweu0v6vn37q4f6euqah6es5p93uqlcxr8kl</a>
 					</div>
 					<input id="cash" width="1px" height="1px" type="hidden" value="qrrj4pcweu0v6vn37q4f6euqah6es5p93uqlcxr8kl" />
 				</div>
@@ -132,7 +132,7 @@
 					</div>
 					<br>
 					<div class="text-center">
-					<a id="litecoin-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">LSTzUWZbAVRCgDMHjc9fjPM5PFRndKxnkK</a>
+						<a id="litecoin-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">LSTzUWZbAVRCgDMHjc9fjPM5PFRndKxnkK</a>
 					</div>
 					<input id="litecoin" width="1px" height="1px" type="hidden" value="LSTzUWZbAVRCgDMHjc9fjPM5PFRndKxnkK" />
 				</div>
@@ -146,7 +146,7 @@
 					</div>
 					<br>
 					<div class="text-center">
-					<a id="ethereum-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">0xe67F900395958c609Ad3098A0a85d8fCf19B6067</a>
+						<a id="ethereum-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">0xe67F900395958c609Ad3098A0a85d8fCf19B6067</a>
 					</div>
 					<input id="ethereum" width="1px" height="1px" type="hidden" value="0xe67F900395958c609Ad3098A0a85d8fCf19B6067" />
 				</div>
@@ -160,7 +160,7 @@
 					</div>
 					<br>
 					<div class="text-center">
-					<a id="xrp-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">rUS4KaEGr7Xdac5XAjeqEvSXpgewxHQjK1</a>
+						<a id="xrp-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">rUS4KaEGr7Xdac5XAjeqEvSXpgewxHQjK1</a>
 					</div>
 					<input id="xrp" height="1px" width="1px" type="hidden" value="rUS4KaEGr7Xdac5XAjeqEvSXpgewxHQjK1" />
 				</div>
@@ -174,7 +174,7 @@
 					</div>
 					<br>
 					<div class="text-center">
-					<a id="monero-text" class="card-text monero" data-toggle="tooltip" data-placement="top" title="Click to Copy">4AvkGD1MNUhB8dLgAYEUUK1UJxJuj6zXC9DDPb2ywYpRCZ1Y6yWGaxFfD3q8HAgbPXXqnqaGxiZGqjFtjULbgGDhAiLBX6M</a>
+						<a id="monero-text" class="card-text monero" data-toggle="tooltip" data-placement="top" title="Click to Copy">4AvkGD1MNUhB8dLgAYEUUK1UJxJuj6zXC9DDPb2ywYpRCZ1Y6yWGaxFfD3q8HAgbPXXqnqaGxiZGqjFtjULbgGDhAiLBX6M</a>
 					</div>
 					<input id="monero" width="1px" height="1px" type="hidden" value="4AvkGD1MNUhB8dLgAYEUUK1UJxJuj6zXC9DDPb2ywYpRCZ1Y6yWGaxFfD3q8HAgbPXXqnqaGxiZGqjFtjULbgGDhAiLBX6M" />
 				</div>
@@ -188,7 +188,7 @@
 					</div>
 					<br>
 					<div class="text-center">
-					<a id="dash-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">Xukc7xfRecEMMNuhDKb5Vb1MkoNe28Pson</a>
+						<a id="dash-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">Xukc7xfRecEMMNuhDKb5Vb1MkoNe28Pson</a>
 					</div>
 					<input id="dash" width="1px" height="1px" type="hidden" value="Xukc7xfRecEMMNuhDKb5Vb1MkoNe28Pson" />
 				</div>
@@ -202,7 +202,7 @@
 					</div>
 					<br>
 					<div class="text-center">
-					<a id="zcash-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">t1PN1dwc8brKkKhzWqZahwuarngs5STa9fy</a>
+						<a id="zcash-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">t1PN1dwc8brKkKhzWqZahwuarngs5STa9fy</a>
 					</div>
 					<input id="zcash" width="1px" height="1px" type="hidden" value="t1PN1dwc8brKkKhzWqZahwuarngs5STa9fy" />
 				</div>
@@ -216,7 +216,7 @@
 					</div>
 					<br>
 					<div class="text-center">
-					<a id="dogecoin-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">DR6gfyGh2txp9eMpvuweQwUqPzqWc7VJBN</a>
+						<a id="dogecoin-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">DR6gfyGh2txp9eMpvuweQwUqPzqWc7VJBN</a>
 					</div>
 					<input id="dogecoin" width="1px" height="1px" type="hidden" value="DR6gfyGh2txp9eMpvuweQwUqPzqWc7VJBN" />
 				</div>
@@ -230,39 +230,39 @@
 					</div>
 					<br>
 					<div class="text-center">
-					<a id="gold-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">GTuJYM373DDa8qWYx4ryTwaDDpPkY5CxD9</a>
+						<a id="gold-text" class="card-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">GTuJYM373DDa8qWYx4ryTwaDDpPkY5CxD9</a>
 					</div>
-							<input id="gold" width="1px" height="1px" type="hidden" value="GTuJYM373DDa8qWYx4ryTwaDDpPkY5CxD9" />
+					<input id="gold" width="1px" height="1px" type="hidden" value="GTuJYM373DDa8qWYx4ryTwaDDpPkY5CxD9" />
 				</div>
 			</div>
 		</div>
 
-<div id="secondaryBtc" class="modal" style="overflow:hidden">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Bitcoin Broken?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModel">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>If you can only donate in bitcoin and the other bitcoin address doesn't work, use this address.</p>
-        <div class="text-center">
-          <img src="wallets/alt_bitcoin.png" alt="Bitcoin QR Code" width="60%" height="60%" />
-        </div>
-        <br>
-        <div class="text-center">
-        <a id="alt-bitcoin-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">1ErJBAovBRujYZ9Db5H1222UvaNm9pHKce</a>
-        </div>
-        <input id="alt-bitcoin" width="1px" height="1px" type="hidden" value="1ErJBAovBRujYZ9Db5H1222UvaNm9pHKce" />
-      </div>
-      <div class="modal-footer">
-        <button id="doneModel" type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
-      </div>
-    </div>
-  </div>
-</div>
+		<div id="secondaryBtc" class="modal" style="overflow:hidden">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Bitcoin Broken?</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModel">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>If you can only donate in bitcoin and the other bitcoin address doesn't work, use this address.</p>
+						<div class="text-center">
+							<img src="wallets/alt_bitcoin.png" alt="Bitcoin QR Code" width="60%" height="60%" />
+						</div>
+						<br>
+						<div class="text-center">
+							<a id="alt-bitcoin-text" data-toggle="tooltip" data-placement="top" title="Click to Copy">1ErJBAovBRujYZ9Db5H1222UvaNm9pHKce</a>
+						</div>
+						<input id="alt-bitcoin" width="1px" height="1px" type="hidden" value="1ErJBAovBRujYZ9Db5H1222UvaNm9pHKce" />
+					</div>
+					<div class="modal-footer">
+						<button id="doneModel" type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- LOAD NAVBAR-->
 		<script>
@@ -270,13 +270,13 @@
 			$("#navbar").load("navbar.html");
 			$("#secondaryBtc").modal("hide");
 		});
-		
+
 		$("#secondaryBtc").draggable({
-		handle: ".modal-header"
+			handle: ".modal-header"
 		});
-		
+
 		function sleep (time) {
-		return new Promise((resolve) => setTimeout(resolve, time));
+			return new Promise((resolve) => setTimeout(resolve, time));
 		}
 
 		$(document).ready(function(){
@@ -287,65 +287,65 @@
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 			$('.jumbotron').removeClass("d-flex flex-column justify-content-around");
 		}
-		
+
 		function openSecondaryBtc(){
-		  $("#secondaryBtc").modal("show");
+			$("#secondaryBtc").modal("show");
 		}
-		
+
 		function closeSecondaryBtc(){
-		  $("#secondaryBtc").modal("hide");
+			$("#secondaryBtc").modal("hide");
 		}
-		
+
 		document.getElementById("closeModel").addEventListener("click", closeSecondaryBtc(), false);
-		
+
 		document.getElementById("doneModel").addEventListener("click", closeSecondaryBtc(), false);
-		
+
 		document.getElementById("bitcoin-text").addEventListener("click", function(){
-		  copy("bitcoin");
-		}, false);
-		
-		document.getElementById("alt-bitcoin-text").addEventListener("click", function(){
-		  copy("alt-bitcoin");
-		}, false);
-		
-		document.getElementById("cash-text").addEventListener("click", function(){
-		copy("cash");
-		}, false);
-		
-			document.getElementById("bitcoin-text").addEventListener("click", function(){
 			copy("bitcoin");
-			}, false);
-			
-			document.getElementById("litecoin-text").addEventListener("click", function(){
+		}, false);
+
+		document.getElementById("alt-bitcoin-text").addEventListener("click", function(){
+			copy("alt-bitcoin");
+		}, false);
+
+		document.getElementById("cash-text").addEventListener("click", function(){
+			copy("cash");
+		}, false);
+
+		document.getElementById("bitcoin-text").addEventListener("click", function(){
+			copy("bitcoin");
+		}, false);
+
+		document.getElementById("litecoin-text").addEventListener("click", function(){
 			copy("litecoin");
-			}, false);
-			
-				document.getElementById("ethereum-text").addEventListener("click", function(){
-				copy("ethereum");
-				}, false);
-				
-				document.getElementById("xrp-text").addEventListener("click", function(){
-				copy("xrp");
-				}, false);
-				
-					document.getElementById("monero-text").addEventListener("click", function(){
-					copy("monero");
-					}, false);
-					
-					document.getElementById("dash-text").addEventListener("click", function(){
-					copy("dash");
-					}, false);
-					
-						document.getElementById("zcash-text").addEventListener("click", function(){
-						copy("zcash");
-						}, false);
-						
-						document.getElementById("dogecoin-text").addEventListener("click", function(){
-						copy("dogecoin");
-						}, false);
+		}, false);
+
+		document.getElementById("ethereum-text").addEventListener("click", function(){
+			copy("ethereum");
+		}, false);
+
+		document.getElementById("xrp-text").addEventListener("click", function(){
+			copy("xrp");
+		}, false);
+
+		document.getElementById("monero-text").addEventListener("click", function(){
+			copy("monero");
+		}, false);
+
+		document.getElementById("dash-text").addEventListener("click", function(){
+			copy("dash");
+		}, false);
+
+		document.getElementById("zcash-text").addEventListener("click", function(){
+			copy("zcash");
+		}, false);
+
+		document.getElementById("dogecoin-text").addEventListener("click", function(){
+			copy("dogecoin");
+		}, false);
 
 		function copy(id) {
-		  var text = "#" + id + "-text";
+			var text = "#" + id + "-text";
 			var copyText = document.getElementById(id);
 			copyText.type = "text";
 			copyText.select();
@@ -353,24 +353,24 @@
 			copyText.type = "hidden";
 			$(text).attr('title', 'Copied!').tooltip('_fixTitle').tooltip('show');
 			sleep(2000).then(() => {
-			  $(text).attr('title', 'Click to Copy').tooltip('_fixTitle').tooltip('show');
+				$(text).attr('title', 'Click to Copy').tooltip('_fixTitle').tooltip('show');
 			});
 		}
-		
-		;(function(){
-		function id(v){return document.getElementById(v); }
-		function loadbar() {
-		var ovrl = id("overlay"),
-		prog = id("progress"),
-		stat = id("progstat"),
-		img = document.images,
-		c = 0;
-		tot = img.length;
-		function imgLoaded(){
-		c += 1;
-		var perc = ((100/tot*c) << 0) +"%"; prog.style.width=perc; stat.innerHTML="Loading " + perc; if(c===tot) return doneLoading(); } function doneLoading(){ ovrl.style.opacity=0; setTimeout(function(){ ovrl.style.display="none" ; }, 1200); } for(var i=0; i<tot; i++) { var tImg=new Image(); tImg.onload=imgLoaded; tImg.onerror=imgLoaded; tImg.src=img[i].src; } } document.addEventListener('DOMContentLoaded', loadbar, false); }());
-		</script>
-	</div>
-</body>
 
-</html>
+		;(function(){
+			function id(v){return document.getElementById(v); }
+			function loadbar() {
+				var ovrl = id("overlay"),
+				prog = id("progress"),
+				stat = id("progstat"),
+				img = document.images,
+				c = 0;
+				tot = img.length;
+				function imgLoaded(){
+					c += 1;
+					var perc = ((100/tot*c) << 0) +"%"; prog.style.width=perc; stat.innerHTML="Loading " + perc; if(c===tot) return doneLoading(); } function doneLoading(){ ovrl.style.opacity=0; setTimeout(function(){ ovrl.style.display="none" ; }, 1200); } for(var i=0; i<tot; i++) { var tImg=new Image(); tImg.onload=imgLoaded; tImg.onerror=imgLoaded; tImg.src=img[i].src; } } document.addEventListener('DOMContentLoaded', loadbar, false); }());
+					</script>
+					</div>
+					</body>
+
+					</html>
