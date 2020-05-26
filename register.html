@@ -68,8 +68,17 @@
 						<label>Confirm Password</label>
 						<input id="txtConfirmPassword" type="password" placeholder="Confirm Password" maxlength="255" class="form-control" data-toggle="password" required />
 					</div>
+					
 					<p id="warnings" class="text-danger"></p>
 					<hr class="my-4">
+					
+										<div class="form-group">
+										  <div class="custom-control custom-checkbox">
+										    <input type="checkbox" style="cursor:pointer; position:relative; z-index: 2" class="custom-control-input" id="tosaccept" required>
+										    <label class="custom-control-label" for="tosaccept">I accept the <a href="/legal?tab=tou">Terms of Service</a></label>
+										  </div>
+										</div>
+					
 					<div data-theme="dark" class="g-recaptcha" data-sitekey="6LeSm_cUAAAAAGUz8yarXTZgNwameIiW9nSZfO0s" style="display:inline-block"></div>
 					<br>
 					<p class="lead">
@@ -79,7 +88,7 @@
 				<script src='https://www.google.com/recaptcha/api.js'></script>
 			</div>
 			<a id="login" href="/login">Already Have an Account? Log in Here</a>
-			<a href="/legal?tab=tou">Terms of Service</a>
+			
 			<!-- LOAD NAVBAR-->
 			<script>
 			$(function() {
