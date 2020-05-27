@@ -145,7 +145,7 @@
                setCookie("token", update);
              }
              }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
-                var update = $.updateInfhtsessionStorage.getItem("token"), sessionStorage.getItem("username"), "email", document.getElementById("emailInput").value);
+                var update = $.updateInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"), "email", document.getElementById("emailInput").value);
                 if(update == "false"){
                 window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
                 }else{
