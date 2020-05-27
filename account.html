@@ -82,6 +82,25 @@
       }
       });
       
+         $.extend({
+         updateInfo: function(token, user, service, data) {
+         var responseText = null;
+         $.ajax(
+         {
+         url: 'https://tabulatephp.azurewebsites.net/changecreds.php',
+         type: 'POST',
+         dataType: 'text',
+         async: false,
+         data: {token: token, name: user, service: service, data: data},
+         success: function(response)
+         {
+         responseText = response;
+         }
+         });
+         return responseText;
+         }
+         });
+      
        if(!checkLogin()){
        //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
        }else{
@@ -116,10 +135,32 @@
          document.getElementById("emailInput").readOnly = false;
          }else{
            if(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(document.getElementById("emailInput").value)){
+             document.getElementById("emailEdit").disabled = true;
+             document.getElementById("emailEdit").innerHTML = "<div class='spinner-border spinner-border-sm' role='status'><span class='sr-only'>Loading...</span></div>";
+             if(checkCookie("username") && checkCookie("token")){
+             var update = $.updateInfo(getCookie("token"), getCookie("username"), "email", document.getElementById("emailInput").value);
+             if(update == "false"){
+               window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+             }else{
+               setCookie("token", update);
+             }
+             }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
+                var update = $.updateInfhtsessionStorage.getItem("token"), sessionStorage.getItem("username"), "email", document.getElementById("emailInput").value);
+                if(update == "false"){
+                window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+                }else{
+                  sessionStorage.setItem("token", update);
+                }
+             }else{
+               window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+             }
+             
+             
            document.getElementById("emailEdit").innerHTML = "Edit";
            document.getElementById("emailInput").className = "form-control";
-           document.getElementById("emailInput").value = "";
+           document.getElementById("emailInput").placeholder = document.getElementById("emailInput").value;
            document.getElementById("emailInput").readOnly = true;
+           document.getElementById("emailEdit").disabled = false;
            }else{
              document.getElementById("emailInput").className = "form-control is-invalid";
            }
