@@ -55,9 +55,14 @@
 
         <div class="modal-body">
           <p>You are about to delete your account, this procedure is irreversible.</p>
-          <p>Do you want to proceed?</p>
+          <p id="instructions"></p>
         </div>
-
+        <form id="confirm-form">
+        <div class="form-group">
+          <label>Security Code</label>
+          <input id="code" type="text" maxlength="6" placeholder="000000" name="code" class="form-control" required />
+        </div>
+        </form>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
           <a class="btn btn-danger btn-ok" id="submit">Delete</a>
@@ -85,10 +90,6 @@
             <label>Confirm Password</label>
             <input type="password" id="txtConfirmPassword" maxlength="255" placeholder="Confirm Password" class="form-control" data-toggle="password" required />
           </div>
-          <div class="form-group">
-            <label id="checknum-label"></label>
-            <input type="text" id="checknum" maxlength="5" placeholder="Please type the Above Value" class="form-control" pattern="" title="Type the Required Number" required />
-          </div>
           <input type="hidden" value="" name="username" id="username"></input>
           <p id="warnings" class="text-danger"></p>
           <hr class="my-4">
@@ -108,23 +109,26 @@
         </form>
       </div>
     </div>
+
     <!-- LOAD NAVBAR-->
     <script>
       $(function() {
         $("#navbar").load("./navbar.html");
       });
 
-      if(checkCookie("username")){
-        document.getElementById("username").value = getCookie("username");
-      }else if(sessionStorage.getItem("username") != null){
-        document.getElementById("username").value = sessionStorage.getItem("username");
-      }else{
-        window.location.href = "https://tabulate.tech/login?redirect=https://tabulate.tech/deleteaccount";
-      }
+      // if(checkCookie("username")){
+      //   document.getElementById("username").value = getCookie("username");
+      // }else if(sessionStorage.getItem("username") != null){
+      //   document.getElementById("username").value = sessionStorage.getItem("username");
+      // }else{
+      //   window.location.href = "https://tabulate.tech/login?redirect=https://tabulate.tech/deleteaccount";
+      // }
 
-      var randomnum = (""+Math.random()).substring(2,7);
-      document.getElementById("checknum-label").innerHTML = "Please Type \"" + randomnum + "\" to Confirm";
-      document.getElementById("checknum").pattern = randomnum;
+      // if(checkCookie("username")){
+      //   document.getElementById("huddenuser").value = getCookie("username");
+      // }else if(sessionStorage.getItem("username") != null){
+      //   document.getElementById("hiddenuser").value = sessionStorage.getItem("username");
+      // }
 
       var x = getUrlParam("success", "false");
       if(x == "user"){
@@ -134,9 +138,28 @@
         document.getElementById("jumbotron").innerHTML = "Account Deleted";
       }
 
-      if(checkLogin() == false){
-        window.location.href = "https://tabulate.tech/login?redirect=https://tabulate.tech/deleteaccount";
-      }
+      // if(checkLogin() == false){
+      //   window.location.href = "https://tabulate.tech/login?redirect=https://tabulate.tech/deleteaccount";
+      // }
+
+      $.extend({
+        xResponse: function(user) {
+          var responseText = null;
+          $.ajax(
+          {
+            url: 'https://tabulatephp.azurewebsites.net/deleteaccountemail.php',
+            type: 'POST',
+            dataType: 'text',
+            async: false,
+            data: {user: user},
+            success: function(response)
+            {
+              responseText = response;
+            }
+          });
+          return responseText;
+        }
+      });
 
       $('#submit').click(function(){
         $("#confirm-delete").modal("hide");
@@ -151,10 +174,15 @@
             document.getElementById("txtConfirmPassword").className = "form-control is-invalid";
           }
           document.getElementById("txtConfirmPassword").className = "form-control";
-
-            $("#confirm-delete").modal("show");
+          var email = $.xResponse(getCookie("username"));
+          document.getElementById("instructions").innerHTML = "Enter the Security Code that we sent to your email, " + email + ":";
+          $("#confirm-delete").modal("show");
         });
       });
+
+
+
+
 
     </script>
   </div>
