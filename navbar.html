@@ -27,7 +27,7 @@
 			<div class="dropdown" style="display:inline-block">
 				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
 				<div id="account" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					<a class="dropdown-item" href="/login">Log In</a>
+					<a id="login" class="dropdown-item" href="/login">Log In</a>
 					<a class="dropdown-item" href="/register">Sign Up</a>
 				</div>
 			</div>
@@ -38,6 +38,7 @@
 	<img class="logo" src="/images/carpetbagger_profile.png" alt="Profile Picture"></img>
 </nav>
 <script>
+document.getElementById("login").href = "/login?redirect=" + window.location.href;
 	if(checkCookie("username")){
 		document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a><a class='dropdown-item' onclick='signOut(\"https://tabulate.tech\")'>Sign Out</a>";
 	}else if(sessionStorage.getItem("username") != null){
