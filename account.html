@@ -49,7 +49,7 @@
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="" id="emailInput" readonly="">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button" style="color: #ffffff">Edit</button>
+              <button class="btn btn-outline-secondary" type="button" id="emailEdit" style="color: #ffffff">Edit</button>
             </div>
           </div>
         </form>
@@ -109,6 +109,13 @@
          
        }
        
+       $("#emailEdit").click(function(){
+         if(document.getElementById("emailEdit").innerHTML == "Edit"){
+         document.getElementById("emailEdit").innerHTML = "Save";
+         }else{
+           document.getElementById("emailEdit").innerHTML = "Edit";
+         }
+       });
        
     </script>
   </div>
