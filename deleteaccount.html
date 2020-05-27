@@ -117,7 +117,7 @@
       });
 
       if(checkCookie("username")){
-        document.getElementById("username").value = getCookie("username");
+        document.getElementById("hidden-user").value = getCookie("username");
       }else if(sessionStorage.getItem("username") != null){
         document.getElementById("username").value = sessionStorage.getItem("username");
       }else{
