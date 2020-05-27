@@ -121,6 +121,7 @@
       // }else if(sessionStorage.getItem("username") != null){
       //   document.getElementById("username").value = sessionStorage.getItem("username");
       // }else{
+          //signOut(false);
       //   window.location.href = "https://tabulate.tech/login?redirect=https://tabulate.tech/deleteaccount";
       // }
 
@@ -139,6 +140,7 @@
       }
 
       // if(checkLogin() == false){
+          //signOut(false);
       //   window.location.href = "https://tabulate.tech/login?redirect=https://tabulate.tech/deleteaccount";
       // }
 
@@ -148,10 +150,10 @@
           $.ajax(
           {
             url: 'https://tabulatephp.azurewebsites.net/deleteaccountemail.php',
-            type: 'POST',
+            type: 'GET',
             dataType: 'text',
             async: false,
-            data: {user: user},
+            data: "user=" + user,
             success: function(response)
             {
               responseText = response;
