@@ -115,9 +115,14 @@
          document.getElementById("emailInput").value = document.getElementById("emailInput").placeholder;
          document.getElementById("emailInput").readOnly = false;
          }else{
+           if(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(document.getElementById("emailInput").value)){
            document.getElementById("emailEdit").innerHTML = "Edit";
+           document.getElementById("emailInput").className = "form-control";
            document.getElementById("emailInput").value = "";
            document.getElementById("emailInput").readOnly = true;
+           }else{
+             document.getElementById("emailInput").className = "form-control is-invalid";
+           }
          }
        });
        
