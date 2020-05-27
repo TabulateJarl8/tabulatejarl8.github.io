@@ -112,8 +112,10 @@
        $("#emailEdit").click(function(){
          if(document.getElementById("emailEdit").innerHTML == "Edit"){
          document.getElementById("emailEdit").innerHTML = "Save";
+         document.getElementById("emailInput").removeAttribute("readonly");
          }else{
            document.getElementById("emailEdit").innerHTML = "Edit";
+           document.getElementById("emailEdit").setAttribute("readonly", "");
          }
        });
        
