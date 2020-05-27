@@ -102,11 +102,13 @@
          });
       
        if(!checkLogin()){
+         signOut(false);
        window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
        }else{
          if(checkCookie("username") && checkCookie("token")){
          var info = $.requestInfo(getCookie("token"), getCookie("username"));
          if(info == "false"){
+           signOut(false);
            window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
          }else{
          info = info.split(";");
@@ -115,6 +117,7 @@
          }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
            var info = $.requestInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"));
            if(info == "false"){
+             signOut(false);
              window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
            }else{
            info = info.split(";");
@@ -140,6 +143,7 @@
              if(checkCookie("username") && checkCookie("token")){
              var update = $.updateInfo(getCookie("token"), getCookie("username"), "email", document.getElementById("emailInput").value);
              if(update == "false"){
+               signOut(false);
                window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
              }else{
                setCookie("token", update);
@@ -147,11 +151,13 @@
              }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
                 var update = $.updateInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"), "email", document.getElementById("emailInput").value);
                 if(update == "false"){
+                  signOut(false);
                 window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
                 }else{
                   sessionStorage.setItem("token", update);
                 }
              }else{
+               signOut(false);
                window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
              }
              
