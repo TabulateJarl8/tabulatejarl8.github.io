@@ -116,20 +116,20 @@
         $("#navbar").load("./navbar.html");
       });
 
-      // if(checkCookie("username")){
-      //   document.getElementById("username").value = getCookie("username");
-      // }else if(sessionStorage.getItem("username") != null){
-      //   document.getElementById("username").value = sessionStorage.getItem("username");
-      // }else{
-          //signOut(false);
-      //   window.location.href = "https://tabulate.tech/login?redirect=https://tabulate.tech/deleteaccount";
-      // }
+      if(checkCookie("username")){
+        document.getElementById("username").value = getCookie("username");
+      }else if(sessionStorage.getItem("username") != null){
+        document.getElementById("username").value = sessionStorage.getItem("username");
+      }else{
+          signOut(false);
+        window.location.href = "https://tabulate.tech/login?redirect=https://tabulate.tech/deleteaccount";
+      }
 
-      // if(checkCookie("username")){
-      //   document.getElementById("huddenuser").value = getCookie("username");
-      // }else if(sessionStorage.getItem("username") != null){
-      //   document.getElementById("hiddenuser").value = sessionStorage.getItem("username");
-      // }
+      if(checkCookie("username")){
+        document.getElementById("huddenuser").value = getCookie("username");
+      }else if(sessionStorage.getItem("username") != null){
+        document.getElementById("hiddenuser").value = sessionStorage.getItem("username");
+      }
 
       var x = getUrlParam("success", "false");
       if(x == "user"){
@@ -139,10 +139,10 @@
         document.getElementById("jumbotron").innerHTML = "Account Deleted";
       }
 
-      // if(checkLogin() == false){
-          //signOut(false);
-      //   window.location.href = "https://tabulate.tech/login?redirect=https://tabulate.tech/deleteaccount";
-      // }
+      if(checkLogin() == false){
+          signOut(false);
+        window.location.href = "https://tabulate.tech/login?redirect=https://tabulate.tech/deleteaccount";
+      }
 
       $.extend({
         sendCode: function(data, code) {
@@ -189,10 +189,6 @@
           $("#confirm-delete").modal("show");
         });
       });
-
-
-
-
 
     </script>
   </div>
