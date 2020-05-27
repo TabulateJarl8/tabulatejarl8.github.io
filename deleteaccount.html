@@ -126,7 +126,7 @@
       }
 
       if(checkCookie("username")){
-        document.getElementById("hiddenuser").value = getCookie("username");
+        document.getElementById("hidden-user").value = getCookie("username");
       }else if(sessionStorage.getItem("username") != null){
         document.getElementById("hiddenuser").value = sessionStorage.getItem("username");
       }
