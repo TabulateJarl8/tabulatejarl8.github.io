@@ -1,23 +1,101 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="./bootstrap.css">
+  <!--Favicons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#36464b">
+  <link rel="shortcut icon" href="/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <title>Tabulate | Account</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./simple-sidebar.css">
   <script src="scripts.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167553203-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-167553203-1');
+  </script>
 </head>
 
 <body>
-  <div id="signin"></div>
+  <div id="navbar">
+    <nav class="navbar navbar-dark bg-primary" style="overflow: visable"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No JavaScript?</a>
+      <p class="text-warning">Please enable javascript in your browser or some critical features may not function.</p>
+    </nav>
+  </div>
+  
+  <div id="page-container">
+    <div class="page-header">
+      <h1>My Account</h1>
+    </div>
+    <div class="jumbotron">
+      <form id="email">
+          <label class="control-label" for="emailInput">Email</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="" id="emailInput" readonly="">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" style="color: #ffffff">Edit</button>
+            </div>
+          </div>
+        </form>
+        <hr class="my-4">
+        more
+      </div>
+    </div>
+    <!-- LOAD NAVBAR-->
+    <script>
+      $(function() {
+        $("#navbar").load("./navbar.html");
+      });
+      
+      $.extend({
+      requestInfo: function(token, user) {
+      var responseText = null;
+      $.ajax(
+      {
+      url: 'https://tabulatephp.azurewebsites.net/requestinfo.php',
+      type: 'POST',
+      dataType: 'text',
+      async: false,
+      data: {token: token, name: user},
+      success: function(response)
+      {
+      responseText = response;
+      }
+      });
+      return responseText;
+      }
+      });
+      
+       if(!checkLogin()){
+       window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+       }else{
+         var info = $.requestInfo(getCookie("token"), getCookie("username"));
+         info = info.split(";");
+         setCookie("token", info[0], 30);
+         
+         document.getElementById("emailInput").placeholder = info[1];
+         
+       }
+       
+       
+    </script>
+  </div>
 </body>
-<script>
-if(checkLogin()){
-  document.write("logged in");
-}else{
-  document.getElementById("signin").innerHTML = "<a href='/login?redirect=" + window.location.href + "'>Log In</a>";
-}
-</script>
 
 </html>
