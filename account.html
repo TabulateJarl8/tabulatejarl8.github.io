@@ -102,12 +102,12 @@
          });
       
        if(!checkLogin()){
-       //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+       window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
        }else{
          if(checkCookie("username") && checkCookie("token")){
          var info = $.requestInfo(getCookie("token"), getCookie("username"));
          if(info == "false"){
-           //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+           window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
          }else{
          info = info.split(";");
          setCookie("token", info[0], 30);
@@ -115,13 +115,13 @@
          }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
            var info = $.requestInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"));
            if(info == "false"){
-             //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+             window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
            }else{
            info = info.split(";");
            sessionStorage.setItem("token", info[0]);
            }
          }else{
-           //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+           window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
          }
          
          document.getElementById("emailInput").placeholder = info[1];
