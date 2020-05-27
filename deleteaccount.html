@@ -145,7 +145,7 @@
       // }
 
       $.extend({
-        sendCode: function(data) {
+        sendCode: function(data, code = false) {
           var responseText = null;
           $.ajax(
           {
@@ -154,7 +154,8 @@
             dataType: 'text',
             async: false,
             data: {
-              user: data
+              user: data,
+              code: code
             },
             success: function(response)
             {
@@ -166,8 +167,13 @@
       });
 
       $('#submit').click(function(){
-        $("#confirm-delete").modal("hide");
-        $('#hidden-submit').click();
+        if($.sendCode(getCookie("username"), $("#code").val()) == "false"){
+          document.getElementById("code").className = "form-control is-invalid";
+        }else{
+          document.getElementById("code").className = "form-control";
+          $("#confirm-delete").modal("hide");
+          $('#hidden-submit').click();
+        }
       });
 
       $(function () {
