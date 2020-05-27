@@ -47,7 +47,7 @@
       <form id="email">
           <label class="control-label" for="emailInput">Email</label>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="" id="emailInput" readonly="">
+            <input type="text" class="form-control" value="" id="emailInput" readonly="">
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" type="button" id="emailEdit" style="color: #ffffff">Edit</button>
             </div>
@@ -83,12 +83,12 @@
       });
       
        if(!checkLogin()){
-       window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+       //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
        }else{
          if(checkCookie("username") && checkCookie("token")){
          var info = $.requestInfo(getCookie("token"), getCookie("username"));
          if(info == "false"){
-           window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+           //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
          }else{
          info = info.split(";");
          setCookie("token", info[0], 30);
@@ -96,26 +96,26 @@
          }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
            var info = $.requestInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"));
            if(info == "false"){
-             window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+             //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
            }else{
            info = info.split(";");
            sessionStorage.setItem("token", info[0]);
            }
          }else{
-           window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+           //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
          }
          
-         document.getElementById("emailInput").placeholder = info[1];
+         document.getElementById("emailInput").value = info[1];
          
        }
        
        $("#emailEdit").click(function(){
          if(document.getElementById("emailEdit").innerHTML == "Edit"){
          document.getElementById("emailEdit").innerHTML = "Save";
-         document.getElementById("emailInput").removeAttribute("readonly");
+         document.getElementById("emailInput").readOnly = false;
          }else{
            document.getElementById("emailEdit").innerHTML = "Edit";
-           document.getElementById("emailEdit").setAttribute("readonly", "");
+           document.getElementById("emailInput").readOnly = true;
          }
        });
        
