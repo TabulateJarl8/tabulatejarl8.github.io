@@ -40,8 +40,8 @@
 <script>
 document.getElementById("login").href = "/login?redirect=" + window.location.href;
 	if(checkCookie("username")){
-		document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a><a class='dropdown-item' onclick='signOut(\"https://tabulate.tech\")'>Sign Out</a>";
+		document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a><a class='dropdown-item' onclick='signOut(window.location.href)'>Sign Out</a>";
 	}else if(sessionStorage.getItem("username") != null){
-		document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a><a class='dropdown-item' onclick='signOut(\"https://tabulate.tech\")'>Sign Out</a>";
+		document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a><a class='dropdown-item' onclick='signOut(window.location.href)'>Sign Out</a>";
 	}
 </script>
