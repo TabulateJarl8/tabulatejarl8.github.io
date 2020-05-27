@@ -76,10 +76,6 @@
     <div class="jumbotron">
       <div id="jumbotron" class="text-center">
         <form action="https://tabulatephp.azurewebsites.net/deleteaccount.php" method="post" enctype="multipart/form-data" autocomplete="false" id="form">
-          <div class="form-group">
-            <label>Username</label>
-            <input type="text" maxlength="255" placeholder="Username" name="user" class="form-control" required />
-          </div>
 
           <div class="form-group">
             <label>Password</label>
@@ -89,6 +85,11 @@
             <label>Confirm Password</label>
             <input type="password" id="txtConfirmPassword" maxlength="255" placeholder="Confirm Password" class="form-control" data-toggle="password" required />
           </div>
+          <div class="form-group">
+            <label id="checknum-label"></label>
+            <input type="text" id="checknum" maxlength="5" placeholder="Please type the Above Value" class="form-control" pattern="" title="Type the Required Number" required />
+          </div>
+          <input type="hidden" value="" name="username" id="username"></input>
           <p id="warnings" class="text-danger"></p>
           <hr class="my-4">
 
@@ -113,6 +114,18 @@
         $("#navbar").load("./navbar.html");
       });
 
+      if(checkCookie("username")){
+        document.getElementById("username").value = getCookie("username");
+      }else if(sessionStorage.getItem("username") != null){
+        document.getElementById("username").value = sessionStorage.getItem("username");
+      }else{
+        window.location.href = "https://tabulate.tech/login?redirect=https://tabulate.tech/deleteaccount";
+      }
+
+      var randomnum = (""+Math.random()).substring(2,7);
+      document.getElementById("checknum-label").innerHTML = "Please Type \"" + randomnum + "\" to Confirm";
+      document.getElementById("checknum").pattern = randomnum;
+
       var x = getUrlParam("success", "false");
       if(x == "user"){
         document.getElementById("warnings").innerHTML = "Invalid Username/Password";
@@ -122,7 +135,7 @@
       }
 
       if(checkLogin() == false){
-        document.getElementById("jumbotron").innerHTML = "You are not logged in";
+        window.location.href = "https://tabulate.tech/login?redirect=https://tabulate.tech/deleteaccount";
       }
 
       $('#submit').click(function(){
