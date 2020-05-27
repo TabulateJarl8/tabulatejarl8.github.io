@@ -153,7 +153,9 @@
             type: 'GET',
             dataType: 'text',
             async: false,
-            data: data,
+            data: {
+              user: data
+            },
             success: function(response)
             {
               responseText = response;
@@ -176,8 +178,7 @@
             document.getElementById("txtConfirmPassword").className = "form-control is-invalid";
           }
           document.getElementById("txtConfirmPassword").className = "form-control";
-          var data = "user=" + getCookie("username");
-          var email = $.xResponse(data);
+          var email = $.xResponse(getCookie("username"));
           document.getElementById("instructions").innerHTML = "Enter the Security Code that we sent to your email, " + email + ":";
           $("#confirm-delete").modal("show");
         });
