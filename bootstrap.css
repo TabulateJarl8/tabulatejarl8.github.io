@@ -57,6 +57,17 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+#profile-container {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+
 #page-container{
 	/*margin:104px;*/
 	margin:9.62962962962963%;
