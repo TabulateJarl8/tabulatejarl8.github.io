@@ -58,9 +58,9 @@
           </strong>
         </div>
       </div>
-      <form onsubmit="return Validate(this);">
+      <form onsubmit="return Validate(this);" action="https://tabulatephp.azurewebsites.net/changecreds.php" method="POST">
         <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" style="display: none" accepts="image/*" required>
-        <input type="submit" id="profilesubmit" style="display:none" />
+        <input type="submit" id="profilesubmit" />
       </form>
       <br />
       <br />
