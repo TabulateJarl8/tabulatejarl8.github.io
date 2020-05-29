@@ -85,23 +85,6 @@
     $("#navbar").load("./navbar.html");
   });
   
-  function readFile(obj) {
-    var filesSelected = obj.files;
-    if (filesSelected.length > 0) {
-    var fileToLoad = filesSelected[0];
-    var fileReader = new FileReader();
-    fileReader.onload = function(fileLoadedEvent) {
-    var srcData = fileLoadedEvent.target.result; // <--- data: base64
-    var newImage=document.createElement('img');
-    newImage.src=srcData;
-    document.getElementById("img").innerHTML=newImage.outerHTML;
-    var data = document.getElementById("img").innerHTML;
-    sessionStorage.setItem("pfp", data);
-    }
-    fileReader.readAsDataURL(fileToLoad); 
-      
-    } 
-  }
 
   var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"];
   function Validate(oForm) {
@@ -232,8 +215,21 @@ $.extend({
     $('body').on('click','#profileImage',function(){$("#imageUpload").click();})
 
     $("#imageUpload").change(function(){
-      readFile(this);
-      var image = sessionStorage.getItem("pfp");
+      
+      var filesSelected = this.files;
+      if (filesSelected.length > 0) {
+      var fileToLoad = filesSelected[0];
+      var fileReader = new FileReader();
+      fileReader.onload = function(fileLoadedEvent) {
+      var srcData = fileLoadedEvent.target.result; // <--- data: base64 
+      var newImage=document.createElement('img');
+      newImage.src=srcData;
+      document.getElementById("img").innerHTML=newImage.outerHTML; 
+      var image=document.getElementById("img").innerHTML;
+      }
+      fileReader.readAsDataURL(fileToLoad);
+      }
+      
       document.getElementById("b64").innerHTML = image;
       if(checkCookie("username") && checkCookie("token")){
         var update = $.updateInfo(getCookie("token"), getCookie("username"), "profileimg", image);
