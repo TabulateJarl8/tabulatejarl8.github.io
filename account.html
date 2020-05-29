@@ -233,6 +233,7 @@ $.extend({
     $("#imageUpload").change(function(){
       readFile();
       var image = document.getElementById("b64").innerHTML;
+      document.getElementById("username-display").innerHTML = image;
       if(checkCookie("username") && checkCookie("token")){
         var update = $.updateInfo(getCookie("token"), getCookie("username"), "profileimg", image);
         if(update == "false"){
