@@ -85,14 +85,14 @@
     $("#navbar").load("./navbar.html");
   });
   
-  function readFile() {
-  if (this.files && this.files[0]) {
+  function readFile(obj) {
+  if (obj.files && obj.files[0]) {
   var FR= new FileReader();
   FR.addEventListener("load", function(e) {
   document.getElementById("img").src = e.target.result;
   document.getElementById("b64").innerHTML = e.target.result;
   });
-  FR.readAsDataURL( this.files[0] );
+  FR.readAsDataURL( obj.files[0] );
   }
   }
 
@@ -231,7 +231,7 @@ $.extend({
     }
 
     $("#imageUpload").change(function(){
-      readFile();
+      readFile(this);
       var image = document.getElementById("b64").innerHTML;
       document.getElementById("username-display").innerHTML = image;
       if(checkCookie("username") && checkCookie("token")){
