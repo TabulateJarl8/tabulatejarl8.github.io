@@ -92,7 +92,14 @@
     var fileReader = new FileReader();
     fileReader.onload = function(fileLoadedEvent) {
     var srcData = fileLoadedEvent.target.result; // <--- data: base64
-    var newImage=document.createElement('img'); newImage.src=srcData; document.getElementById("img").innerHTML=newImage.outerHTML; sessionStorage.setItem("pfp", document.getElementById(" myImg").innerHTML); } fileReader.readAsDataURL(fileToLoad); } 
+    var newImage=document.createElement('img');
+    newImage.src=srcData;
+    document.getElementById("img").innerHTML=newImage.outerHTML;
+    sessionStorage.setItem("pfp", document.getElementById(" myImg").innerHTML);
+    }
+    fileReader.readAsDataURL(fileToLoad); 
+      
+    } 
   }
 
   var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"];
