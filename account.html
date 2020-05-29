@@ -95,7 +95,8 @@
     var newImage=document.createElement('img');
     newImage.src=srcData;
     document.getElementById("img").innerHTML=newImage.outerHTML;
-    sessionStorage.setItem("pfp", document.getElementById(" myImg").innerHTML);
+    var data = document.getElementById("img").innerHTML;
+    sessionStorage.setItem("pfp", data);
     }
     fileReader.readAsDataURL(fileToLoad); 
       
