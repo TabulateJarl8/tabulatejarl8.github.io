@@ -245,7 +245,6 @@ $.extend({
           if(checkCookie("username") && checkCookie("token")){
             formData.append("token", getCookie("token"));
             formData.append("name", getCookie("username"));
-            formData.append("service", "profileimg");
             var update = $.updatePic(formData);
             if(update == "false"){
               signOut(false);
@@ -257,7 +256,6 @@ $.extend({
           }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
             formData.append("token", sessionStorage.getItem("token"));
             formData.append("name", sessionStorage.getItem("username"));
-            formData.append("service", "profileimg");
             var update = $.updatePic(formData);
             if(update == "false"){
               signOut(false);
