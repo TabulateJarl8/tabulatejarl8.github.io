@@ -59,7 +59,7 @@
         </div>
       </div>
       <form onsubmit="return Validate(this);">
-        <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" style="display: none" accepts="image/*" required>
+        <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" id="profile_photo" style="display: none" accepts="image/*" required>
         <input type="submit" id="profilesubmit" style="display:none" />
       </form>
       <br />
@@ -86,7 +86,7 @@
   });
   
 
-  var _validFileExtensions = [".jpg", ".jpeg", ".png"];
+  var _validFileExtensions = [".jpg", ".jpeg", ".png", ".bmp"];
   function Validate(oForm) {
     var arrInputs = oForm.getElementsByTagName("input");
     for (var i = 0; i < arrInputs.length; i++) { var oInput=arrInputs[i]; if (oInput.type=="file" ) { var sFileName=oInput.value; if (sFileName.length> 0) {
@@ -137,6 +137,26 @@ $.extend({
         });
         return responseText;
       }
+    });
+    
+    $.extend({
+    updatePic: function(token, user, service, data) {
+    var responseText = null;
+    $.ajax(
+    {
+    url: 'https://tabulatephp.azurewebsites.net/changecreds.php',
+    type: 'POST',
+    dataType: false,
+    async: false,
+    processData: false,
+    data: {token: token, name: user, service: service, data: data},
+    success: function(response)
+    {
+    responseText = response;
+    }
+    });
+    return responseText;
+    }
     });
 
     if(!checkLogin()){
@@ -218,23 +238,12 @@ $.extend({
       
       var filesSelected = this.files;
       if (filesSelected.length > 0) {
-      var image = filesSelected[0];
-      /*
-      var fileReader = new FileReader();
-      fileReader.onload = function(fileLoadedEvent) {
-      var srcData = fileLoadedEvent.target.result; // <--- data: base64 
-      var newImage=document.createElement('img');
-      newImage.src=srcData;
-      document.getElementById("img").innerHTML=newImage.outerHTML; 
-      var image=document.getElementById("img").innerHTML;
-      }
-      fileReader.readAsDataURL(fileToLoad);
-      }*/
-      
-      document.getElementById("b64").src = image;
+        var formData = new FormData();
+      var inputLogo = $("#profile_photo")[0];
+      formData.append(inputLogo.name, inputLogo.files[0]);
       
       if(checkCookie("username") && checkCookie("token")){
-        var update = $.updateInfo(getCookie("token"), getCookie("username"), "profileimg", image);
+        var update = $.updatePic(getCookie("token"), getCookie("username"), "profileimg", formData);
         if(update == "false"){
           signOut(false);
           //window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
@@ -243,7 +252,7 @@ $.extend({
          // window.location.reload();
         }
       }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
-        var update = $.updateInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"), "profileimg", image);
+        var update = $.updatePic(sessionStorage.getItem("token"), sessionStorage.getItem("username"), "profileimg", formData);
         if(update == "false"){
           signOut(false);
           //window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
