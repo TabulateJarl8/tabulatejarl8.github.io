@@ -20,11 +20,17 @@
 	<script src="./bootstrap.min.js"></script>
 
 	<style>
-	@media screen and (min-width: 40.5em) {
-		.placeholder-block{}
-	}
-	.placeholder-block{
-		width: 30rem;
+	@media screen and (min-width: 65em) {
+		.grid-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+			max-width: 90rem;
+			margin: 0 auto 30px;
+		}
+		.card{
+			margin-left: 2.9629629629629632%;
+			margin-right: 2.9629629629629632%;
+		}
 	}
 	</style>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -49,7 +55,7 @@
 		<hr class="my-4" style="background: white">
 		<br>
 		<h2>Python Modules</h2>
-		<div class="d-flex flex-wrap justify-content-around">
+		<div class="grid-container">
 			<div class="card border-success mb-3" style="max-width: 30rem;">
 				<div class="card-header"><span class="badge badge-success" style="float:right">Stable</span></div>
 				<div class="card-body">
@@ -80,8 +86,6 @@
 					<a class="btn btn-success" href="http://github.com/TabulateJarl8/fng_api" role="button">Source Code</a>
 				</div>
 			</div>
-		</div>
-		<div class="d-flex flex-wrap justify-content-around">
 			<div class="card border-success mb-3" style="max-width: 30rem;">
 				<div class="card-header"><span class="badge badge-success" style="float:right">Stable</span></div>
 				<div class="card-body">
@@ -92,15 +96,13 @@
 					<a class="btn btn-success" href="http://github.com/TabulateJarl8/titleize" role="button">Source Code</a>
 				</div>
 			</div>
-			<div class="placeholder-block"></div>
-			<div class="placeholder-block"></div>
 		</div>
 		<br>
 		<hr class="my-4" style="background: white">
 		<br>
-		<h2>Plugins for IICalc</h2>
-		<p>IICalc is an open source, command line based, expandable calculator made by my friend over at <a href="turbowafflz.gitlab.io">turbowafflz.gitlab.io</a>. Anyone can expand it's capabilities by adding plugins. I've created a few plugins as well as directly contributed to this project. You can find this project <a href="http://github.com/TurboWafflz/ImaginaryInfinity-Calculator">here</a>. My plugins currently only work for the <a href="https://github.com/TurboWafflz/ImaginaryInfinity-Calculator/tree/development">Development Version</a></p>
-		<div class="d-flex flex-wrap justify-content-around">
+		<h2>Plugins for iiCalc</h2>
+		<p>iiCalc is an open source, command line based, expandable calculator made by my friend over at <a href="turbowafflz.gitlab.io">turbowafflz.gitlab.io</a>. Anyone can expand it's capabilities by adding plugins. I've created a few plugins as well as directly contributed to this project. You can find this project <a href="http://github.com/TurboWafflz/ImaginaryInfinity-Calculator">here</a>. My plugins currently only work for the <a href="https://github.com/TurboWafflz/ImaginaryInfinity-Calculator/tree/development">Development Version</a></p>
+		<div class="grid-container">
 			<div class="card border-success mb-3" style="max-width: 30rem;">
 				<div class="card-header"><span class="badge badge-success" style="float:right">Stable</span></div>
 				<div class="card-body">
@@ -142,13 +144,15 @@
 				</div>
 			</div>
 		</div>
-		<!-- LOAD NAVBAR-->
-		<script>
-		$(function() {
-			$("#navbar").load("./navbar.html");
-		});
-		</script>
 	</div>
+	<!-- LOAD NAVBAR-->
+	<script>
+	$(function() {
+		$("#navbar").load("./navbar.html");
+	});
+
+	</script>
+</div>
 </body>
 
 </html>
