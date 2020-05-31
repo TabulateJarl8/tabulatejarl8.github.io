@@ -239,8 +239,7 @@ $.extend({
         var filesSelected = this.files;
         if (filesSelected.length > 0) {
           var formData = new FormData();
-          var inputLogo = $("#profile_photo")[0];
-          formData.append("data", inputLogo.files[0]);
+          formData.append("data", this.files[0]);
 
           if(checkCookie("username") && checkCookie("token")){
             formData.append("token", getCookie("token"));
