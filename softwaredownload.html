@@ -75,8 +75,8 @@
       if(softurl == "formulas.py"){
         softurl = "formulas/formulas.py";
       }
-      document.getElementById("downloadFrame").innerHTML = "<iframe style='display:none' src='https://tabulate.tech/calcplugins/" + getUrlParam("software", "empty") + "' frameborder=0 width='1px' height='1px'></iframe>"
-      document.getElementById("downloadStart").innerHTML = "If your download does not start automatically, download it <a href='/calcplugins/" + getUrlParam("software") + "'>here.</a>";
+      document.getElementById("downloadFrame").innerHTML = "<iframe style='display:none' src='https://tabulate.tech/calcplugins/" + softurl + "' frameborder=0 width='1px' height='1px'></iframe>"
+      document.getElementById("downloadStart").innerHTML = "If your download does not start automatically, download it <a href='/calcplugins/" + softurl + "'>here.</a>";
     } else {
       document.getElementById("title").innerHTML = "Tabulate | Unknown software";
       document.getElementById("downloadStart").innerHTML = "No URL Parameter Found";
