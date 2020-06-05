@@ -60,6 +60,8 @@
       </div>
       <form onsubmit="return Validate(this);">
         <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" id="profile_photo" style="display: none" accepts="image/*" required>
+        <input type="hidden" value="" id="imgtoken" name="token" />
+        <input type="hidden" value="" id="imguser" name="name" />
         <input type="submit" id="profilesubmit" style="display:none" />
       </form>
       <br />
@@ -187,7 +189,7 @@ $.extend({
 
         document.getElementById("emailInput").placeholder = info[1];
         document.getElementById("username-display").innerHTML = info[2];
-
+        document.getElementById("imguser").value = info[2];
       }
 
       $("#emailEdit").click(function(){
