@@ -71,8 +71,12 @@
       document.getElementById("title").innerHTML = "Tabulate | Download " + software;
       document.getElementById("header").innerHTML = software;
       document.getElementById("jumbo-header").innerHTML = "Thanks for Downloading " + software + "!";
-      document.getElementById("downloadFrame").innerHTML = "<iframe src='https://tabulate.tech/software/" + getUrlParam("software", "empty") + "' frameborder=0 width='1px' height='1px'></iframe>"
-      document.getElementById("downloadStart").innerHTML = "If your download does not start automatically, download it <a href='/software/" + getUrlParam("software") + "'>here.</a>";
+      var softurl = getUrlParam("software", "empty");
+      if(softurl == "formulas.py"){
+        softurl = "formulas/formulas.py";
+      }
+      document.getElementById("downloadFrame").innerHTML = "<iframe src='https://tabulate.tech/calcplugins/" + getUrlParam("software", "empty") + "' frameborder=0 width='1px' height='1px'></iframe>"
+      document.getElementById("downloadStart").innerHTML = "If your download does not start automatically, download it <a href='/calcplugins/" + getUrlParam("software") + "'>here.</a>";
     } else {
       document.getElementById("title").innerHTML = "Tabulate | Unknown software";
       document.getElementById("downloadStart").innerHTML = "No URL Parameter Found";
