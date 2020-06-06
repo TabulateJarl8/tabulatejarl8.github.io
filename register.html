@@ -82,7 +82,7 @@
 					<div data-theme="dark" class="g-recaptcha" data-sitekey="6LeSm_cUAAAAAGUz8yarXTZgNwameIiW9nSZfO0s" style="display:inline-block"></div>
 					<br>
 					<p class="lead">
-						<button id="submit" type="submit" class="btn btn-primary btn-lg">Register</button>
+						<button id="submit" type="submit" id="submitbtn" class="btn btn-primary btn-lg">Register</button>
 					</p>
 				</form>
 				<script src='https://www.google.com/recaptcha/api.js'></script>
@@ -93,6 +93,11 @@
 			<script>
 			$(function() {
 				$("#navbar").load("navbar.html");
+			});
+			
+			$("form").submit(function(){
+			$("#submitbtn").addClass("disabled");
+			$("#submitbtn").html("Loading...");
 			});
 
 			$(function () {

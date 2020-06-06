@@ -50,6 +50,7 @@
 				<h1>Login</h1>
 			</div>
 		</div>
+		
 		<div class="jumbotron">
 			<div id="jumbotron" class="text-center">
 				<form action="https://tabulatephp.azurewebsites.net/validation.php" method="post" enctype="multipart/form-data">
@@ -75,7 +76,7 @@
 					<br>
 
 					<p class="lead">
-						<button type="submit" class="btn btn-primary btn-lg">Login</button>
+						<button type="submit" class="btn btn-primary btn-lg"  id="submitbtn">Login</button>
 					</p>
 				</form>
 			</div>
@@ -83,10 +84,16 @@
 			<br>
 			<a id="forgot-password" href="/passwordreset">Forgot Password?</a>
 		</div>
+		
 		<!-- LOAD NAVBAR-->
 		<script>
 		$(function() {
 			$("#navbar").load("./navbar.html");
+		});
+		
+		$("form").submit(function(){
+		  $("#submitbtn").addClass("disabled");
+		  $("#submitbtn").html("Loading...");
 		});
 
 		var x = getUrlParam("success", "false");
