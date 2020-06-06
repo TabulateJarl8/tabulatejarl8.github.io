@@ -115,6 +115,11 @@
     $(function() {
       $("#navbar").load("./navbar.html");
     });
+    
+    $("confirm-form").submit(function(){
+    $("#submit").addClass("disabled");
+    $("#submit").html("Loading...");
+    });
 
     if(checkCookie("username")){
       document.getElementById("hidden-user").value = getCookie("username");
