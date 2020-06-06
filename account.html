@@ -48,22 +48,23 @@
       <h1>My Account</h1>
     </div>
     <div class="jumbotron">
-      <div class="row">
+     <!-- <div class="row">
         <div id="profile-container" style="margin-right: 15px; margin-left: 10px">
           <image id="profileImage" src="wallets/dogecoin.png" />
-        </div>
+        </div>-->
         <div style="font-size: 20px">
           <strong id="username-display">
             null
           </strong>
         </div>
-      </div>
+      <!--</div>-->
+      <!--
       <form onsubmit="return Validate(this);">
         <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" id="profile_photo" style="display: none" accepts="image/*" required>
         <input type="hidden" value="" id="imgtoken" name="token" />
         <input type="hidden" value="" id="imguser" name="name" />
         <input type="submit" id="profilesubmit" style="display:none" />
-      </form>
+      </form>-->
       <br />
       <br />
       <form id="email">
@@ -87,7 +88,7 @@
     $("#navbar").load("./navbar.html");
   });
 
-
+/*
   var _validFileExtensions = [".jpg", ".jpeg", ".png", ".bmp"];
   function Validate(oForm) {
     var arrInputs = oForm.getElementsByTagName("input");
@@ -101,7 +102,7 @@
 }
 
 return true;
-}
+}*/
 
 $.extend({
   requestInfo: function(token, user) {
@@ -140,7 +141,7 @@ $.extend({
         return responseText;
       }
     });
-
+/*
     $.extend({
       updatePic: function(data) {
         var responseText = null;
@@ -159,17 +160,17 @@ $.extend({
           });
           return responseText;
         }
-      });
+      });*/
 
       if(!checkLogin()){
         signOut(false);
-        //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+        window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
       }else{
         if(checkCookie("username") && checkCookie("token")){
           var info = $.requestInfo(getCookie("token"), getCookie("username"));
           if(info == "false"){
             signOut(false);
-            //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+            window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
           }else{
             info = info.split(";");
             setCookie("token", info[0], 30);
@@ -178,18 +179,18 @@ $.extend({
           var info = $.requestInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"));
           if(info == "false"){
             signOut(false);
-            //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+            window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
           }else{
             info = info.split(";");
             sessionStorage.setItem("token", info[0]);
           }
         }else{
-          //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+          window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
         }
 
         document.getElementById("emailInput").placeholder = info[1];
         document.getElementById("username-display").innerHTML = info[2];
-        document.getElementById("imguser").value = info[2];
+        //document.getElementById("imguser").value = info[2];
       }
 
       $("#emailEdit").click(function(){
@@ -205,7 +206,7 @@ $.extend({
               var update = $.updateInfo(getCookie("token"), getCookie("username"), "email", document.getElementById("emailInput").value);
               if(update == "false"){
                 signOut(false);
-                //window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+                window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
               }else{
                 setCookie("token", update);
               }
@@ -213,13 +214,13 @@ $.extend({
               var update = $.updateInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"), "email", document.getElementById("emailInput").value);
               if(update == "false"){
                 signOut(false);
-                //window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+                window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
               }else{
                 sessionStorage.setItem("token", update);
               }
             }else{
               signOut(false);
-              //window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+              window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
             }
 
 
@@ -233,7 +234,7 @@ $.extend({
           }
         }
       });
-
+/*
       $('body').on('click','#profileImage',function(){$("#imageUpload").click();})
 
       $("#imageUpload").change(function(){
@@ -270,7 +271,7 @@ $.extend({
             //window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
           }
         }
-      });
+      });*/
 
       </script>
     </div>
