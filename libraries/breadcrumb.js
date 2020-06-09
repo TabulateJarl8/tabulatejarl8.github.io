@@ -1,3 +1,13 @@
+function urlExists(url) {
+  var http = new XMLHttpRequest();
+  http.open('HEAD', url, false);
+  http.send();
+  if (http.status != 404){
+    return true;
+  }else{
+    return false;
+  }
+}
 var url = window.location.href.split("/");
 var secondurl = window.location.href.split("/");
 if (secondurl[secondurl.length - 1] === "") {
@@ -34,16 +44,11 @@ for (i = 0; i < url.length - 1; i++) {
     path = "/";
   }
   var crumburl = path;
-  $.ajax({
-    type: 'HEAD',
-    url: crumburl,
-    success: function() {
+    if(urlExists(crumburl)) {
       var element = "<li class='breadcrumb-item'><a href='" + crumburl + "'>" + url[i] + "</a></li>";
-    },
-    error: function() {
+    }else{
       var element = "<li class='breadcrumb-item active'>" + url[i] + "</li>";
     }
-  });
   
   secondurl.pop();
   $(".breadcrumb").append(element);
