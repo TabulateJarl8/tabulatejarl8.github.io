@@ -34,7 +34,17 @@ for (i = 0; i < url.length - 1; i++) {
     path = "/";
   }
   var crumburl = path;
-  var element = "<li class='breadcrumb-item'><a href='" + crumburl + "'>" + url[i] + "</a></li>";
+  $.ajax({
+    type: 'HEAD',
+    url: crumburl,
+    success: function() {
+      var element = "<li class='breadcrumb-item'><a href='" + crumburl + "'>" + url[i] + "</a></li>";
+    },
+    error: function() {
+      var element = "<li class='breadcrumb-item active'>" + url[i] + "</li>";
+    }
+  });
+  
   secondurl.pop();
   $(".breadcrumb").append(element);
 }
