@@ -19,3 +19,15 @@ defaults:
       path: 'nojs.html'
     values:
       sitemap: false
+      
+  -
+    scope:
+      path: 'softwaredownload.html'
+    values:
+      sitemap: false
+      
+  -
+    scope:
+      path: 'datapackdownload.html'
+    values:
+      sitemap: false
