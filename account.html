@@ -77,7 +77,7 @@
         </div>
       </form>
       <hr class="my-4">
-      more
+      <button class="btn btn-outline-danger" onclick="window.location.href='/deleteaccount'">Delete Account</button>
     </div>
     <img id="img" style="display:none" src=""></img>
     <img src="" id="b64"></img>
@@ -164,7 +164,7 @@ $.extend({
 
       if(!checkLogin()){
         signOut(false);
-        window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+        //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
       }else{
         if(checkCookie("username") && checkCookie("token")){
           var info = $.requestInfo(getCookie("token"), getCookie("username"));
