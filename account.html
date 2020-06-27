@@ -164,7 +164,7 @@ $.extend({
 
       if(!checkLogin()){
         signOut(false);
-        //window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+        window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
       }else{
         if(checkCookie("username") && checkCookie("token")){
           var info = $.requestInfo(getCookie("token"), getCookie("username"));
