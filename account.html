@@ -171,7 +171,7 @@ $.extend({
             signOut(false);
             window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
           }else{
-            info = info.split("|", 4);
+            info = info.split("|");
             setCookie("token", info[0], 30);
           }
         }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
@@ -180,7 +180,7 @@ $.extend({
             signOut(false);
             window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
           }else{
-            info = info.split("|", 4);
+            info = info.split("|");
             sessionStorage.setItem("token", info[0]);
           }
         }else{
