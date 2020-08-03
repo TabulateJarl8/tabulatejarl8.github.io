@@ -2,101 +2,135 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" type="text/css" href="./bootstrap.css">
-  <!--Favicons-->
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#36464b">
-  <link rel="shortcut icon" href="/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#2b5797">
-  <meta name="msapplication-config" content="/favicon/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
-  <title>Tabulate | Account</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="./bootstrap.min.js"></script>
-  <script src="scripts.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167553203-1"></script>
-  <style>
-  #profileImage{
-    cursor: pointer;
-  }
-  </style>
-  <script>
-  window.dataLayer = window.dataLayer || [];
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="./bootstrap.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<!--Favicons-->
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/favicon/site.webmanifest">
+	<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#36464b">
+	<link rel="shortcut icon" href="/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-config" content="/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<title>Tabulate | Account</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="./bootstrap.min.js"></script>
+	<script src="scripts.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167553203-1"></script>
+	<style>
+	#profileImage{
+		cursor: pointer;
+		display: block;
 
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
+	}
+	.overlay{
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		background: rgb(0,0,0);
+		background: rgba(0,0,0,0.5);
+		color: #f1f1f1;
+		width: 100%;
+		transition: .5s ease;
+		opacity: 0;
+		color: white;
+		font-size: 25px;
+	}
 
-  gtag('config', 'UA-167553203-1');
-  </script>
+	.overlay>i{
+		cursor: pointer;
+		left: 12px;
+		top: 10px;
+		position: absolute;
+	}
+
+	#profile-container:hover .overlay{
+		cursor: pointer;
+		opacity: 1;
+	}
+	#profile-container{
+		cursor: pointer;
+		position: relative;
+	}
+	</style>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'UA-167553203-1');
+	</script>
 </head>
 
 <body>
-  <div id="navbar">
-    <nav class="navbar navbar-dark bg-primary" style="overflow: visable"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No JavaScript?</a>
-      <p class="text-warning">Please enable javascript in your browser or some critical features may not function.</p>
-    </nav>
-  </div>
+	<div id="navbar">
+		<nav class="navbar navbar-dark bg-primary" style="overflow: visable"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No JavaScript?</a>
+			<p class="text-warning">Please enable javascript in your browser or some critical features may not function.</p>
+		</nav>
+	</div>
 
-  <div id="page-container">
-    <div class="page-header">
-      <h1>My Account</h1>
-    </div>
-    <div class="jumbotron">
-     <div class="row">
-        <div id="profile-container" style="margin-right: 15px; margin-left: 10px">
-          <image id="profileImage" src="wallets/dogecoin.png" />
-        </div>
-        <div style="font-size: 20px">
-          <strong id="username-display">
-            null
-          </strong>
-        </div>
-      </div>
+	<div id="page-container">
+		<div class="page-header">
+			<h1>My Account</h1>
+		</div>
+		<div class="jumbotron">
+			<div class="row">
+				<div id="profile-container" style="margin-right: 15px; margin-left: 10px">
+					<image id="profileImage" src="wallets/dogecoin.png" />
+					<div class="overlay"><i class="fas fa-camera"></i></div>
+				</div>
+				<div style="font-size: 20px">
+					<strong id="username-display">
+						null
+					</strong>
+				</div>
+			</div>
 
-      <form onsubmit="return Validate(this);">
-        <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" id="profile_photo" style="display: none" accepts="image/*" required>
-        <input type="hidden" value="" id="imgtoken" name="token" />
-        <input type="hidden" value="" id="imguser" name="name" />
-        <input type="submit" id="profilesubmit" style="display:none" />
-      </form>
-      <br />
-      <br />
-      <form id="email">
-        <label class="control-label" for="emailInput">Email</label>
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" value="" placeholder="" id="emailInput" readonly="">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="emailEdit" style="color: #ffffff">Edit</button>
-          </div>
-        </div>
-      </form>
-      <hr class="my-4">
-      <button class="btn btn-outline-danger" onclick="window.location.href='/deleteaccount'">Delete Account</button>
-    </div>
-    <img id="img" style="display:none" src=""></img>
-  </div>
-  <!-- LOAD NAVBAR-->
-  <script>
-  $(function() {
-    $("#navbar").load("./navbar.html");
-  });
+			<form onsubmit="return Validate(this);">
+				<input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" id="profile_photo" style="display: none" accepts="image/*" required>
+				<input type="hidden" value="" id="imgtoken" name="token" />
+				<input type="hidden" value="" id="imguser" name="name" />
+				<input type="submit" id="profilesubmit" style="display:none" />
+			</form>
+			<br />
+			<br />
+			<form id="email">
+				<label class="control-label" for="emailInput">Email</label>
+				<div class="input-group mb-3">
+					<input type="email" class="form-control" value="" placeholder="" id="emailInput" readonly="">
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" type="button" id="emailEdit" style="color: #ffffff">Edit</button>
+					</div>
+				</div>
+			</form>
+			<hr class="my-4">
+			<button class="btn btn-outline-danger" onclick="window.location.href='/deleteaccount'">Delete Account</button>
+		</div>
+		<img id="img" style="display:none" src=""></img>
+	</div>
+	<!-- LOAD NAVBAR-->
+	<script>
+	$(function() {
+		$("#navbar").load("./navbar.html");
+	});
 
 
-  var _validFileExtensions = [".jpg", ".jpeg", ".png", ".bmp"];
-  function Validate(oForm) {
-    var arrInputs = oForm.getElementsByTagName("input");
-    for (var i = 0; i < arrInputs.length; i++) { var oInput=arrInputs[i]; if (oInput.type=="file" ) { var sFileName=oInput.value; if (sFileName.length> 0) {
-      var blnValid = false;
-      for (var j = 0; j < _validFileExtensions.length; j++) { var sCurExtension=_validFileExtensions[j]; if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase()==sCurExtension.toLowerCase()) { blnValid=true; break; } } if (!blnValid) { alert(sFileName + " is not a valid image");
-      return false;
-    }
-  }
+	var _validFileExtensions = [".jpg", ".jpeg", ".png", ".bmp"];
+	function Validate(oForm) {
+		var arrInputs = oForm.getElementsByTagName("input");
+		for (var i = 0; i < arrInputs.length; i++) { var oInput=arrInputs[i]; if (oInput.type=="file" ) { var sFileName=oInput.value; if (sFileName.length> 0) {
+			var blnValid = false;
+			for (var j = 0; j < _validFileExtensions.length; j++) { var sCurExtension=_validFileExtensions[j]; if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase()==sCurExtension.toLowerCase()) { blnValid=true; break; } } if (!blnValid) { alert(sFileName + " is not a valid image");
+			return false;
+		}
+	}
 }
 }
 
@@ -104,180 +138,180 @@ return true;
 }
 
 $.extend({
-  requestInfo: function(token, user) {
-    var responseText = null;
-    $.ajax(
-      {
-        url: 'https://tabulateflask.azurewebsites.net/requestinfo',
-        type: 'POST',
-        dataType: 'text',
-        async: false,
-        data: {token: token, name: user},
-        success: function(response)
-        {
-          responseText = response;
-        }
-      });
-      return responseText;
-    }
-  });
+	requestInfo: function(token, user) {
+		var responseText = null;
+		$.ajax(
+			{
+				url: 'https://tabulateflask.azurewebsites.net/requestinfo',
+				type: 'POST',
+				dataType: 'text',
+				async: false,
+				data: {token: token, name: user},
+				success: function(response)
+				{
+					responseText = response;
+				}
+			});
+			return responseText;
+		}
+	});
 
-  $.extend({
-    updateInfo: function(token, user, service, data) {
-      var responseText = null;
-      $.ajax(
-        {
-          url: 'https://tabulateflask.azurewebsites.net/changecreds',
-          type: 'POST',
-          dataType: 'text',
-          async: false,
-          data: {token: token, name: user, service: service, data: data},
-          success: function(response)
-          {
-            responseText = response;
-          }
-        });
-        return responseText;
-      }
-    });
+	$.extend({
+		updateInfo: function(token, user, service, data) {
+			var responseText = null;
+			$.ajax(
+				{
+					url: 'https://tabulateflask.azurewebsites.net/changecreds',
+					type: 'POST',
+					dataType: 'text',
+					async: false,
+					data: {token: token, name: user, service: service, data: data},
+					success: function(response)
+					{
+						responseText = response;
+					}
+				});
+				return responseText;
+			}
+		});
 
-    $.extend({
-      updatePic: function(formdata) {
-        var responseText = null;
-        $.ajax(
-          {
-            url: 'https://tabulateflask.azurewebsites.net/changecreds',
-            type: 'POST',
-            async: false,
-            processData: false,
+		$.extend({
+			updatePic: function(formdata) {
+				var responseText = null;
+				$.ajax(
+					{
+						url: 'https://tabulateflask.azurewebsites.net/changecreds',
+						type: 'POST',
+						async: false,
+						processData: false,
 						contentType: false,
-            data: formdata,
-            success: function(response)
-            {
-              responseText = response;
-            }
-          });
-          return responseText;
-        }
-      });
+						data: formdata,
+						success: function(response)
+						{
+							responseText = response;
+						}
+					});
+					return responseText;
+				}
+			});
 
-      if(!checkLogin()){
-        signOut(false);
-        window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
-      }else{
-        if(checkCookie("username") && checkCookie("token")){
-          var info = $.requestInfo(getCookie("token"), getCookie("username"));
-          if(info == "false"){
-            signOut(false);
-            window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
-          }else{
-            info = info.split("|");
-            setCookie("token", info[0], 30);
-          }
-        }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
-          var info = $.requestInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"));
-          if(info == "false"){
-            signOut(false);
-            window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
-          }else{
-            info = info.split("|");
-            sessionStorage.setItem("token", info[0]);
-          }
-        }else{
-          window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
-        }
+			if(!checkLogin()){
+				signOut(false);
+				window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+			}else{
+				if(checkCookie("username") && checkCookie("token")){
+					var info = $.requestInfo(getCookie("token"), getCookie("username"));
+					if(info == "false"){
+						signOut(false);
+						window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+					}else{
+						info = info.split("|");
+						setCookie("token", info[0], 30);
+					}
+				}else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
+					var info = $.requestInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"));
+					if(info == "false"){
+						signOut(false);
+						window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+					}else{
+						info = info.split("|");
+						sessionStorage.setItem("token", info[0]);
+					}
+				}else{
+					window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+				}
 
-        document.getElementById("emailInput").placeholder = info[1];
-        document.getElementById("username-display").innerHTML = info[2];
-        document.getElementById("imguser").value = info[2];
+				document.getElementById("emailInput").placeholder = info[1];
+				document.getElementById("username-display").innerHTML = info[2];
+				document.getElementById("imguser").value = info[2];
 				document.getElementById("profileImage").src = info[3];
-      }
+			}
 
-      $("#emailEdit").click(function(){
-        if(document.getElementById("emailEdit").innerHTML == "Edit"){
-          document.getElementById("emailEdit").innerHTML = "Save";
-          document.getElementById("emailInput").value = document.getElementById("emailInput").placeholder;
-          document.getElementById("emailInput").readOnly = false;
-        }else{
-          if(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(document.getElementById("emailInput").value)){
-            document.getElementById("emailEdit").disabled = true;
-            document.getElementById("emailEdit").innerHTML = "<div class='spinner-border spinner-border-sm' role='status'><span class='sr-only'>Loading...</span></div>";
-            if(checkCookie("username") && checkCookie("token")){
-              var update = $.updateInfo(getCookie("token"), getCookie("username"), "email", document.getElementById("emailInput").value);
-              if(update == "false"){
-                signOut(false);
-                window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
-              }else{
-                setCookie("token", update, 30);
-              }
-            }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
-              var update = $.updateInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"), "email", document.getElementById("emailInput").value);
-              if(update == "false"){
-                signOut(false);
-                window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
-              }else{
-                sessionStorage.setItem("token", update);
-              }
-            }else{
-              signOut(false);
-              window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
-            }
+			$("#emailEdit").click(function(){
+				if(document.getElementById("emailEdit").innerHTML == "Edit"){
+					document.getElementById("emailEdit").innerHTML = "Save";
+					document.getElementById("emailInput").value = document.getElementById("emailInput").placeholder;
+					document.getElementById("emailInput").readOnly = false;
+				}else{
+					if(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(document.getElementById("emailInput").value)){
+						document.getElementById("emailEdit").disabled = true;
+						document.getElementById("emailEdit").innerHTML = "<div class='spinner-border spinner-border-sm' role='status'><span class='sr-only'>Loading...</span></div>";
+						if(checkCookie("username") && checkCookie("token")){
+							var update = $.updateInfo(getCookie("token"), getCookie("username"), "email", document.getElementById("emailInput").value);
+							if(update == "false"){
+								signOut(false);
+								window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+							}else{
+								setCookie("token", update, 30);
+							}
+						}else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
+							var update = $.updateInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"), "email", document.getElementById("emailInput").value);
+							if(update == "false"){
+								signOut(false);
+								window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+							}else{
+								sessionStorage.setItem("token", update);
+							}
+						}else{
+							signOut(false);
+							window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+						}
 
 
-            document.getElementById("emailEdit").innerHTML = "Edit";
-            document.getElementById("emailInput").className = "form-control";
-            document.getElementById("emailInput").placeholder = document.getElementById("emailInput").value;
-            document.getElementById("emailInput").readOnly = true;
-            document.getElementById("emailEdit").disabled = false;
-          }else{
-            document.getElementById("emailInput").className = "form-control is-invalid";
-          }
-        }
-      });
+						document.getElementById("emailEdit").innerHTML = "Edit";
+						document.getElementById("emailInput").className = "form-control";
+						document.getElementById("emailInput").placeholder = document.getElementById("emailInput").value;
+						document.getElementById("emailInput").readOnly = true;
+						document.getElementById("emailEdit").disabled = false;
+					}else{
+						document.getElementById("emailInput").className = "form-control is-invalid";
+					}
+				}
+			});
 
-      $('body').on('click','#profileImage',function(){$("#imageUpload").click();})
+			$('body').on('click','#profileImage',function(){$("#imageUpload").click();})
 
-      $("#imageUpload").change(function(){
+			$("#imageUpload").change(function(){
 
-        var filesSelected = this.files;
-        if (filesSelected.length > 0) {
-          if(checkCookie("username") && checkCookie("token")){
+				var filesSelected = this.files;
+				if (filesSelected.length > 0) {
+					if(checkCookie("username") && checkCookie("token")){
 						var formdata = new FormData();
 						formdata.append("file", this.files[0]);
 						formdata.append("token", getCookie("token"));
 						formdata.append("name", getCookie("username"));
 						formdata.append("service", "profileimg");
-            var update = $.updatePic(formdata);
-            if(update == "false"){
-              signOut(false);
-              window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
-            }else{
-              setCookie("token", update, 30);
-              window.location.reload();
-            }
-          }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
+						var update = $.updatePic(formdata);
+						if(update == "false"){
+							signOut(false);
+							window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+						}else{
+							setCookie("token", update, 30);
+							window.location.reload();
+						}
+					}else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
 						var formdata = new FormData();
 						formdata.append("file", this.files[0]);
 						formdata.append("token", sessionStorage.getItem("token"));
 						formdata.append("name", sessionStorage.getItem("username"));
 						formdata.append("service", "profileimg");
-            var update = $.updatePic(formData);
-            if(update == "false"){
-              signOut(false);
-              window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
-            }else{
-              sessionStorage.setItem("token", update);
-              window.location.reload();
-            }
-          }else{
-            signOut(false);
-            window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
-          }
-        }
-      });
+						var update = $.updatePic(formData);
+						if(update == "false"){
+							signOut(false);
+							window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+						}else{
+							sessionStorage.setItem("token", update);
+							window.location.reload();
+						}
+					}else{
+						signOut(false);
+						window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+					}
+				}
+			});
 
-      </script>
-    </div>
-  </body>
+			</script>
+		</div>
+	</body>
 
-  </html>
+	</html>
