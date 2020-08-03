@@ -251,6 +251,8 @@ $.extend({
 						formdata.append("name", getCookie("username"));
 						formdata.append("service", "profileimg");
             var update = $.updatePic(formdata);
+						console.log(update);
+						debugger;
             if(update == "false"){
               signOut(false);
               window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;

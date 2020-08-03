@@ -83,9 +83,14 @@ $.extend({
 	});
 
 	function checkLogin(){
+		console.log(checkCookie("token"));
+		console.log(checkCookie("username"));
+		debugger;
 		if(checkCookie("token")){
 			if(checkCookie("username")){
 				var check = $.xResponse(getCookie("token"), getCookie("username"));
+				console.log(check);
+				debugger;
 				if(check != "false"){
 					setCookie("token", check, 30);
 					return true;
