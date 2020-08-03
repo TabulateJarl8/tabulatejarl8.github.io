@@ -142,16 +142,16 @@ $.extend({
     });
 
     $.extend({
-      updatePic: function(data) {
+      updatePic: function(formdata) {
         var responseText = null;
         $.ajax(
           {
             url: 'https://tabulateflask.azurewebsites.net/changecreds',
             type: 'POST',
-						dataType: false,
             async: false,
             processData: false,
-            data: data,
+						contentType: false,
+            data: formdata,
             success: function(response)
             {
               responseText = response;
