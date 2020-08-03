@@ -161,9 +161,6 @@ $.extend({
         }
       });
 
-			console.log(checkLogin());
-			debugger;
-
       if(!checkLogin()){
         signOut(false);
         window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
@@ -211,7 +208,7 @@ $.extend({
                 signOut(false);
                 window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
               }else{
-                setCookie("token", update);
+                setCookie("token", update, 30);
               }
             }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
               var update = $.updateInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"), "email", document.getElementById("emailInput").value);
@@ -251,13 +248,11 @@ $.extend({
 						formdata.append("name", getCookie("username"));
 						formdata.append("service", "profileimg");
             var update = $.updatePic(formdata);
-						console.log(update);
-						debugger;
             if(update == "false"){
               signOut(false);
               window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
             }else{
-              setCookie("token", update);
+              setCookie("token", update, 30);
               window.location.reload();
             }
           }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
