@@ -68,7 +68,7 @@ $.extend({
 		var responseText = null;
 		$.ajax(
 			{
-				url: 'https://tabulatephp.azurewebsites.net/checklogin.php',
+				url: 'https://tabulateflask.azurewebsites.net/checklogin',
 				type: 'POST',
 				dataType: 'text',
 				async: false,
