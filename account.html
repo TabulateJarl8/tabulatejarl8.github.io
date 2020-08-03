@@ -146,12 +146,11 @@ $.extend({
         var responseText = null;
         $.ajax(
           {
-            url: 'https://tabulateflask.azurewebsites.net/changeprofileimg',
+            url: 'https://tabulateflask.azurewebsites.net/changecreds',
             type: 'POST',
-            dataType: false,
             async: false,
             processData: false,
-            data: {data: data},
+            data: data,
             success: function(response)
             {
               responseText = response;
@@ -242,7 +241,12 @@ $.extend({
         var filesSelected = this.files;
         if (filesSelected.length > 0) {
           if(checkCookie("username") && checkCookie("token")){
-            //var update = $.updateInfo(getCookie("token"), getCookie("username"), "profileimg", this.files[0]);
+						var formdata = new FormData()
+						formdata.append("file", this.files[0])
+						formdata.append("token", getCookie("token"))
+						formdata.append("name", getCookie("username"))
+						formdata.append("service", "profileimg")
+            var update = $.updatePic(formdata);
             if(update == "false"){
               signOut(false);
               window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
