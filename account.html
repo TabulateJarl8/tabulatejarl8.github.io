@@ -295,7 +295,7 @@ $.extend({
 						formdata.append("token", sessionStorage.getItem("token"));
 						formdata.append("name", sessionStorage.getItem("username"));
 						formdata.append("service", "profileimg");
-						var update = $.updatePic(formData);
+						var update = $.updatePic(formdata);
 						if(update == "false"){
 							signOut(false);
 							window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
