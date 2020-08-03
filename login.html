@@ -50,10 +50,10 @@
 				<h1>Login</h1>
 			</div>
 		</div>
-		
+
 		<div class="jumbotron">
 			<div id="jumbotron" class="text-center">
-				<form action="https://tabulatephp.azurewebsites.net/validation.php" method="post" enctype="multipart/form-data">
+				<form action="https://tabulateflask.azurewebsites.net/validation" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label>Username</label>
 						<input type="text" maxlength="255" placeholder="Username" name="user" class="form-control" required />
@@ -84,13 +84,13 @@
 			<br>
 			<a id="forgot-password" href="/passwordreset">Forgot Password?</a>
 		</div>
-		
+
 		<!-- LOAD NAVBAR-->
 		<script>
 		$(function() {
 			$("#navbar").load("./navbar.html");
 		});
-		
+
 		$("form").submit(function(){
 		  $("#submitbtn").addClass("disabled");
 		  $("#submitbtn").html("Loading...");

@@ -51,7 +51,7 @@
 		</div>
 		<div class="jumbotron">
 			<div id="jumbotron" class="text-center">
-				<form action="https://tabulatephp.azurewebsites.net/registration.php" method="POST" enctype="multipart/form-data">
+				<form action="https://tabulateflask.azurewebsites.net/registration" method="POST" enctype="multipart/form-data">
 					<div class="form-group">
 						<label>Email</label>
 						<input type="email" placeholder="Email" maxlength="255" name="email" class="form-control" required />
@@ -94,7 +94,7 @@
 			$(function() {
 				$("#navbar").load("navbar.html");
 			});
-			
+
 			$("form").submit(function(){
 			$("#submitbtn").addClass("disabled");
 			$("#submitbtn").html("Loading...");

@@ -80,7 +80,7 @@
     </div>
     <div class="jumbotron">
       <div id="jumbotron" class="text-center">
-        <form action="https://tabulatephp.azurewebsites.net/deleteaccount.php" method="post" enctype="multipart/form-data" autocomplete="false" id="form">
+        <form action="https://tabulateflask.azurewebsites.net/deleteaccount" method="post" enctype="multipart/form-data" autocomplete="false" id="form">
 
           <div class="form-group">
             <label>Password</label>
@@ -115,7 +115,7 @@
     $(function() {
       $("#navbar").load("./navbar.html");
     });
-    
+
     $("confirm-form").submit(function(){
     $("#submit").addClass("disabled");
     $("#submit").html("Loading...");
@@ -154,7 +154,7 @@
         var responseText = null;
         $.ajax(
           {
-            url: 'https://tabulatephp.azurewebsites.net/deleteaccountemail.php',
+            url: 'https://tabulateflask.azurewebsites.net/deleteaccountemail',
             type: 'GET',
             dataType: 'text',
             async: false,
