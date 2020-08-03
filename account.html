@@ -242,7 +242,7 @@ $.extend({
         var filesSelected = this.files;
         if (filesSelected.length > 0) {
           if(checkCookie("username") && checkCookie("token")){
-            var update = $.updateInfo(getCookie("token"), getCookie("username"), "profileimg", this.files[0]);
+            //var update = $.updateInfo(getCookie("token"), getCookie("username"), "profileimg", this.files[0]);
             if(update == "false"){
               signOut(false);
               window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
