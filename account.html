@@ -242,11 +242,11 @@ $.extend({
         var filesSelected = this.files;
         if (filesSelected.length > 0) {
           if(checkCookie("username") && checkCookie("token")){
-						var formdata = new FormData()
-						formdata.append("file", this.files[0])
-						formdata.append("token", getCookie("token"))
-						formdata.append("name", getCookie("username"))
-						formdata.append("service", "profileimg")
+						var formdata = new FormData();
+						formdata.append("file", this.files[0]);
+						formdata.append("token", getCookie("token"));
+						formdata.append("name", getCookie("username"));
+						formdata.append("service", "profileimg");
             var update = $.updatePic(formdata);
             if(update == "false"){
               signOut(false);
@@ -256,8 +256,11 @@ $.extend({
               window.location.reload();
             }
           }else if(sessionStorage.getItem("username") != null && sessionStorage.getItem("token") != null){
-            formData.append("token", sessionStorage.getItem("token"));
-            formData.append("name", sessionStorage.getItem("username"));
+						var formdata = new FormData();
+						formdata.append("file", this.files[0]);
+						formdata.append("token", sessionStorage.getItem("token"));
+						formdata.append("name", sessionStorage.getItem("username"));
+						formdata.append("service", "profileimg");
             var update = $.updatePic(formData);
             if(update == "false"){
               signOut(false);
