@@ -50,7 +50,7 @@
 		  user = (window.location.href).split("/");
 		  user = user[user.length - 1];
 		  window.alert(user);
-		  jQuery.ajax({
+		  $.ajax({
 		  async: false, //add async false
 		  url: 'http://tabulateflask.azurewebsites.net/user/' + user,
 		  type: 'get',
@@ -60,6 +60,7 @@
 		  document.write(data);
 		  }
 		  });
+		  window.alert("here?");
 		}
 		$(function() {
 			$("#navbar").load("/navbar.html");
