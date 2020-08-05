@@ -45,22 +45,7 @@
 
 		<!-- LOAD NAVBAR-->
 
-		<script>
-		if((window.location.href).includes("tabulate.tech/user/")){
-		  user = (window.location.href).split("/");
-		  user = user[user.length - 1];
-		  window.alert(user);
-		  $.ajax({
-		  async: false, //add async false
-		  url: 'https://tabulateflask.azurewebsites.net/user/' + user,
-		  type: 'get',
-		  dataType: 'text/html',
-		  success:function(data)
-		  {
-		    window.alert(data.length);
-		  }
-		  });
-		}
+<script>
 		$(function() {
 			$("#navbar").load("/navbar.html");
 		});
