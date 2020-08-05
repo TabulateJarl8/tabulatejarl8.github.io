@@ -49,6 +49,7 @@
 		if((window.location.href).includes("tabulate.tech/user/")){
 		  user = (window.location.href).split("/");
 		  user = user[user.length - 1];
+		  window.alert(user);
 		  jQuery.ajax({
 		  async: false, //add async false
 		  url: 'http://tabulateflask.azurewebsites.net/user/' + user,
@@ -56,7 +57,7 @@
 		  dataType: 'text/html',
 		  success:function(data)
 		  {
-		  alert(data);
+		  document.write(data);
 		  }
 		  });
 		}
