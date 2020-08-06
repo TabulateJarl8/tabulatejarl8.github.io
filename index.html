@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<link rel="stylesheet" href="./libraries/aos.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 
 	<!--Favicons-->
@@ -43,12 +43,16 @@
 		</div>
 		<div class="jumbotron">
 			<h1 id="hello" class="display-3">Hello, world!</h1>
-			<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+			<div data-aos="fade-up" data-aos-duration="1000">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</div>
 			<hr class="my-4">
-			<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-			<p class="lead">
-				<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-			</p>
+			<div data-aos-duration="1000" data-aos="fade-up">Test</div>
+			<div data-aos="fade-up" data-aos-duration="1000">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</div>
+			<br>
+			<br>
+			<div data-aos="fade-up" data-aos-duration="1000">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</div>
+			<br>
+			  <br>
+			<div data-aos="fade-up" data-aos-duration="1000">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</div>
 		</div>
 
 		<!-- LOAD NAVBAR-->
@@ -94,5 +98,9 @@
 		}
 		</script>
 	</div>
+	<script src="./libraries/aos.js"></script>
+	<script>
+	  AOS.init();
+	</script>
 </body>
 </html>
