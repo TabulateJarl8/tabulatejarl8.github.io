@@ -35,10 +35,12 @@
 	gtag('config', 'UA-167553203-1');
 	</script>
 	<style>
-		.center-verticle{
-			display: flex;
-			align-items: center;
-		}
+		@media only screen and (hover: none) and (pointer: coarse){
+		  .center-verticle{
+		  display: flex;
+		  align-items: center;
+		  }
+		  
 		.left-text{
 			float: left;
 			width: 50%;
@@ -57,6 +59,8 @@
 			float: right;
 			width: 50%;
 		}
+		}
+	
 	</style>
 </head>
 <body>
@@ -72,9 +76,9 @@
 			<hr class="my-4">
 			<div data-aos="fade-up" data-aos-duration="1000">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</div>
 		<br><br>
-		<div class="center-verticle">
-		<div class="left-text" data-aos="fade-up" data-aos-duration="1000">Python: I use python for really anything i need it for.</div>
-		<pre class="right-code language-python" data-aos="fade-up" data-aos-duration="1000"><code>
+		<div class="center-verticle" data-aos="fade-up" data-aos-duration="1000">
+		<div class="left-text">Python: I use python for really anything i need it for.</div>
+		<pre class="right-code language-python"><code>
 from flask import Flask, request, redirect
 
 app = <span style="color: #61aeee">Flask</span>(__name__)
