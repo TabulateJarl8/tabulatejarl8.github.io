@@ -34,6 +34,30 @@
 
 	gtag('config', 'UA-167553203-1');
 	</script>
+	<style>
+		.center-verticle{
+			display: flex;
+			align-items: center;
+		}
+		.left-text{
+			float: left;
+			width: 50%;
+			word-break: normal;
+		}
+		.right-text{
+			float: right;
+			width: 50%;
+			word-break: normal;
+		}
+		.left-code{
+			float: left;
+			width: 50%;
+		}
+		.right-code{
+			float: right;
+			width: 50%;
+		}
+	</style>
 </head>
 <body>
 <!--i wrote this line on top of a mountain-->
@@ -48,11 +72,12 @@
 			<hr class="my-4">
 			<div data-aos="fade-up" data-aos-duration="1000">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</div>
 		<br><br>
-		<div data-aos="fade-up" data-aos-duration="1000">Heres some great code:</div>
-		<pre class="language-python" data-aos="fade-up" data-aos-duration="1000"><code>
+		<div class="center-verticle">
+		<div class="left-text" data-aos="fade-up" data-aos-duration="1000">Python: I use python for really anything i need it for.</div>
+		<pre class="right-code language-python" data-aos="fade-up" data-aos-duration="1000"><code>
 from flask import Flask, request, redirect
 
-app = Flask(__name__)
+app = <span style="color: #61aeee">Flask</span>(__name__)
 
 @app.route("/test", methods=["GET", "POST"])
 def test():
@@ -63,39 +88,7 @@ def test():
         #Redirect Client
         return redirect("https://youtu.be/dQw4w9WgXcQ", code=301)
 		</code></pre>
-		<br><br>
-		<div data-aos="fade-up" data-aos-duration="1000">Wasn't that so incredibly fun?!?!?!?!</div>
-		<br><br>
-		<div data-aos="fade-up" data-aos-duration="1000">Heres some more great code:</div>
-		<pre class="language-sql" data-aos="fade-up" data-aos-duration="1000"><code>
-CREATE TABLE "why" (
-    "id" serial NOT NULL PRIMARY KEY,
-    "forum_id" integer NOT NULL,
-    "subject" varchar(255) NOT NULL
-);
-ALTER TABLE "why" ADD CONSTRAINT forum_id FOREIGN KEY ("forum_id") REFERENCES "forum" ("id");
---Wow, so fun
-insert into "why" ("forum_id", "subject") values (2032, 'yellow');
-		</code></pre>
-		<br><br>
-		<div data-aos="fade-up" data-aos-duration="1000">That was some great SQL wasn't it? So useful and practical!!</div>
-		<br><br>
-		<pre class="language-html" data-aos="fade-up" data-aos-duration="1000"><code>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;link rel="stylesheet" href="./bootstrap.css"&gt;
-        &lt;title&gt;Test Page | Home&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;p&gt;This is such a beautiful page&lt;/p&gt;
-        &lt;a href="https://tabulate.tech/register" target="_blank"&gt;Make a new account right now or else&lt;/a&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-		</code></pre>
-		<br><br>
-		<div data-aos="fade-up" data-aos-duration="1000">Well then, you better go <a href="/register" target="_blank">make an account</a>.</div>
-		<br>
+		</div>
 		</div>
 
 		<!-- LOAD NAVBAR-->
