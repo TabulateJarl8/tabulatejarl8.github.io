@@ -6,14 +6,31 @@
 		float: right;
 		display: absolute;
 	}
+	.account-down{
+	  bottom:0;
+	  position: fixed;
+	  font-size: 1.5rem;
+	  z-index: 50;
+	}
 	/* dont show logo on mobile */
 	@media (max-width:629px) {
 		.logo {
 			display: none;
 		}
+		.account-down{
+		  bottom:0;
+		  position: fixed;
+		  font-size: 0.95rem;
+		  z-index: 50;
+		}
 	}
 </style>
+<link rel="stylesheet" href="bootstrap.css">
 <script src="scripts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <!--<div id="account-down" class="bg-info account-down">Account features are currently partially or completely offline for maintenance&nbsp;&nbsp;&nbsp;<button type="button" class="close" aria-label="Close">
+   <span aria-hidden="true">&times;</span>
+ </button></div>-->
 <nav class="navbar navbar-dark bg-primary">
 	<div class="row">
 		<div class="col-lg-12 col-xl-12 col-md-12 col-xs-2">
@@ -43,11 +60,21 @@
 	<img class="logo" src="/images/carpetbagger_profile.png" alt="Profile Picture"></img>
 </nav>
 <script>
+if(getCookie("closeAccount") == "true"){
+$("#account-down").hide();
+}
 	document.getElementById("login").href = "/login?redirect=" + window.location.href;
 	if(checkCookie("username")){
 		document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a><a class='dropdown-item' style='cursor: pointer' onclick='signOut(window.location.href)'>Sign Out</a>";
 	}else if(sessionStorage.getItem("username") != null){
 		document.getElementById("account").innerHTML = "<a class='dropdown-item' href='/account'>My Account</a><a class='dropdown-item' style='cursor: pointer' onclick='signOut(window.location.href)'>Sign Out</a>";
 	}
+	
+	$(".close").on("click", function(event){
+	  $("#account-down").hide();
+	  setCookie("closeAccount", "true", 1);
+	});
+	
+	
 
 </script>
