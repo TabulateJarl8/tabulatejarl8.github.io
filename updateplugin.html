@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Submit ImaginaryInfinity Calculator Plugin | TurboWafflz</title>
+	</head>
+	<body>
+		<!--Page header-->
+		<div class="pageHeader">Loading Header</div>
+		<!--Navbar-->
+		<div class="navbar">
+			<noscript>
+				Loading navigation... <a href="navbar.html">No JavaScript?</a>
+			</noscript>
+		</div>
+		<script>
+			function getData(callback){
+				data = new FormData();
+				data.append("pluginname", document.getElementsByName("name")[0].value);
+
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function(){
+					if (xhr.readyState === 4){
+						if(xhr.status === 200){
+							callback(JSON.parse(xhr.responseText));
+						}
+					}
+				};
+				xhr.open("POST", "https://tabulateflask.azurewebsites.net/iicalc/fillbutton", true);
+				xhr.send(data);
+			}
+
+			$(document).on('click', '#requestbutton', function(){
+				//e.preventDefault();
+				console.log("Autofilling")
+				getData(function(result){
+					if(result["description"] != undefined){
+						document.getElementsByName("description")[0].value = result["description"];
+						document.getElementsByName("summary")[0].value = result["summary"];
+						document.getElementsByName("version")[0].value = result["version"];
+						document.getElementsByName("fileUrl")[0].value = result["download"];
+						document.getElementsByName("depends")[0].value = result["depends"];
+					}
+				});
+			});
+
+		</script>
+		<div class="title">
+			Submit ImaginaryInfinity Calculator Plugin
+		</div>
+		<!--Body Text-->
+		<div class="bodyText">
+			Description and short description can be left blank if you do not wish to change them.
+			<br>
+			<button id="requestbutton" title="Fill rest of information after entering name">Autofill</button> (May take a few minutes if the server needs to warmup)
+			<form action = "https://turbowafflz.azurewebsites.net/iicalc/uploadplugin" method = "POST" enctype = "multipart/form-data">
+				<table>
+					<tr>
+						<td class="fieldName">Name:</td> <td><input type="text" name="name" required placeholder="SuperCoolPlugin"></input></td>
+				</tr>
+			<tr>
+				<td class="fieldName">Description:</td> <td><textarea name="description" required rows=5 cols=30 placeholder="A fancy plugin that does cool things that are useful for it's users"></textarea></td>
+			</tr>
+			<tr>
+				<td class="fieldName">Short description:</td> <td><input type="text" name="summary" required placeholder="Does useful things"></input></td>
+		</tr>
+	<tr>
+		<td class="fieldName">Version:</td> <td><input type="text" name="version" required placeholder="3.2.12"></input></td>
+</tr>
+<tr>
+	<td class="fieldName">Dependencies:</td> <td><input type="text" name="depends" placeholder="anothercoolplugin, tableLib"></input></td>
+</tr>
+<tr>
+	<td class="fieldName">Download link:</td> <td><input type="text" name="fileUrl" required placeholder="Please use GitHub or GitLab"></input></td>
+</tr>
+<tr>
+	<td class="fieldName">File name:</td> <td><input type="text" name="fileName" required placeholder="supercoolplugin.py"></input></td>
+</tr>
+<tr>
+	<td class="fieldName">File hash:</td> <td><input type="text" name="fileHash" required placeholder="24b5b86f410a61bed9b9646241dd2d5c7e14e969a1e16f6ae5d2a047bfc9d50e"></input></td>
+</tr>
+<tr>
+	<td><input type="hidden" name="url" id="authCode"></td>
+</tr>
+</table>
+<div class="fancyButtons">
+	<input type = "submit" id="submitButton" value="Submit" onclick="sessionStorage.setItem('sessionValid', 'false')"/>
+</div>
+</div>
+
+</form>
+</div>
+</body>
+</html>
