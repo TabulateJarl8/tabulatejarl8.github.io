@@ -44,7 +44,8 @@
 		<div class="jumbotron">
 			<div class="row">
 				<div id="profile-container" style="margin-right: 15px; margin-left: 10px">
-					<image id="profileImage" src="data:image/jpeg;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAATmVYSWZNTQAqAAAACAAEARoABQAAAAEAAAA+ARsABQAAAAEAAABGASgAAwAAAAEAAgAAAhMAAwAAAAEAAQAAAAAAAAAAASwAAAABAAABLAAAAAGbYnAsAAABzElEQVR4nO3VzW4TMRQF4HOcybSjDE1EpDK0qVBUJBZVyqovz0t0wYIfsSFSgZQShRIUTTzjw6IVHdtDQzaIRb0aWfezr699E77CtsNsLR7I1iNpnSUcQEJ/SyiLboLKImELaiGszMGTRynWP2aXVRKbmNAOX/QBoNsrrt9+60YmOj7Xh2d9CYCkvbPDNTcRVvsTigRAUpzsV6EJiUtPqN9BFE9Sdz9hNcrUWJbKRuE2AVFShKkXYdEC4rIc3qJEngWZ+YTajUpoduVnFlUsFPFUSGxMwimfyKzKUJQr458/2MWUc//5CvMyjAnW5DQoqaYbzqJkPmWjqI7T+YZ7gZJ3V0a3QZK5eh89//gl4/yChCSBvDhXVPaoX0S9vnw2MADc4uPMxH3Z0pWmM/ua5zsol0uXtLR/RIjaoV4sbr6t6UQoIJQ12V7e2+kaOFv+XF6vXPib4RPa7tHTfnOu+v75i/X73yf24HkPXibJcDj+8Cn5ExEmIwj0yir0Xj5+03zOzXvR6ciJwT2QckenzY3vCO1x4UxbvxhXHFu2kDofxzd9izTO65iwLjptPQkARKeoGRFw0B5/MwYticmk95H0rjX/2z++B/IPyC/jX5+JL5W1pwAAAABJRU5ErkJggg==" />
+					<div id="loader" style="position: absolute; left: 50%"><div class="spinner-border spinner-border-lg"></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 20px">Loading...</span></div>
+					<img id="profileImage" src="data:image/jpeg;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAATmVYSWZNTQAqAAAACAAEARoABQAAAAEAAAA+ARsABQAAAAEAAABGASgAAwAAAAEAAgAAAhMAAwAAAAEAAQAAAAAAAAAAASwAAAABAAABLAAAAAGbYnAsAAABzElEQVR4nO3VzW4TMRQF4HOcybSjDE1EpDK0qVBUJBZVyqovz0t0wYIfsSFSgZQShRIUTTzjw6IVHdtDQzaIRb0aWfezr699E77CtsNsLR7I1iNpnSUcQEJ/SyiLboLKImELaiGszMGTRynWP2aXVRKbmNAOX/QBoNsrrt9+60YmOj7Xh2d9CYCkvbPDNTcRVvsTigRAUpzsV6EJiUtPqN9BFE9Sdz9hNcrUWJbKRuE2AVFShKkXYdEC4rIc3qJEngWZ+YTajUpoduVnFlUsFPFUSGxMwimfyKzKUJQr458/2MWUc//5CvMyjAnW5DQoqaYbzqJkPmWjqI7T+YZ7gZJ3V0a3QZK5eh89//gl4/yChCSBvDhXVPaoX0S9vnw2MADc4uPMxH3Z0pWmM/ua5zsol0uXtLR/RIjaoV4sbr6t6UQoIJQ12V7e2+kaOFv+XF6vXPib4RPa7tHTfnOu+v75i/X73yf24HkPXibJcDj+8Cn5ExEmIwj0yir0Xj5+03zOzXvR6ciJwT2QckenzY3vCO1x4UxbvxhXHFu2kDofxzd9izTO65iwLjptPQkARKeoGRFw0B5/MwYticmk95H0rjX/2z++B/IPyC/jX5+JL5W1pwAAAABJRU5ErkJggg==" />
 				</div>
 				<div style="font-size: 20px">
 					<strong id="username-display">
@@ -63,6 +64,12 @@
 		$.ajax({
 			url: "https://tabulateflask.azurewebsites.net/user/" + user,
 			type: "GET",
+			beforeSend: function(){
+				$("#loader").show();
+			},
+			complete: function(){
+				$("#loader").hide();
+			},
 			success: function(response){
 				document.getElementById("username-display").innerHTML = response["username"];
 				document.getElementById("profileImage").src = response["profileimg"];
