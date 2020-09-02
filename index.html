@@ -37,6 +37,7 @@
 	</script>
 	<style>
 	@media only screen and (hover: none) and (pointer: coarse){
+	  
 		.center-verticle{
 			display: flex;
 			align-items: center;
@@ -146,6 +147,11 @@
 			$("#navbar").load("navbar.html");
 		});
 
+    var isMobile = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/);
+
+if(isMobile) {
+   document.getElementById("social-panel").innerHTML = "";
+}
 
 		var name = getUrlParam("name", "empty");
 		var tempName = getUrlParam("tempName", "empty");
