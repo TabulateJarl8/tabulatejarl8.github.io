@@ -1,10 +1,6 @@
 <style>
 	.logo {
-		width: 3%;
-		height: auto;
-		max-width: 625px;
-		float: right;
-		display: absolute;
+		width: 99%;
 	}
 	.account-down{
 	  bottom:0;
@@ -23,6 +19,10 @@
 		  font-size: 0.95rem;
 		  z-index: 50;
 		}
+	}
+	#profile-container{
+		cursor: pointer;
+		position: relative;
 	}
 </style>
 <link rel="stylesheet" href="bootstrap.css">
@@ -56,7 +56,9 @@
 			<button type="button" class="btn btn-primary" onclick="window.location.href = '/donate'">Donate</button>
 		</div>
 	</div>
+	<div id="profile-container" style="margin-right: 15px; margin-left: 10px">
 	<img class="logo" src="/images/carpetbagger_profile.png" alt="Profile Picture"></img>
+	</div>
 </nav>
 <script>
 if(getCookie("closeAccount") == "true"){
