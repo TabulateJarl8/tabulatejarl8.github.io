@@ -284,7 +284,7 @@ gtag('config', 'UA-167553203-1');
 			$("[data-toggle='modal']").modal()
 		});
 
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		if(window.mobileCheck) {
 			$('.jumbotron').removeClass("d-flex flex-column justify-content-around");
 		}
 
