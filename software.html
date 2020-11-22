@@ -54,20 +54,31 @@
 <body data-spy="scroll" data-target="#toc">
 	<div id="navbar"><nav class="navbar navbar-dark bg-primary"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No JavaScript?</a><p class="text-warning">Please enable javascript in your browser or some critical features may not function.</p></nav></div>
 	<div id="page-container">
-		<div class="page-header">
+		<div class="page-header" style="display: flex; justify-content: space-between;">
+			<div>
 			<h1>Software</h1>
+			<br>
+			<nav id="toc" data-toggle="toc"></nav>
+		</div>
+			<div>
+				<h4>Badges:</h4>
+				<hr class="my-4" style="background: white">
+				<span class="badge badge-success">Active</span> - Being actively developed and will most likely recieve frequent future updates.
+				<br><br>
+				<span class="badge badge-warning">Idle</span> - Currently not being actively developed. May or may not recieve new features, but<br>will most likely recieve support.
+				<br><br>
+				<span class="badge badge-danger">Discontinued</span> - Not being developed. Most likely will not recieve any future updates or<br>support.
+			</div>
 		</div>
 		<br>
-		<nav id="toc" data-toggle="toc"></nav>
 		<hr class="my-4" style="background: white">
 		<br>
 		<h2>Python Modules</h2>
 		<div class="grid-container">
 			<div class="card border-success mb-3" style="max-width: 30rem;">
-				<div class="card-header"><!--<span class="badge badge-success" style="float:right">Stable</span>-->
-
-					<a href="https://pepy.tech/project/update-check"><img style="float: left" src="https://pepy.tech/badge/update-check" alt="Download Amount" height="18"></a>
-					<a href="https://github.com/TabulateJarl8/update_check/issues"><img src="https://img.shields.io/github/issues/TabulateJarl8/update_check.svg" style="float:right" alt="Issues" height="18"></a>
+				<div class="card-header">
+					<a href="https://pepy.tech/project/update-check"><img style="float: left; top:0" src="https://pepy.tech/badge/update-check" alt="Download Amount" height="18"></a>
+					<span class="badge badge-warning" style="float:right">Idle</span>
 				</div>
 				<div class="card-body" style="padding-bottom: 3rem;">
 					<h4 class="card-title">Update Check</h4>
@@ -77,9 +88,10 @@
 				</div>
 			</div>
 			<div class="card border-success mb-3" style="max-width: 30rem;">
-				<div class="card-header"><!--<span class="badge badge-success" style="float:right">Stable</span>-->
+				<div class="card-header">
 					<a href="https://pepy.tech/project/randfacts"><img style="float: left" src="https://pepy.tech/badge/randfacts" alt="Download Amount" height="18"></a>
-					<a href="https://github.com/TabulateJarl8/randfacts/issues"><img src="https://img.shields.io/github/issues/TabulateJarl8/randfacts.svg" style="float:right" alt="Issues" height="18"></a>
+					<span class="badge badge-warning" style="float:right">Idle</span>
+
 				</div>
 				<div class="card-body" style="padding-bottom: 3rem;">
 					<h4 class="card-title">Randfacts</h4>
@@ -89,9 +101,9 @@
 				</div>
 			</div>
 			<div class="card border-success mb-3" style="max-width: 30rem;">
-				<div class="card-header"><!--<span class="badge badge-success" style="float:right">Stable</span>-->
+				<div class="card-header">
 					<a href="https://pepy.tech/project/fng-api"><img style="float: left" src="https://pepy.tech/badge/fng-api" alt="Download Amount" height="18"></a>
-					<a href="https://github.com/TabulateJarl8/fng_api/issues"><img src="https://img.shields.io/github/issues/TabulateJarl8/fng_api.svg" style="float:right" alt="Issues" height="18"></a>
+					<span class="badge badge-warning" style="float:right">Idle</span>
 				</div>
 				<div class="card-body" style="padding-bottom: 3rem;">
 					<h4 class="card-title">FNG API</h4>
@@ -101,9 +113,9 @@
 				</div>
 			</div>
 			<div class="card border-success mb-3" style="max-width: 30rem;">
-				<div class="card-header"><!--<span class="badge badge-success" style="float:right">Stable</span>-->
+				<div class="card-header">
 					<a href="https://pepy.tech/project/titleize"><img style="float: left" src="https://pepy.tech/badge/titleize" alt="Download Amount" height="18"></a>
-					<a href="https://github.com/TabulateJarl8/titleize/issues"><img src="https://img.shields.io/github/issues/TabulateJarl8/titleize.svg" style="float:right" alt="Issues" height="18"></a>
+					<span class="badge badge-warning" style="float:right">Idle</span>
 				</div>
 				<div class="card-body" style="padding-bottom: 3rem;">
 					<h4 class="card-title">Titleize</h4>
@@ -120,7 +132,7 @@
 		<p>iiCalc is an open source, command line based, expandable calculator made by my friend over at <a href="https://turbowafflz.gitlab.io" target="_blank">turbowafflz.gitlab.io</a>. Anyone can expand it's capabilities by adding plugins. I've created a few plugins as well as directly contributed to this project. You can find this project <a href="http://github.com/TurboWafflz/ImaginaryInfinity-Calculator">here</a>. My plugins currently only work for the <a href="https://github.com/TurboWafflz/ImaginaryInfinity-Calculator/tree/development">Development Version.</a> You can install it via the <span><code>pm.install("&lt;name&gt;")</code></span> command or through the GUI store, accessed with the <span><code>store.store()</code></span> command.</p>
 		<div class="grid-container">
 			<div class="card border-success mb-3" style="max-width: 30rem;">
-				<div class="card-header"><span class="badge badge-success" style="float:right">Stable</span></div>
+				<div class="card-header"><span class="badge badge-success" style="float:right">Active</span></div>
 				<div class="card-body" style="padding-bottom: 3rem;">
 					<h4 class="card-title">Formulas</h4>
 					<p class="card-text">The formulas plugin is a plugin that adds the functionality to solve lots of formulas. Some include but are not limited to, volume of shapes, quadratic formula, and energy equations.</p><br>
@@ -130,7 +142,7 @@
 				</div>
 			</div>
 			<div class="card border-success mb-3" style="max-width: 30rem;">
-				<div class="card-header"><span class="badge badge-success" style="float:right">Stable</span></div>
+				<div class="card-header"><span class="badge badge-warning" style="float:right">Idle</span></div>
 				<div class="card-body" style="padding-bottom: 3rem;">
 					<h4 class="card-title">Quads</h4>
 					<p class="card-text">The quads plugin will find information on a parabolla from the quadratic equation.</p><br>
@@ -138,7 +150,7 @@
 				</div>
 			</div>
 			<div class="card border-success mb-3" style="max-width: 30rem;">
-				<div class="card-header"><span class="badge badge-success" style="float:right">Stable</span></div>
+				<div class="card-header"><span class="badge badge-warning" style="float:right">Idle</span></div>
 				<div class="card-body" style="padding-bottom: 3rem;">
 					<h4 class="card-title">ABSGraph</h4>
 					<p class="card-text">Absgraph is a plugin that will give you the equation to an Absolute Value Graph from the x value, y value, and slope.</p><br>
@@ -146,7 +158,7 @@
 				</div>
 			</div>
 			<div class="card border-success mb-3" style="max-width: 30rem;">
-				<div class="card-header"><span class="badge badge-success" style="float:right">Stable</span></div>
+				<div class="card-header"><span class="badge badge-danger" style="float:right">Discontinued</span></div>
 				<div class="card-body" style="padding-bottom: 3rem;">
 					<h4 class="card-title">Odds</h4>
 					<p class="card-text">The odds plugin is fairly simple. All it does it take an input of numbers and splits them into 2 lists, even numbers and odd numbers. It will tell you how many of each there are and you can also get it to show all of the split numbers.</p><br>
@@ -154,7 +166,7 @@
 				</div>
 			</div>
 			<div class="card border-success mb-3" style="max-width: 30rem;">
-				<div class="card-header"><span class="badge badge-success" style="float:right">Stable</span></div>
+				<div class="card-header"><span class="badge badge-warning" style="float:right">Idle</span></div>
 				<div class="card-body" style="padding-bottom: 3rem;">
 					<h4 class="card-title">Themegui</h4>
 					<p class="card-text">Themegui is a GUI-based theme editor using tkinter.</p><br>
@@ -178,13 +190,13 @@
 		});
 	});
 </script>
-<div class="footer-margin">
-	<footer class="py-4 bg-trans-dark text-white-50 footer fixed-bottom">
-		<div class="container text-center"><small>
-			By using this service you agree to our <a href="/legal?tab=tou">Terms of Service</a> and our <a href="/legal?tab=disclaimer">Disclaimer</a></small>
-		</div>
-	</footer>
+<!-- <div class="footer-margin">
+<footer class="py-4 bg-trans-dark text-white-50 footer fixed-bottom">
+<div class="container text-center"><small>
+By using this service you agree to our <a href="/legal?tab=tou">Terms of Service</a> and our <a href="/legal?tab=disclaimer">Disclaimer</a></small>
 </div>
+</footer>
+</div> -->
 </body>
 
 </html>

@@ -83,14 +83,14 @@
 		<div class="jumbotron">
 			<h1 class="display-4">Tabulate Official Website</h1>
 			<br><br>
-			<div style="font-size: 16px" data-aos="fade-up" data-aos-duration="1000">Hi <span id="hello"></span>, I'm Tabulate. I'm a full stack developer and I've been programming for around <span id="years"></span><script>document.getElementById("years").innerHTML = new Date().getFullYear() - 2016</script> years. I'm proficient in HTML, JavaScript, JQuery, CSS, and Python. I have some experience with PHP, Java, SQL, Batch, and Bash. I also have a few Python Modules that you can find <a href="/software">here</a>. Note: this website is still in development and some pages may be incomplete. If you find any bugs, please report them by contacting me at <a href="mailto:tabulatejarl8@gmail.com?subject=Bug%20Report">tabulatejarl8@gmail.com</a></div>
+			<div style="font-size: 16px" data-aos="fade-up" data-aos-duration="1000">Hi<span id="hello"></span>, I'm Tabulate. I'm a full stack developer and I've been programming for around <span id="years"></span><script>document.getElementById("years").innerHTML = new Date().getFullYear() - 2016</script> years. I'm proficient in HTML, JavaScript, JQuery, CSS, and Python. I have some experience with PHP, Java, SQL, Batch, and Bash. I also have a few Python Modules that you can find <a href="/software">here</a>. Note: this website is still in development and some pages may be incomplete. If you find any bugs, please report them by contacting me at <a href="mailto:tabulatejarl8@gmail.com?subject=Bug%20Report">tabulatejarl8@gmail.com</a></div>
 			<br>
 			<hr class="my-4">
 			<h3>Featured Projects:</h3>
 			<br><br>
 			<div class="row d-flex justify-content-between">
 				<div class="card border-success mb-3" style="max-width: 30rem; position: relative;">
-					<div class="card-header"><span class="badge badge-success" style="float:right">Stable</span></div>
+					<div class="card-header"><span class="badge badge-success" style="float:right">Active</span></div>
 					<div class="card-body" style="padding-bottom: 3rem;">
 						<h4 class="card-title">ImaginaryInfinity Calculator</h4>
 						<p class="card-text">ImaginaryInfinity Calculator is a lightweight, but expandable calculator written in Python. It's command line interface is designed to resemble that of some graphing calculators. I've worked on this with my friend, TurboWafflz for a while now. The latest release version can be found on the master branch, but the development branch contains new testing features, but may be unstable.</p>
@@ -100,7 +100,7 @@
 				<div class="card border-success mb-3" style="max-width: 30rem; position: relative;">
 					<div class="card-header">
 						<a href="https://pepy.tech/project/randfacts"><img style="float: left" src="https://pepy.tech/badge/randfacts" alt="Download Amount" height="18"></a>
-						<a href="https://github.com/TabulateJarl8/randfacts/issues"><img src="https://img.shields.io/github/issues/TabulateJarl8/randfacts.svg" style="float:right" alt="Issues" height="18"></a>
+						<span class="badge badge-warning" style="float:right">Idle</span>
 					</div>
 					<div class="card-body" style="padding-bottom: 3rem;">
 						<h4 class="card-title">Randfacts</h4>
@@ -112,7 +112,7 @@
 				<div class="card border-success mb-3" style="max-width: 30rem; position: relative;">
 					<div class="card-header">
 						<a href="https://pepy.tech/project/update-check"><img style="float: left" src="https://pepy.tech/badge/update-check" alt="Download Amount" height="18"></a>
-						<a href="https://github.com/TabulateJarl8/update_check/issues"><img src="https://img.shields.io/github/issues/TabulateJarl8/update_check.svg" style="float:right;" alt="Issues" height="18"></a>
+						<span class="badge badge-warning" style="float:right">Idle</span>
 					</div>
 					<div class="card-body" style="padding-bottom: 3rem;">
 						<h4 class="card-title">Update Check</h4>
@@ -124,7 +124,7 @@
 			</div>
 			<div class="row d-flex justify-content-between">
 				<div class="card border-success mb-3" style="max-width: 30rem; position: relative;">
-					<div class="card-header"><span class="badge badge-success" style="float:right">Stable</span></div>
+					<div class="card-header"><span class="badge badge-success" style="float:right">Active</span></div>
 					<div class="card-body" style="padding-bottom: 3rem;">
 						<h4 class="card-title">Formulas</h4>
 						<p class="card-text">The formulas plugin for <a href="https://github.com/TurboWafflz/ImaginaryInfinity-Calculator">ImaginaryInfinity Calculator</a> is a plugin that adds the functionality to solve lots of formulas. Some include but are not limited to, volume of shapes, quadratic formula, and energy equations.</p><br>
@@ -154,7 +154,7 @@
 			$("#navbar").load("navbar.html");
 		});
 
-		if(window.mobileCheck) {
+		if(window.mobileCheck()) {
 			document.getElementById("social-panel").innerHTML = "";
 		}
 
@@ -164,7 +164,7 @@
 		var tempToken = getUrlParam("tempToken", "empty");
 		var redirect = getUrlParam("redirect", "empty");
 		if(name != "empty"){
-			document.getElementById("hello").innerHTML = name;
+			document.getElementById("hello").innerHTML = " " + name;
 			setCookie("username", name, 30);
 			if(token != "empty"){
 				setCookie("token", token, 30);
@@ -175,9 +175,9 @@
 				window.location.href = redirect;
 			}
 		}else if(checkCookie("username") == true){
-			document.getElementById("hello").innerHTML = getCookie("username");
+			document.getElementById("hello").innerHTML = " " + getCookie("username");
 		}else if(tempName != "empty"){
-			document.getElementById("hello").innerHTML = tempName;
+			document.getElementById("hello").innerHTML = " " + tempName;
 			sessionStorage.setItem("username", tempName);
 			if(tempToken != "empty"){
 				sessionStorage.setItem("token", tempToken);
@@ -188,7 +188,7 @@
 				window.location.href = redirect;
 			}
 		}else if(sessionStorage.getItem("username") != null){
-			document.getElementById("hello").innerHTML = sessionStorage.getItem("username");
+			document.getElementById("hello").innerHTML = " " + sessionStorage.getItem("username");
 		}
 		</script>
 	</div>
