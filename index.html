@@ -72,6 +72,18 @@
 	.social-btn:hover{
 		filter: brightness(85%);
 	}
+	@media screen and (min-width: 65em) {
+		.grid-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+			max-width: 90rem;
+			margin: 0 auto 30px;
+		}
+		.card{
+			margin-left: 2.9629629629629632%;
+			margin-right: 2.9629629629629632%;
+		}
+	}
 	span > code.hljs{display:inline;}
 
 	</style>
@@ -88,7 +100,7 @@
 			<hr class="my-4">
 			<h3>Featured Projects:</h3>
 			<br><br>
-			<div class="row d-flex justify-content-between">
+			<div class="grid-container">
 				<div class="card border-success mb-3" style="max-width: 30rem; position: relative;">
 					<div class="card-header"><span class="badge badge-success" style="float:right">Active</span></div>
 					<div class="card-body" style="padding-bottom: 3rem;">
@@ -122,13 +134,23 @@
 					</div>
 				</div>
 			</div>
-			<div class="row d-flex justify-content-between">
+			<div class="grid-container">
 				<div class="card border-success mb-3" style="max-width: 30rem; position: relative;">
 					<div class="card-header"><span class="badge badge-success" style="float:right">Active</span></div>
 					<div class="card-body" style="padding-bottom: 3rem;">
 						<h4 class="card-title">Formulas</h4>
 						<p class="card-text">The formulas plugin for <a href="https://github.com/TurboWafflz/ImaginaryInfinity-Calculator">ImaginaryInfinity Calculator</a> is a plugin that adds the functionality to solve lots of formulas. Some include but are not limited to, volume of shapes, quadratic formula, and energy equations.</p><br>
 						<p><b>You can install this plugin in ImaginaryInfinity Calculator by typing <span><code>pm.install("formulas")</code></span> or through the GUI store, accessed with the <span><code>store.store()</code></span> command.</b></p>
+						<a class="btn btn-success" href="http://github.com/TabulateJarl8/calcplugins" style="position: absolute; bottom: 1.25rem;" role="button">Source Code</a>
+
+					</div>
+				</div>
+				<div class="card border-success mb-3" style="max-width: 30rem; position: relative;">
+					<div class="card-header"><span class="badge badge-success" style="float:right">Active</span></div>
+					<div class="card-body" style="padding-bottom: 3rem;">
+						<h4 class="card-title">ptable</h4>
+						<p class="card-text">The ptable plugin is a plugin for <a href="https://github.com/TurboWafflz/ImaginaryInfinity-Calculator">ImaginaryInfinity Calculator</a>. This plugin just provides data from the periodic table. Right now, every element has a mass, a number, and a melting point value. More values may be added in the future.</p><br>
+						<p><b>You can install this plugin in ImaginaryInfinity Calculator by typing <span><code>pm.install("ptable")</code></span> or through the GUI store, accessed with the <span><code>store.store()</code></span> command.</b></p>
 						<a class="btn btn-success" href="http://github.com/TabulateJarl8/calcplugins" style="position: absolute; bottom: 1.25rem;" role="button">Source Code</a>
 
 					</div>
