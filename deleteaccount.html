@@ -20,12 +20,29 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
   <style>
-  input[type="text"]::placeholder,
-  input[type="email"]::placeholder,
-  input[type="password"]::placeholder {
-    text-align: center;
-    color: black;
-  }
+	input[type="text"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="password"]::placeholder {
+		color: white;
+	}
+
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	input[type="password"]:focus {
+		background: #40444b;
+		color: white;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"] {
+		background: #222222;
+		color: white;
+	}
+
+	.fa-eye, .fa-eye-slash{
+		color: white;
+	}
   </style>
   <script src="bootstrap.min.js"></script>
   <script src="scripts.js"></script>
@@ -79,7 +96,8 @@
       </div>
     </div>
     <div class="jumbotron">
-      <div id="jumbotron" class="text-center">
+      <div id="jumbotron" class="text-center" style="display: flex; justify-content: space-around;">
+				<div class="card w-50">
         <form action="https://tabulateflask.azurewebsites.net/deleteaccount" method="post" enctype="multipart/form-data" autocomplete="false" id="form">
 
           <div class="form-group">
@@ -107,6 +125,7 @@
           </p>
           <button type="submit" id="hidden-submit" style="display:none"></button>
         </form>
+			</div>
       </div>
     </div>
 
