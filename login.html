@@ -23,8 +23,25 @@
 	input[type="text"]::placeholder,
 	input[type="email"]::placeholder,
 	input[type="password"]::placeholder {
-		text-align: center;
-		color: black;
+		color: white;
+	}
+
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	input[type="password"]:focus {
+		background: #40444b;
+		color: white;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"] {
+		background: #222222;
+		color: white;
+	}
+
+	.fa-eye, .fa-eye-slash{
+		color: white;
 	}
 	</style>
 	<script src="bootstrap.min.js"></script>
@@ -52,7 +69,8 @@
 		</div>
 
 		<div class="jumbotron">
-			<div id="jumbotron" class="text-center">
+			<div id="jumbotron" class="text-center" style="display: flex; justify-content: space-around;">
+				<div class="card w-50" style="border: none">
 				<form action="https://tabulateflask.azurewebsites.net/validation" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label>Username</label>
@@ -79,6 +97,7 @@
 						<button type="submit" class="btn btn-primary btn-lg"  id="submitbtn">Login</button>
 					</p>
 				</form>
+			</div>
 			</div>
 			<a id="no-account" class="text-info" href="/register">Don't have an account? Register Here</a>
 			<br>
