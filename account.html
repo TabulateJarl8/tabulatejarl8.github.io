@@ -23,6 +23,26 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167553203-1"></script>
 	<style>
+	input[type="text"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="password"]::placeholder {
+		background: #40444b;
+		color: white;
+	}
+
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	input[type="password"]:focus {
+		background: #40444b;
+		color: white;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"] {
+		background: #222222;
+		color: white;
+	}
 	#profileImage{
 		cursor: pointer;
 		display: block;
@@ -111,6 +131,7 @@
 				</div>
 			</form>
 			<hr class="my-4">
+			<button class="btn btn-outline-info" onclick="window.location.href='/passwordreset'">Reset Password</button>
 			<button class="btn btn-outline-danger" onclick="window.location.href='/deleteaccount'">Delete Account</button>
 		</div>
 	</div>
@@ -202,13 +223,13 @@ $.extend({
 
 			if(!checkLogin()){
 				signOut(false);
-				window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+				// window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
 			}else{
 				if(checkCookie("username") && checkCookie("token")){
 					var info = $.requestInfo(getCookie("token"), getCookie("username"));
 					if(info == "false"){
 						signOut(false);
-						window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+						// window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
 					}else{
 						info = JSON.parse(info);
 						setCookie("token", info["token"], 30);
@@ -217,13 +238,13 @@ $.extend({
 					var info = $.requestInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"));
 					if(info == "false"){
 						signOut(false);
-						window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+						// window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
 					}else{
 						info = JSON.parse(info);
 						sessionStorage.setItem("token", info["token"]);
 					}
 				}else{
-					window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
+					// window.location.href = "https://tabulate.tech/login?redirect=" + window.location.href;
 				}
 
 				document.getElementById("emailInput").placeholder = info["email"];
@@ -245,7 +266,7 @@ $.extend({
 							var update = $.updateInfo(getCookie("token"), getCookie("username"), "email", document.getElementById("emailInput").value);
 							if(update == "false"){
 								signOut(false);
-								window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+								// window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
 							}else{
 								setCookie("token", update, 30);
 							}
@@ -253,13 +274,13 @@ $.extend({
 							var update = $.updateInfo(sessionStorage.getItem("token"), sessionStorage.getItem("username"), "email", document.getElementById("emailInput").value);
 							if(update == "false"){
 								signOut(false);
-								window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+								// window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
 							}else{
 								sessionStorage.setItem("token", update);
 							}
 						}else{
 							signOut(false);
-							window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+							// window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
 						}
 
 
@@ -289,7 +310,7 @@ $.extend({
 						var update = $.updatePic(formdata);
 						if(update == "false"){
 							signOut(false);
-							window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+							// window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
 						}else{
 							setCookie("token", update, 30);
 							window.location.reload();
@@ -303,14 +324,14 @@ $.extend({
 						var update = $.updatePic(formdata);
 						if(update == "false"){
 							signOut(false);
-							window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+							// window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
 						}else{
 							sessionStorage.setItem("token", update);
 							window.location.reload();
 						}
 					}else{
 						signOut(false);
-						window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
+						// window.location.href = "https://tabulate.tech/login?reidrect=" + window.location.href;
 					}
 				}
 			});
