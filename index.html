@@ -189,10 +189,6 @@
 			$("#navbar").load("navbar.html");
 		});
 
-		if(window.mobileCheck()) {
-			document.getElementById("social-panel").innerHTML = "";
-		}
-
 		var name = getUrlParam("name", "empty");
 		var tempName = getUrlParam("tempName", "empty");
 		var token = getUrlParam("token", "empty");
