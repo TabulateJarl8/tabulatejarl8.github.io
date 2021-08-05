@@ -20,29 +20,30 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 	<style>
-	input[type="text"]::placeholder,
-	input[type="email"]::placeholder,
-	input[type="password"]::placeholder {
-		color: white;
-	}
+		input[type="text"]::placeholder,
+		input[type="email"]::placeholder,
+		input[type="password"]::placeholder {
+			color: white;
+		}
 
-	input[type="text"]:focus,
-	input[type="email"]:focus,
-	input[type="password"]:focus {
-		background: #40444b;
-		color: white;
-	}
+		input[type="text"]:focus,
+		input[type="email"]:focus,
+		input[type="password"]:focus {
+			background: #40444b;
+			color: white;
+		}
 
-	input[type="text"],
-	input[type="email"],
-	input[type="password"] {
-		background: #222222;
-		color: white;
-	}
+		input[type="text"],
+		input[type="email"],
+		input[type="password"] {
+			background: #222222;
+			color: white;
+		}
 
-	.fa-eye, .fa-eye-slash{
-		color: white;
-	}
+		.fa-eye,
+		.fa-eye-slash {
+			color: white;
+		}
 	</style>
 	<script src="bootstrap.min.js"></script>
 	<script src="scripts.js"></script>
@@ -50,17 +51,23 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167553203-1"></script>
 	<script>
-	window.dataLayer = window.dataLayer || [];
+		window.dataLayer = window.dataLayer || [];
 
-	function gtag() { dataLayer.push(arguments); }
-	gtag('js', new Date());
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
 
-	gtag('config', 'UA-167553203-1');
+		gtag('config', 'UA-167553203-1');
 	</script>
 </head>
 
 <body>
-	<div id="navbar"><nav class="navbar navbar-dark bg-primary"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No JavaScript?</a><p class="text-warning">Please enable javascript in your browser or some critical features may not function.</p></nav></div>
+	<div id="navbar">
+		<nav class="navbar navbar-dark bg-primary"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No JavaScript?</a>
+			<p class="text-warning">Please enable javascript in your browser or some critical features may not function.</p>
+		</nav>
+	</div>
 	<div id="page-container">
 		<div class="page-header">
 			<div class="text-center">
@@ -71,33 +78,33 @@
 		<div class="jumbotron">
 			<div id="jumbotron" class="text-center" style="display: flex; justify-content: space-around;">
 				<div class="card w-50" style="border: none">
-				<form action="https://tabulateflask.azurewebsites.net/validation" method="post" enctype="multipart/form-data">
-					<div class="form-group">
-						<label>Username</label>
-						<input type="text" maxlength="255" placeholder="Username" name="user" class="form-control" required />
-					</div>
-
-					<div class="form-group">
-						<label>Password</label>
-						<input type="password" maxlength="255" placeholder="Password" name="password" class="form-control" data-toggle="password" required />
-					</div>
-					<p id="warnings" class="text-danger"></p>
-					<hr class="my-4">
-
-					<div class="form-group">
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" style="cursor:pointer; position:relative; z-index: 2" class="custom-control-input" id="customCheck1" name="remember" value="yes">
-							<label class="custom-control-label" for="customCheck1">Remember Me</label>
+					<form action="https://tabulateflask.azurewebsites.net/validation" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label>Username</label>
+							<input type="text" maxlength="255" placeholder="Username" name="user" class="form-control" required />
 						</div>
-					</div>
-					<input type="hidden" value="no" id="redirect" name="redirect">
-					<br>
 
-					<p class="lead">
-						<button type="submit" class="btn btn-primary btn-lg"  id="submitbtn">Login</button>
-					</p>
-				</form>
-			</div>
+						<div class="form-group">
+							<label>Password</label>
+							<input type="password" maxlength="255" placeholder="Password" name="password" class="form-control" data-toggle="password" required />
+						</div>
+						<p id="warnings" class="text-danger"></p>
+						<hr class="my-4">
+
+						<div class="form-group">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" style="cursor:pointer; position:relative; z-index: 2" class="custom-control-input" id="customCheck1" name="remember" value="yes">
+								<label class="custom-control-label" for="customCheck1">Remember Me</label>
+							</div>
+						</div>
+						<input type="hidden" value="no" id="redirect" name="redirect">
+						<br>
+
+						<p class="lead">
+							<button type="submit" class="btn btn-primary btn-lg" id="submitbtn">Login</button>
+						</p>
+					</form>
+				</div>
 			</div>
 			<a id="no-account" class="text-info" href="/register">Don't have an account? Register Here</a>
 			<br>
@@ -106,31 +113,33 @@
 
 		<!-- LOAD NAVBAR-->
 		<script>
-		$(function() {
-			$("#navbar").load("./navbar.html");
-		});
+			$(function() {
+				$("#navbar").load("./navbar.html");
+			});
 
-		$("form").submit(function(){
-		  $("#submitbtn").addClass("disabled");
-		  $("#submitbtn").html("Loading...");
-		});
+			$("form").submit(function() {
+				$("#submitbtn").addClass("disabled");
+				$("#submitbtn").html("Loading...");
+			});
 
-		var x = getUrlParam("success", "false");
-		var redirect = getUrlParam("redirect", "empty");
-		document.getElementById("redirect").value = redirect;
-		if(x == "user"){
-			document.getElementById("warnings").innerHTML = "Invalid Username/Password";
-		}
+			var x = getUrlParam("success", "false");
+			var redirect = getUrlParam("redirect", "empty");
+			document.getElementById("redirect").value = redirect;
+			if (x == "user") {
+				document.getElementById("warnings").innerHTML = "Invalid Username/Password";
+			}
 
-		if(getCookie("username") != null){
-			document.getElementById("jumbotron").innerHTML = "Hi, " + getCookie("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(\"https://tabulate.tech\")' class='btn-lg btn-primary'>Sign Out</button>";
-			document.getElementById("no-account").innerHTML = "";
-			document.getElementById("forgot-password").innerHTML = "";
-		}else if(sessionStorage.getItem("username") != null){
-			document.getElementById("jumbotron").innerHTML = "Hi, " + sessionStorage.getItem("username") + ". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(\"https://tabulate.tech\")' class='btn-lg btn-primary'>Sign Out</button>";
-			document.getElementById("no-account").innerHTML = "";
-			document.getElementById("forgot-password").innerHTML = "";
-		}
+			if (getCookie("username") != null) {
+				document.getElementById("jumbotron").innerHTML = "Hi, " + getCookie("username") +
+					". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(\"https://tabulate.tech\")' class='btn-lg btn-primary'>Sign Out</button>";
+				document.getElementById("no-account").innerHTML = "";
+				document.getElementById("forgot-password").innerHTML = "";
+			} else if (sessionStorage.getItem("username") != null) {
+				document.getElementById("jumbotron").innerHTML = "Hi, " + sessionStorage.getItem("username") +
+					". There's nothing here right now. I guess you can sign out if you want.<br><br><button type='button' onclick='signOut(\"https://tabulate.tech\")' class='btn-lg btn-primary'>Sign Out</button>";
+				document.getElementById("no-account").innerHTML = "";
+				document.getElementById("forgot-password").innerHTML = "";
+			}
 		</script>
 	</div>
 </body>

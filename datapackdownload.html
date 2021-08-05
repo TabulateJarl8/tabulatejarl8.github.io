@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,17 +27,24 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167553203-1"></script>
 	<script>
-	window.dataLayer = window.dataLayer || [];
+		window.dataLayer = window.dataLayer || [];
 
-	function gtag() { dataLayer.push(arguments); }
-	gtag('js', new Date());
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
 
-	gtag('config', 'UA-167553203-1');
+		gtag('config', 'UA-167553203-1');
 	</script>
 </head>
+
 <body>
 
-	<div id="navbar"><nav class="navbar navbar-dark bg-primary"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No JavaScript?</a><p class="text-warning">Please enable javascript in your browser or some critical features may not function.</p></nav></div>
+	<div id="navbar">
+		<nav class="navbar navbar-dark bg-primary"><a type="button" class="btn btn-danger btn-lg" href="/nojs">No JavaScript?</a>
+			<p class="text-warning">Please enable javascript in your browser or some critical features may not function.</p>
+		</nav>
+	</div>
 	<div id="page-container">
 		<div class="page-header">
 			<h1 id="header">404 Error</h1>
@@ -55,32 +63,32 @@
 		<!-- LOAD NAVBAR-->
 
 		<script>
-		$(function() {
-			$("#navbar").load("/navbar.html");
-		});
-
-		function toTitleCase(str) {
-			return str.replace(/\w\S*/g, function(txt){
-				return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+			$(function() {
+				$("#navbar").load("/navbar.html");
 			});
-		}
 
-		var datapack = getUrlParam("datapack");
-		if(datapack != undefined){
-			datapack = datapack.slice(0, -4);
-			datapack = datapack.replace(/_/g," ");
-			datapack = toTitleCase(datapack);
-			document.getElementById("title").innerHTML = "Tabulate | Download " + datapack;
-			document.getElementById("header").innerHTML = datapack;
-			document.getElementById("jumbo-header").innerHTML = "Thanks for Downloading " + datapack + "!";
-			document.getElementById("downloadFrame").innerHTML = "<iframe src='https://tabulate.tech/datapack/" + getUrlParam("datapack", "empty") + "' frameborder=0 width='1px' height='1px'></iframe>"
-			document.getElementById("downloadStart").innerHTML = "If your download does not start automatically, download it <a href='/datapack/" + getUrlParam("datapack") + "'>here.</a>";
-		}else{
-			document.getElementById("title").innerHTML = "Tabulate | Unknown Datapack";
-			document.getElementById("downloadStart").innerHTML = "No URL Parameter Found";
-		}
+			function toTitleCase(str) {
+				return str.replace(/\w\S*/g, function(txt) {
+					return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+				});
+			}
 
+			var datapack = getUrlParam("datapack");
+			if (datapack != undefined) {
+				datapack = datapack.slice(0, -4);
+				datapack = datapack.replace(/_/g, " ");
+				datapack = toTitleCase(datapack);
+				document.getElementById("title").innerHTML = "Tabulate | Download " + datapack;
+				document.getElementById("header").innerHTML = datapack;
+				document.getElementById("jumbo-header").innerHTML = "Thanks for Downloading " + datapack + "!";
+				document.getElementById("downloadFrame").innerHTML = "<iframe src='https://tabulate.tech/datapack/" + getUrlParam("datapack", "empty") + "' frameborder=0 width='1px' height='1px'></iframe>"
+				document.getElementById("downloadStart").innerHTML = "If your download does not start automatically, download it <a href='/datapack/" + getUrlParam("datapack") + "'>here.</a>";
+			} else {
+				document.getElementById("title").innerHTML = "Tabulate | Unknown Datapack";
+				document.getElementById("downloadStart").innerHTML = "No URL Parameter Found";
+			}
 		</script>
 	</div>
 </body>
+
 </html>
