@@ -1,26 +1,39 @@
 {{ define "main" }}
 <div class="container">
-  <div class="card p-2 m-5 border-primary">
-    <div class="card-body">
-      <h1 class="card-title">{{ .Title }}</h1>
-	  <hr class="bg-light">
-      <p class="card-text">Status: {{ .Params.status }}</p>
-      <p class="card-text">{{ .Content }}</p>
-        {{ range .Params.buttons }}
-        <a href="{{ .href }}" class="btn btn-{{ .button_color }} btn-shadow text-mono"{{ if .newtab }} target="_blank"{{ end }}>{{ .text }}</a>
-        {{ end }}
-    </div>
-    <div class="card-footer">
-      <div class="row">
-        {{ with .Params.images }}
-        {{ range $index, $image := . }}
-        <div class="col-md-3">
-          <img src="{{ $image }}" alt="{{ index $.Params.alts $index }}" class="img-fluid">
-        </div>
-        {{ end }}
-        {{ end }}
-      </div>
-    </div>
-  </div>
+	<div class="card p-2 m-5 border-primary">
+		<div class="card-body">
+
+			{{ $colorMapping := dict
+			"info" "Beta"
+			"success" "Active"
+			"warning" "Idle"
+			"danger" "Discontinued"
+			}}
+
+			{{ $paramColor := .Params.status }}
+
+			{{ with index $colorMapping $paramColor }}
+			<h1 class="card-title">{{ $.Title }}<span class="badge text-white {{ $paramColor }}-bg-dark float-right">{{ . }}</span></h1>
+			
+			<hr class="bg-{{ $paramColor }}">
+			{{end}}
+			<p class="card-text">{{ .Content }}</p>
+			{{ range .Params.buttons }}
+			<a href="{{ .href }}" class="btn btn-{{ .button_color }} btn-shadow text-mono" {{ if .newtab }}
+				target="_blank" {{ end }}>{{ .text }}</a>
+			{{ end }}
+		</div>
+		<div class="card-footer">
+			<div class="row">
+				{{ with .Params.images }}
+				{{ range $index, $image := . }}
+				<div class="col-md-3">
+					<img src="{{ $image }}" alt="{{ index $.Params.alts $index }}" class="img-fluid">
+				</div>
+				{{ end }}
+				{{ end }}
+			</div>
+		</div>
+	</div>
 </div>
 {{ end }}

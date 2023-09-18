@@ -13,19 +13,18 @@
 				}}
 
 				{{ $paramColor := .Params.status }}
-				
+
 				{{ with index $colorMapping $paramColor }}
-					<span class="badge text-white {{ $paramColor }}-bg-dark float-right"
-				style="filter: brightness(0.8);">{{ . }}</span>
+				<span class="badge text-white {{ $paramColor }}-bg-dark float-right">{{ . }}</span>
 				{{ end }}
-				
+
 			</div>
 			<div class="card-body">
 				<blockquote class="card-blockquote">
 					{{ $summary := index (split .Content "</p>") 0 }}
 					<p>{{ $summary | plainify }}</p>
 
-					
+
 					<a href='
 					{{ if isset .Params "link_override" }}
 					{{ .Params.link_override }}

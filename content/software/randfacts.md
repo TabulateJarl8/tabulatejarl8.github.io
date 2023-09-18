@@ -7,13 +7,8 @@ featured: true
 status: "success"
 images:
   - "/img/showcase/squiid-1.png"
-  - "/img/showcase/squiid-2.png"
-  - "/img/showcase/squiid-3.png"
-  - "/img/showcase/squiid-4.png"
 alts:
   - First Image
-  - Second Image
-  - Third Image
 buttons:
   - get:
     text: PyPI Page
