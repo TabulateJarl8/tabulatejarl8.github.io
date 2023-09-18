@@ -1,14 +1,16 @@
 ---
 title: randfacts
-weight: 1
+weight: 10
 draft: false
 nav: false
 featured: true
 status: "success"
 images:
-  - "/img/showcase/squiid-1.png"
+  - "/img/showcase/randfacts/logo.png"
+  - "/img/showcase/randfacts/usage.png"
 alts:
-  - First Image
+  - Randfacts logo
+  - Randfacts usage
 buttons:
   - get:
     text: PyPI Page

@@ -24,13 +24,11 @@
 			{{ end }}
 		</div>
 		<div class="card-footer">
-			<div class="row">
-				{{ with .Params.images }}
-				{{ range $index, $image := . }}
-				<div class="col-md-3">
+			<div class="row g-3 justify-content-center">
+				{{ range $index, $image := .Params.images }}
+				<div class="col-md-12 col-lg-6 align-self-center">
 					<img src="{{ $image }}" alt="{{ index $.Params.alts $index }}" class="img-fluid">
 				</div>
-				{{ end }}
 				{{ end }}
 			</div>
 		</div>

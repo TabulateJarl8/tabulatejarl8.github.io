@@ -2,7 +2,7 @@
 	{{ $count := 0 }}
 	{{ range where .Site.RegularPages.ByWeight.Reverse "Params.featured" "==" true }}
 	<div class="col-md-4">
-		<div class="card border-primary">
+		<div class="card border-primary h-100">
 			<div class="card-header">
 				{{ .Title }}
 				{{ $colorMapping := dict
@@ -23,8 +23,7 @@
 				<blockquote class="card-blockquote">
 					{{ $summary := index (split .Content "</p>") 0 }}
 					<p>{{ $summary | plainify }}</p>
-
-
+					<div class="mt-auto">
 					<a href='
 					{{ if isset .Params "link_override" }}
 					{{ .Params.link_override }}
@@ -32,6 +31,7 @@
 					{{ .RelPermalink }}
 					{{ end }}
 					' class="btn btn-dark btn-shadow text-mono float-right">Learn More</a>
+				</div>
 				</blockquote>
 			</div>
 		</div>
