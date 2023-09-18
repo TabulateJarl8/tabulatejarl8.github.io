@@ -1,0 +1,46 @@
+<div class="row pb-4">
+	{{ $count := 0 }}
+	{{ range where .Site.RegularPages.ByWeight.Reverse "Params.featured" "==" true }}
+	<div class="col-md-4">
+		<div class="card border-primary">
+			<div class="card-header">
+				{{ .Title }}
+				{{ $colorMapping := dict
+				"info" "Beta"
+				"success" "Active"
+				"warning" "Idle"
+				"danger" "Discontinued"
+				}}
+
+				{{ $paramColor := .Params.status }}
+				
+				{{ with index $colorMapping $paramColor }}
+					<span class="badge text-white {{ $paramColor }}-bg-dark float-right"
+				style="filter: brightness(0.8);">{{ . }}</span>
+				{{ end }}
+				
+			</div>
+			<div class="card-body">
+				<blockquote class="card-blockquote">
+					{{ $summary := index (split .Content "</p>") 0 }}
+					<p>{{ $summary | plainify }}</p>
+
+					
+					<a href='
+					{{ if isset .Params "link_override" }}
+					{{ .Params.link_override }}
+					{{ else }}
+					{{ .RelPermalink }}
+					{{ end }}
+					' class="btn btn-dark btn-shadow text-mono float-right">Learn More</a>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+	{{ $count = add $count 1 }}
+	{{ if eq (mod $count 3) 0 }}
+</div>
+<div class="row pb-4">
+	{{ end }}
+	{{ end }}
+</div>

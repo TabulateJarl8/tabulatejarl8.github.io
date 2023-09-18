@@ -1,0 +1,28 @@
+<head>
+	<meta charset="UTF-8" />
+	{{ if isset .ctx.Params "link_override" }}
+	<meta http-equiv="Refresh" content="0; url='{{ .ctx.Params.link_override }}'" />
+	{{ end }}
+	<link rel="icon" type="image/svg+xml" href="/img/carpetbagger_profile.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- JavaScript -->
+	{{ $bootstrapjs := resources.Get "js/bootstrap.min.js" }}
+	{{ $jquery := resources.Get "js/jquery-3.7.0.min.js" }}
+	{{ $js := slice $jquery $bootstrapjs | resources.Concat "js/bundle.js" | resources.Minify }}
+
+	<script src="{{ $js.RelPermalink }}"></script>
+
+	<!-- CSS -->
+	{{ $bootstrap := resources.Get "css/bootstrap4.css" }}
+	{{ $extra_styles := resources.Get "css/styles.css" }}
+	{{ $css := slice $bootstrap $extra_styles | resources.Concat "css/bundle.css" | resources.Minify }}
+	<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+	<link rel="stylesheet" href="/fontawesome/css/all.min.css">
+
+	{{ $title := site.Title }}
+	{{ if not .IsHome }}
+	{{ $title = printf "%s | %s" .ctx.Title site.Title }}
+	{{ end }}
+	<title>{{ $title }}</title>
+</head>
