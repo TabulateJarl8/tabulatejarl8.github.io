@@ -1,41 +1,26 @@
-<!DOCTYPE html>
-<html lang="en" class="h-100">
-
-{{ partial "head" (dict "ctx" $ "id" . )}}
-
-<body class="bg-dark">
-
-	{{ partial "navbar.html" . }}
-
-	<!-- Software Showcase Section -->
-	<section class="my-5">
-		<div class="container">
-			<div class="card bg-black text-bg-light mb-4 p-4">
-				<div class="card-body">
-					<h1 class="card-title">{{ .Title }}</h1>
-					<p class="card-text">{{ .Content }}</p>
-				</div>
-				<div class="row">
-					<div class="col-6">
-					{{ range $index, $button := .Params.buttons }}
-					<a class="{{ $button.class }} mb-2" href="{{ $button.href }}" role="button"{{ if $button.newtab }} target="_blank"{{ end }}>{{ $button.text }}</a>
-					{{ end }}
-					</div>
-				</div>
-				
-				<hr>
-				<div class="row g-3 justify-content-center">
-					{{ range $index, $image := .Params.images }}
-					<div class="col-md-12 col-lg-6">
-						<img src="{{ $image }}" alt="{{ index $.Params.alts $index }}" class="img-fluid">
-					</div>
-					{{ end }}
-				</div>
-
-			</div>
-		</div>
-	</section>
-	{{ partial "footer.html" }}
-</body>
-
-</html>
+{{ define "main" }}
+<div class="container">
+  <div class="card p-2 m-5 border-primary">
+    <div class="card-body">
+      <h1 class="card-title">{{ .Title }}</h1>
+	  <hr class="bg-light">
+      <p class="card-text">Status: {{ .Params.status }}</p>
+      <p class="card-text">{{ .Content }}</p>
+        {{ range .Params.buttons }}
+        <a href="{{ .href }}" class="btn btn-{{ .button_color }} btn-shadow text-mono"{{ if .newtab }} target="_blank"{{ end }}>{{ .text }}</a>
+        {{ end }}
+    </div>
+    <div class="card-footer">
+      <div class="row">
+        {{ with .Params.images }}
+        {{ range $index, $image := . }}
+        <div class="col-md-3">
+          <img src="{{ $image }}" alt="{{ index $.Params.alts $index }}" class="img-fluid">
+        </div>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -17,12 +17,12 @@ alts:
 buttons:
   - get:
     text: PyPI Page
-    class: btn btn-secondary text-white
+    button_color: secondary
     href: http://pypi.org/project/randfacts
     newtab: false
   - source:
     text: Source Code
-    class: btn btn-primary text-white
+    button_color: primary
     href: https://github.com/TabulateJarl8/randfacts
     newtab: false
 layout: "software_page"
