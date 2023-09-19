@@ -15,7 +15,7 @@
 				{{ $paramColor := .Params.status }}
 
 				{{ with index $colorMapping $paramColor }}
-				<span class="badge text-white {{ $paramColor }}-bg-dark float-right">{{ . }}</span>
+				<span class="badge text-white bg-{{ $paramColor }}-dark float-right">{{ . }}</span>
 				{{ end }}
 
 			</div>

@@ -1,29 +1,25 @@
 {{ define "main" }}
-  <div class="container">
-    <h1>My Software</h1>
-    <div class="row">
-      {{ range .Site.RegularPages.ByWeight }}
-        {{ with .Params }}
-          {{ if eq .layout "software_page" }}
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img src="{{ index .images 0 }}" class="card-img-top" alt="{{ index .alts 0 }}">
-                <div class="card-body">
-                  <h5 class="card-title">{{ .title }}</h5>
-                  <p class="card-text">{{ .description }}</p>
-                </div>
-                <div class="card-footer">
-                  {{ range .buttons }}
-                    <a href="{{ .href }}" class="btn btn-{{ .button_color }}" {{ if .newtab }}target="_blank" rel="noopener noreferrer"{{ end }}>
-                      {{ .text }}
-                    </a>
-                  {{ end }}
-                </div>
-              </div>
-            </div>
-          {{ end }}
-        {{ end }}
-      {{ end }}
-    </div>
-  </div>
+<div class="container mt-5">
+	<h1>My Software</h1>
+	<div class="row">
+		{{ range .Site.RegularPages.ByWeight }}
+		{{ if eq .Params.layout "software_page" }}
+		<div class="col-md-4">
+			<div class="card mb-4">
+				<img src="{{ index .Params.images 0 }}" class="card-img-top" alt="{{ index .Params.alts 0 }}">
+				<div class="card-body">
+					<h5 class="card-title">{{ .Params.title }}</h5>
+					<p class="card-text">{{ .Params.description }}</p>
+				</div>
+				<div class="card-footer border-{{.Params.status}}">
+					<a href="{{ .RelPermalink }}" class="btn btn-primary btn-shadow text-mono float-right">
+						View Project
+					</a>
+				</div>
+			</div>
+		</div>
+		{{ end }}
+		{{ end }}
+	</div>
+</div>
 {{ end }}

@@ -104,26 +104,26 @@ img.kofiimg {
     font-display: swap;
 }
 
-.info-bg-dark {
+.bg-info-dark {
 	background-color: #236fd8 !important;
 }
 
-.success-bg-dark {
+.bg-success-dark {
 	background-color: #14965b !important;
 }
 
-.danger-bg-dark {
+.bg-danger-dark {
 	background-color: #c22e46 !important;
 }
 
-.warning-bg-dark {
+.bg-warning-dark {
 	background-color: #c25b10 !important;
 }
 
-.secondary-bg-dark {
+.bg-secondary-dark {
 	background-color: #1180ad !important;
 }
 
-.primary-bg-dark {
+.bg-primary-dark {
 	background-color: #5a3db2 !important;
 }
