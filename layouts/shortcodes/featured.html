@@ -1,6 +1,6 @@
 <div class="row pb-4">
 	{{ $count := 0 }}
-	{{ range where .Site.RegularPages.ByWeight.Reverse "Params.featured" "==" true }}
+	{{ range where .Site.RegularPages.ByWeight "Params.featured" "==" true }}
 	<div class="col-md-4">
 		<div class="card border-primary h-100">
 			<div class="card-header">

@@ -1,7 +1,7 @@
 ---
 title: "Squiid"
 date: 2023-09-18T00:05:22-04:00
-weight: 0
+weight: 1
 draft: false
 nav: false
 featured: true
