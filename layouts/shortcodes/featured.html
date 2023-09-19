@@ -23,16 +23,17 @@
 				<blockquote class="card-blockquote">
 					{{ $summary := index (split .Content "</p>") 0 }}
 					<p>{{ $summary | plainify }}</p>
-					<div class="mt-auto">
-					<a href='
-					{{ if isset .Params "link_override" }}
-					{{ .Params.link_override }}
-					{{ else }}
-					{{ .RelPermalink }}
-					{{ end }}
-					' class="btn btn-dark btn-shadow text-mono float-right">Learn More</a>
-				</div>
+
 				</blockquote>
+			</div>
+			<div class="card-footer bg-dark border-0">
+				<a href='
+			{{ if isset .Params "link_override" }}
+			{{ .Params.link_override }}
+			{{ else }}
+			{{ .RelPermalink }}
+			{{ end }}
+			' class="btn btn-dark btn-shadow text-mono float-right">Learn More</a>
 			</div>
 		</div>
 	</div>
