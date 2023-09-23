@@ -1,0 +1,80 @@
+{{ define "main" }}
+<div class="container mt-5">
+
+	<!-- Basic Info and Profile Image (Right-aligned) -->
+	<div class="card p-4">
+		<div class="row">
+			<div class="col-md-4">
+				<img src="/img/portrait_photo.jpg" alt="Connor Sample" class="img-fluid rounded-circle">
+			</div>
+			<div class="col-md-8">
+				<div class="card-body">
+					<h1 class="card-title">Connor Sample</h1>
+					<h6 class="card-subtitle mb-2 text-muted">Software Engineer</h6>
+					<p class="card-text">Email: your@email.com</p>
+					<p class="card-text">Location: Virginia, United States</p>
+					<p class="card-text">Website: <a href="https://tabulate.tech"
+							target="_blank">https://tabulate.tech</a></p>
+					<p class="card-text">GitHub: <a href="https://github.com/TabulateJarl8"
+							target="_blank">https://github.com/TabulateJarl8</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Resume Section -->
+	<div class="row mt-4">
+		<div class="col-md-6">
+			<div class="card mb-4">
+				<div class="card-body">
+					<h3 class="card-title">🎓 Education</h3>
+					<p><strong>James Madison University</strong>
+						<br>Bachelor's in Computer Science
+						<br>Minor in General Music
+					</p>
+					<p>Expected to Graduate: May 2027</p>
+				</div>
+			</div>
+
+			<div class="card mb-4">
+				<div class="card-body">
+					<h3 class="card-title">💻 Programming Languages</h3>
+					{{/*  <ul>
+						<li>Programming Languages: Rust, Python, JavaScript, Bash, Java</li>
+						<li>Web Development: HTML, CSS, JavaScript</li>
+						<li>Database: SQL, MongoDB</li>
+						<li>Frameworks: React, Django</li>
+					</ul>  */}}
+					<ul>
+						<li><i class="fab fa-java"></i> Java</li>
+						<li><i class="fab fa-python"></i> Python</li>
+						<li><i class="fab fa-js"></i> JavaScript</li>
+						<li><i class="fab fa-html5"></i> HTML</li>
+						<li><i class="fab fa-css3"></i> CSS</li>
+						<!-- Add more languages with icons as needed -->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="card mb-4">
+				<div class="card-body">
+					<h3 class="card-title">💼 Experience</h3>
+					<p><strong>FCPS IT Department</strong>
+						<br>Software Developer
+						<br><span class="text-muted">August 2022 - Mar 2023</span>
+					</p>
+					<ul>
+						<li>Unpaid internship with the Fluvanna County Public Schools IT department.</li>
+						<li>Rewrote the bus pass system used by other schools in the school system.</li>
+						<li>Qt GUI development, SQL database interaction, created a maintainable and well-documented
+							codebase.</li>
+					</ul>
+					<hr class="bg-light">
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+{{ end }}
