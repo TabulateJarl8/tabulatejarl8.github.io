@@ -5,18 +5,19 @@
 	<div class="card p-4">
 		<div class="row">
 			<div class="col-md-4">
-				<img src="/img/portrait_photo.jpg" alt="Connor Sample" class="img-fluid rounded-circle">
+				<img src="{{ .Params.about_me.photo }}" alt="Connor Sample" class="img-fluid rounded-circle">
 			</div>
 			<div class="col-md-8">
 				<div class="card-body">
 					<h1 class="card-title">Connor Sample</h1>
-					<h6 class="card-subtitle mb-2 text-muted">Software Engineer</h6>
-					<p class="card-text">Email: your@email.com</p>
-					<p class="card-text">Location: Virginia, United States</p>
+					<h6 class="card-subtitle mb-2 text-muted">{{ .Params.about_me.job_title }}</h6>
+					<p class="card-text">Location: {{ .Params.about_me.location }}</p>
 					<p class="card-text">Website: <a href="https://tabulate.tech"
 							target="_blank">https://tabulate.tech</a></p>
 					<p class="card-text">GitHub: <a href="https://github.com/TabulateJarl8"
 							target="_blank">https://github.com/TabulateJarl8</a></p>
+					<p class="card-text">GitLab: <a href="https://gitlab.com/TabulateJarl8"
+							target="_blank">https://gitlab.com/TabulateJarl8</a></p>
 				</div>
 			</div>
 		</div>
@@ -27,11 +28,14 @@
 			<div class="card mb-4">
 				<div class="card-body">
 					<h3 class="card-title">🎓 Education</h3>
-					<p><strong>James Madison University</strong>
-						<br>Bachelor's in Computer Science
-						<br>Minor in General Music
+					{{ range .Params.education }}
+					<p><strong>{{.name}}</strong>
+						{{ range .degrees }}
+						<br>{{.}}
+						{{ end }}
 					</p>
-					<p>Expected to Graduate: May 2027</p>
+					<p>{{ .graduation }}</p>
+					{{ end }}
 				</div>
 			</div>
 
@@ -39,22 +43,13 @@
 				<div class="card-body">
 					<h3 class="card-title">💻 My Technologies</h3>
 					<div class="row text-center">
+						{{ range .Params.tech }}
 						<div class="col-3">
-							<img src="https://img.icons8.com/color/48/000000/python.png" class="card-icon" alt="Python Icon">
-							<p class="card-text">Python</p>
+							<img src="{{ .image }}"
+								width="48" class="card-icon" alt="{{ .name }} Icon">
+							<p class="card-text">{{ .name }}</p>
 						</div>
-						<div class="col-3">
-							<img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" class="card-icon" alt="Java Icon">
-							<p class="card-text">Java</p>
-						</div>
-						<div class="col-3">
-							<img src="https://img.icons8.com/color/48/000000/javascript.png" class="card-icon" alt="JavaScript Icon">
-							<p class="card-text">JavaScript</p>
-						</div>
-						<div class="col-3">
-							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/120px-Rust_programming_language_black_logo.svg.png" width="48" class="card-icon" alt="JavaScript Icon">
-							<p class="card-text">Rust</p>
-						</div>
+						{{ end }}
 					</div>
 				</div>
 			</div>
@@ -64,17 +59,18 @@
 			<div class="card mb-4">
 				<div class="card-body">
 					<h3 class="card-title">💼 Experience</h3>
-					<p><strong>FCPS IT Department</strong>
-						<br>Software Developer
-						<br><span class="text-muted">August 2022 - Mar 2023</span>
+					{{ range .Params.experience }}
+					<p><strong>{{ .employer }}</strong>
+						<br>{{ .job_title }}
+						<br><span class="text-muted">{{ .job_start }} - {{ .job_end }}</span>
 					</p>
 					<ul>
-						<li>Unpaid internship with the Fluvanna County Public Schools IT department.</li>
-						<li>Rewrote the bus pass system used by other schools in the school system.</li>
-						<li>Qt GUI development, SQL database interaction, created a maintainable and well-documented
-							codebase.</li>
+						{{ range .highlights }}
+						<li>{{ . }}</li>
+						{{ end }}
 					</ul>
 					<hr class="bg-light">
+					{{ end }}
 				</div>
 			</div>
 
