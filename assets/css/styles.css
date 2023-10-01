@@ -127,3 +127,7 @@ img.kofiimg {
 .bg-primary-dark {
 	background-color: #5a3db2 !important;
 }
+
+.footer-icon-hover:hover {
+	color: #c4c4c4;
+}
