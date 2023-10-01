@@ -42,5 +42,13 @@ tech:
       image: /img/tech_logos/css3.png
     - name: LaTeX
       image: /img/tech_logos/latex.png
+    - name: Bootstrap
+      image: /img/tech_logos/bootstrap.png
+    - name: Java
+      image: /img/tech_logos/java.png
+    - name: Git
+      image: /img/tech_logos/git.png
+    - name: Qt
+      image: /img/tech_logos/qt.svg
 ---
 
