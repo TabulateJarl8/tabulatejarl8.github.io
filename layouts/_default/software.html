@@ -2,6 +2,7 @@
 <div class="container mt-5">
 	<h1>My Software</h1>
 	<div class="row">
+		{{/*  TODO: sort by state and then weight  */}}
 		{{ range .Site.RegularPages.ByWeight }}
 		{{ if eq .Params.layout "software_page" }}
 		<div class="col-md-4">
