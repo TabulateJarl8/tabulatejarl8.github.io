@@ -42,39 +42,45 @@
 			<div class="card mb-4">
 				<div class="card-body">
 					<h3 class="card-title">💻 My Technologies</h3>
-					<div class="row text-center">
-						{{ range .Params.tech }}
-						<div class="col-3">
-							<img src="{{ .image }}"
-								width="48" class="card-icon" alt="{{ .name }} Icon">
-							<p class="card-text">{{ .name }}</p>
-						</div>
-						{{ end }}
-					</div>
-				</div>
-			</div>
-		</div>
+					{{ $rowCount := 0 }}
 
-		<div class="col-md-6">
-			<div class="card mb-4">
-				<div class="card-body">
-					<h3 class="card-title">💼 Experience</h3>
-					{{ range .Params.experience }}
-					<p><strong>{{ .employer }}</strong>
-						<br>{{ .job_title }}
-						<br><span class="text-muted">{{ .job_start }} - {{ .job_end }}</span>
-					</p>
-					<ul>
-						{{ range .highlights }}
-						<li>{{ . }}</li>
-						{{ end }}
-					</ul>
-					<hr class="bg-light">
+					{{ range .Params.tech }}
+					{{ if eq (mod $rowCount 4) 0 }}
+						{{ if ne $rowCount 0 }}</div>{{ end }}
+						<div class="row text-center pb-3">
 					{{ end }}
-				</div>
-			</div>
 
+					<div class="col-3">
+						<img src="{{ .image }}" width="48" class="card-icon" alt="{{ .name }} Icon">
+						<p class="card-text">{{ .name }}</p>
+					</div>
+					{{ $rowCount = add $rowCount 1 }}
+					{{ end }}
+				{{ if ne $rowCount 0 }}</div>{{ end }}
+			</div>
 		</div>
 	</div>
+
+	<div class="col-md-6">
+		<div class="card mb-4">
+			<div class="card-body">
+				<h3 class="card-title">💼 Experience</h3>
+				{{ range .Params.experience }}
+				<p><strong>{{ .employer }}</strong>
+					<br>{{ .job_title }}
+					<br><span class="text-muted">{{ .job_start }} - {{ .job_end }}</span>
+				</p>
+				<ul>
+					{{ range .highlights }}
+					<li>{{ . }}</li>
+					{{ end }}
+				</ul>
+				<hr class="bg-light">
+				{{ end }}
+			</div>
+		</div>
+
+	</div>
+</div>
 </div>
 {{ end }}

@@ -26,13 +26,21 @@ experience:
              - Rewrote the bus pass system used by other schools in the school system.
              - Qt GUI development, SQL database interaction, created a maintainable and well-documented codebase.
 tech:
-    - name: Python
-      image: https://img.icons8.com/color/48/000000/python.png
-    - name: Java
-      image: https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png
-    - name: JavaScript
-      image: https://img.icons8.com/color/48/000000/javascript.png
     - name: Rust
-      image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/120px-Rust_programming_language_black_logo.svg.png
+      image: /img/tech_logos/rust.png
+    - name: Python
+      image: /img/tech_logos/python.png
+    - name: JavaScript
+      image: /img/tech_logos/javascript.png
+    - name: Linux
+      image: /img/tech_logos/linux.png
+    - name: Bash
+      image: /img/tech_logos/bash.png
+    - name: HTML5
+      image: /img/tech_logos/html5.png
+    - name: CSS3
+      image: /img/tech_logos/css3.png
+    - name: LaTeX
+      image: /img/tech_logos/latex.png
 ---
 
