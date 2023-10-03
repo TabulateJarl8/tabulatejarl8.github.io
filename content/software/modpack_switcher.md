@@ -5,10 +5,6 @@ draft: false
 nav: false
 featured: false
 status: "warning"
-images:
-  - ""
-alts:
-  - modpack switcher logo
 buttons:
   - release:
     text: Latest Release

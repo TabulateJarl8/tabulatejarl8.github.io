@@ -5,11 +5,17 @@ draft: false
 nav: false
 featured: false
 status: "danger"
+logo: "/img/showcase/academiic/squarelogo.png"
 images:
-# TODO: more
-  - "/img/showcase/academiic/squarelogo.png"
+  - /img/showcase/academiic/home.png
+  - /img/showcase/academiic/assignments.png
+  - /img/showcase/academiic/classes.png
+  - /img/showcase/academiic/assignment.png
 alts:
-  - academiic logo
+  - academiic homepage
+  - assignments page
+  - classes page
+  - assignment page
 buttons:
   - release:
     text: Visit Website

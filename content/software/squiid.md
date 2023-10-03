@@ -5,7 +5,8 @@ weight: 1
 draft: false
 nav: false
 featured: true
-status: "info"
+status: "success"
+logo: /img/showcase/squiid/logo.png
 link_override: "https://imaginaryinfinity.net/projects/squiid/"
 layout: "software_page"
 ---

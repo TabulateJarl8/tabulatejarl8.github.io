@@ -5,6 +5,7 @@ draft: false
 nav: false
 featured: true
 status: "info"
+logo: /img/showcase/ti842py/logo.png
 images:
   - "/img/showcase/ti842py/logo.png"
 alts:

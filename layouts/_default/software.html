@@ -7,10 +7,13 @@
 		{{ if eq .Params.layout "software_page" }}
 		<div class="col-md-4">
 			<div class="card mb-4">
-				<img src="{{ index .Params.images 0 }}" class="card-img-top" alt="{{ index .Params.alts 0 }}">
+				{{ if .Params.logo }}
+				<img src="{{ .Params.logo }}" class="card-img-top" alt="{{ .Params.title }} logo">
+				{{ end }}
 				<div class="card-body">
 					<h5 class="card-title">{{ .Params.title }}</h5>
-					<p class="card-text">{{ .Params.description }}</p>
+					{{ $summary := index (split .Content "</p>") 0 }}
+					<p class="card-text">{{ $summary | plainify }}</p>
 				</div>
 				<div class="card-footer border-{{.Params.status}}">
 					<a href="{{ .RelPermalink }}" class="btn btn-primary btn-shadow text-mono float-right">

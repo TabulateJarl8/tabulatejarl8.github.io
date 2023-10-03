@@ -5,6 +5,7 @@ draft: false
 nav: false
 featured: true
 status: "success"
+logo: /img/showcase/randfacts/logo.png
 images:
   - "/img/showcase/randfacts/logo.png"
   - "/img/showcase/randfacts/usage.png"
