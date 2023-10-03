@@ -1,14 +1,23 @@
 {{ define "main" }}
 <div class="container mt-5">
-	<h1>My Software</h1>
+	<h1 class="mb-3">My Software</h1>
 	<div class="row">
-		{{/*  TODO: sort by state and then weight  */}}
-		{{ range .Site.RegularPages.ByWeight }}
+		{{/*  sort by status  */}}
+		{{ $customOrder := slice "success" "info" "warning" "danger" }}
+
+		{{ $sortedPages := slice }}
+		{{ range $i, $val := $customOrder }}
+			{{ $pages := where $.Site.RegularPages "Params.layout" "software_page" }}
+			{{ $pages = where $pages "Params.status" $val }}
+			{{ $sortedPages = union $sortedPages $pages }}
+		{{ end }}
+
+		{{ range $sortedPages }}
 		{{ if eq .Params.layout "software_page" }}
-		<div class="col-md-4">
-			<div class="card mb-4">
+		<div class="col-md-4 mb-4">
+			<div class="card mb-4 h-100">
 				{{ if .Params.logo }}
-				<img src="{{ .Params.logo }}" class="card-img-top" alt="{{ .Params.title }} logo">
+				<img src="{{ .Params.logo }}" class="card-img-top p-5" alt="{{ .Params.title }} logo">
 				{{ end }}
 				<div class="card-body">
 					<h5 class="card-title">{{ .Params.title }}</h5>
