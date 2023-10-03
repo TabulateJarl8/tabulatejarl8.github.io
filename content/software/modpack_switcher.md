@@ -5,6 +5,11 @@ draft: false
 nav: false
 featured: false
 status: "warning"
+logo: /img/showcase/modpack-switcher/example.png
+images:
+  - /img/showcase/modpack-switcher/example.png
+alts:
+  - modpack switcher example
 buttons:
   - release:
     text: Latest Release

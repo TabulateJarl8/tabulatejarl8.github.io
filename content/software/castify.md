@@ -1,6 +1,6 @@
 ---
 title: Castify
-weight: 80
+weight: 70
 draft: false
 nav: false
 featured: false

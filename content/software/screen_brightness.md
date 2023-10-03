@@ -1,10 +1,11 @@
 ---
 title: Screen Brightness
-weight: 70
+weight: 80
 draft: false
 nav: false
 featured: false
-status: "danger"
+status: "warning"
+logo: /img/showcase/screen-brightness/ui.png
 images:
   - "/img/showcase/screen-brightness/ui.png"
 alts:
