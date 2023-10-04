@@ -1,0 +1,23 @@
+---
+title: "Smartphone"
+date: 2023-10-04T16:40:04-04:00
+draft: false
+---
+
+ - Samsung Galaxy S10 (Primary)
+   - Unrooted Android 11 
+   - 128GB Internal Storage
+   - 256GB SD Card
+   - 8GB RAM
+   - 2280x1080p 60Hz Display
+   - Qualcomm Snapdragon 855
+   - Qualcomm Adreno 640
+   - 3300 mAh battery
+ - Samsung Galaxy S8
+   - Unrooted Android 9 (Pie) 
+   - 64GB Internal Storage
+   - 4GB RAM
+   - 1480x720p 60Hz Display
+   - Qualcomm Snapdragon 835
+   - Qualcomm Adreno 540
+   - 3000 mAh battery
