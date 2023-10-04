@@ -13,13 +13,13 @@
 			{{ $paramColor := .Params.status }}
 
 			{{ with index $colorMapping $paramColor }}
-			<h1 class="card-title">{{ $.Title }}<span class="badge text-white bg-{{ $paramColor }}-dark float-right">{{ . }}</span></h1>
+			<h1 class="card-title">{{ $.Title }}<span class="badge text-white bg-{{ $paramColor }}-dark float-md-right">{{ . }}</span></h1>
 			
 			<hr class="bg-{{ $paramColor }}">
 			{{end}}
 			<p class="card-text">{{ .Content }}</p>
 			{{ range .Params.buttons }}
-			<a href="{{ .href }}" class="btn btn-{{ .button_color }} btn-shadow text-mono" {{ if .newtab }}
+			<a href="{{ .href }}" class="btn btn-{{ .button_color }} btn-shadow text-mono mb-2" {{ if .newtab }}
 				target="_blank" {{ end }}>{{ .text }}</a>
 			{{ end }}
 		</div>
