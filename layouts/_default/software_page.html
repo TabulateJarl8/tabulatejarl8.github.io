@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="container">
-	<div class="card p-2 m-5">
+	<div class="card p-2 m-3 m-md-5">
 		<div class="card-body">
 
 			{{ $colorMapping := dict
@@ -13,7 +13,7 @@
 			{{ $paramColor := .Params.status }}
 
 			{{ with index $colorMapping $paramColor }}
-			<h1 class="card-title">{{ $.Title }}<span class="badge text-white bg-{{ $paramColor }}-dark float-md-right">{{ . }}</span></h1>
+			<h1 class="card-title">{{ $.Title }}<span class="badge text-white bg-{{ $paramColor }}-dark float-sm-right">{{ . }}</span></h1>
 			
 			<hr class="bg-{{ $paramColor }}">
 			{{end}}
