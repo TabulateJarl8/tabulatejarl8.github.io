@@ -3,8 +3,19 @@
 	{{ if isset .ctx.Params "link_override" }}
 	<meta http-equiv="Refresh" content="0; url='{{ .ctx.Params.link_override }}'" />
 	{{ end }}
-	<link rel="icon" type="image/svg+xml" href="/img/carpetbagger_profile.png" />
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name='author' content='Connor Sample' />
+	{{ $description := "Versatile programmer with expertise in Rust, Python, and more. Computer Science student at James
+	Madison University, passionate about FOSS, Linux, and music." }}
+	<meta name='description' content='{{ $description }}' />
+	<meta name="og:description" content="{{ $description }}" />
+	<meta name="og:title" content="tabulate.tech" />
+	<meta name="og:type" content="website" />
+
+	<link rel="icon" type="image/png" href="/img/carpetbagger_profile.png" />
+
+
 	<!-- JavaScript -->
 	{{ $js := resources.Get "js/scripts.js" | js.Build | resources.Minify }}
 
