@@ -26,8 +26,6 @@
 	<link rel="stylesheet" href="{{ .RelPermalink }}">
 	{{ end }}
 
-	<link rel="stylesheet" href="/fontawesome/css/all.min.css">
-
 	{{ $title := site.Title }}
 	{{ if not .IsHome }}
 	{{ $title = printf "%s | %s" .ctx.Title site.Title }}

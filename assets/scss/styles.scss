@@ -132,4 +132,7 @@ img.kofiimg {
 	color: #c4c4c4;
 }
 
-@import "bootstrap4-neon-glow"
+@import "bootstrap4-neon-glow";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
