@@ -6,17 +6,15 @@
 	<link rel="icon" type="image/svg+xml" href="/img/carpetbagger_profile.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!-- JavaScript -->
-	{{ $bootstrapjs := resources.Get "js/bootstrap.min.js" }}
-	{{ $jquery := resources.Get "js/jquery-3.7.0.min.js" }}
-	{{ $js := slice $jquery $bootstrapjs | resources.Concat "js/bundle.js" | resources.Minify }}
+	{{ $js := resources.Get "js/scripts.js" | js.Build | resources.Minify }}
 
-	<script src="{{ $js.RelPermalink }}"></script>
+	<script type="module" src="{{ $js.RelPermalink }}"></script>
 
 	<!-- CSS -->
-	{{ $bootstrap := resources.Get "css/bootstrap4.css" }}
-	{{ $extra_styles := resources.Get "css/styles.css" }}
-	{{ $css := slice $bootstrap $extra_styles | resources.Concat "css/bundle.css" | resources.Minify }}
-	<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+	{{ with resources.Get "scss/styles.scss" | resources.ToCSS (dict "targetPath" "css/style.css") | resources.Minify |
+	fingerprint }}
+	<link rel="stylesheet" href="{{ .RelPermalink }}">
+	{{ end }}
 
 	<link rel="stylesheet" href="/fontawesome/css/all.min.css">
 
