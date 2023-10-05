@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="container text-center">
+	<h1 class="display-4 mt-5">404 - Page Not Found</h1>
+	<p class="lead">The page you are looking for might have been removed or had its name changed, or is temporarily
+		unavailable.</p>
+	<p>Click the button on the left to return to the homepage. Or click the button on the right to view a random
+		project.</p>
+	<a id='return-home' href="/" class="btn btn-primary btn-shadow">Go to Homepage</a>
+	<a id="random-page" class="btn btn-secondary btn-shadow">View Random Project</a>
+</div>
+<script>
+	var pages = [
+		{{ range(where .Site.RegularPages "Section" "software") }}
+	"{{.RelPermalink}}",
+		{{ end }}
+	];
+	document.getElementById('random-page').addEventListener('click', () => {
+		window.location.href = pages.sort(() => 0.5 - Math.random())[0];
+	});
+	document.getElementById('return-home').addEventListener('contextmenu', (e) => {
+		e.preventDefault();
+		urls = [
+			"https://www.rust-lang.org/GIMMETHESECRETS",
+			"https://pandas.pydata.org/MacAndCheeseDownload",
+			"https://gitlab.com/arcticsurprise",
+			"https://www.mozilla.org/wherecanifindthesmallbitsofcheesethatareincludedinfirefox",
+			"https://turbowafflz.gitlab.io/spongeinvade.yml",
+			"https://www.cdc.gov/antivirus"
+		]
+		window.location.href = urls.sort(() => 0.5 - Math.random())[0];
+	});
+</script>
+{{ end }}
