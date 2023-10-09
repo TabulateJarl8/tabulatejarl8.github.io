@@ -1,86 +1,83 @@
 {{ define "main" }}
-<div class="container mt-5">
-
-	<!-- Basic Info and Profile Image (Right-aligned) -->
-	<div class="card p-4">
-		<div class="row">
-			<div class="col-md-4">
-				<img src="{{ .Params.about_me.photo }}" alt="Connor Sample" class="img-fluid rounded-circle">
-			</div>
-			<div class="col-md-8">
-				<div class="card-body">
-					<h1 class="card-title">Connor Sample</h1>
-					<h6 class="card-subtitle mb-2 text-muted">{{ .Params.about_me.job_title }}</h6>
-					<p class="card-text">Location: {{ .Params.about_me.location }}</p>
-					<p class="card-text">Website: <a href="https://tabulate.tech"
-							target="_blank">https://tabulate.tech</a></p>
-					<p class="card-text">GitHub: <a href="https://github.com/TabulateJarl8"
-							target="_blank">https://github.com/TabulateJarl8</a></p>
-					<p class="card-text">GitLab: <a href="https://gitlab.com/TabulateJarl8"
-							target="_blank">https://gitlab.com/TabulateJarl8</a></p>
-				</div>
+<!-- Basic Info and Profile Image (Right-aligned) -->
+<div class="card p-4">
+	<div class="row">
+		<div class="col-md-4">
+			<img src="{{ .Params.about_me.photo }}" alt="Connor Sample" class="img-fluid rounded-circle">
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<h1 class="card-title">Connor Sample</h1>
+				<h6 class="card-subtitle mb-2 text-muted">{{ .Params.about_me.job_title }}</h6>
+				<p class="card-text">Location: {{ .Params.about_me.location }}</p>
+				<p class="card-text">Website: <a href="https://tabulate.tech" target="_blank">https://tabulate.tech</a>
+				</p>
+				<p class="card-text">GitHub: <a href="https://github.com/TabulateJarl8"
+						target="_blank">https://github.com/TabulateJarl8</a></p>
+				<p class="card-text">GitLab: <a href="https://gitlab.com/TabulateJarl8"
+						target="_blank">https://gitlab.com/TabulateJarl8</a></p>
 			</div>
 		</div>
 	</div>
-	<!-- Resume Section -->
-	<div class="row mt-4">
-		<div class="col-md-6">
-			<div class="card mb-4">
-				<div class="card-body">
-					<h3 class="card-title">🎓 Education</h3>
-					{{ range .Params.education }}
-					<p><strong>{{.name}}</strong>
-						{{ range .degrees }}
-						<br>{{.}}
-						{{ end }}
-					</p>
-					<p>{{ .graduation }}</p>
-					{{ end }}
-				</div>
-			</div>
-
-			<div class="card mb-4">
-				<div class="card-body">
-					<h3 class="card-title">💻 My Technologies</h3>
-					{{ $rowCount := 0 }}
-
-					{{ range .Params.tech }}
-					{{ if eq (mod $rowCount 4) 0 }}
-						{{ if ne $rowCount 0 }}</div>{{ end }}
-						<div class="row text-center pb-3">
-					{{ end }}
-
-					<div class="col-3">
-						<img src="{{ .image }}" height="48" class="card-icon" alt="{{ .name }} Icon">
-						<p class="card-text text-nowrap">{{ .name }}</p>
-					</div>
-					{{ $rowCount = add $rowCount 1 }}
-					{{ end }}
-				{{ if ne $rowCount 0 }}</div>{{ end }}
-			</div>
-		</div>
-	</div>
-
+</div>
+<!-- Resume Section -->
+<div class="row mt-4">
 	<div class="col-md-6">
 		<div class="card mb-4">
 			<div class="card-body">
-				<h3 class="card-title">💼 Experience</h3>
-				{{ range .Params.experience }}
-				<p><strong>{{ .employer }}</strong>
-					<br>{{ .job_title }}
-					<br><span class="text-muted">{{ .job_start }} - {{ .job_end }}</span>
-				</p>
-				<ul>
-					{{ range .highlights }}
-					<li>{{ . }}</li>
+				<h3 class="card-title">🎓 Education</h3>
+				{{ range .Params.education }}
+				<p><strong>{{.name}}</strong>
+					{{ range .degrees }}
+					<br>{{.}}
 					{{ end }}
-				</ul>
-				<hr class="bg-light">
+				</p>
+				<p>{{ .graduation }}</p>
 				{{ end }}
 			</div>
 		</div>
 
+		<div class="card mb-4">
+			<div class="card-body">
+				<h3 class="card-title">💻 My Technologies</h3>
+				{{ $rowCount := 0 }}
+
+				{{ range .Params.tech }}
+				{{ if eq (mod $rowCount 4) 0 }}
+				{{ if ne $rowCount 0 }}
+			</div>{{ end }}
+			<div class="row text-center pb-3">
+				{{ end }}
+
+				<div class="col-3">
+					<img src="{{ .image }}" height="48" class="card-icon" alt="{{ .name }} Icon">
+					<p class="card-text text-nowrap">{{ .name }}</p>
+				</div>
+				{{ $rowCount = add $rowCount 1 }}
+				{{ end }}
+				{{ if ne $rowCount 0 }}
+			</div>{{ end }}
+		</div>
 	</div>
 </div>
+
+<div class="col-md-6">
+	<div class="card mb-4">
+		<div class="card-body">
+			<h3 class="card-title">💼 Experience</h3>
+			{{ range .Params.experience }}
+			<p><strong>{{ .employer }}</strong>
+				<br>{{ .job_title }}
+				<br><span class="text-muted">{{ .job_start }} - {{ .job_end }}</span>
+			</p>
+			<ul>
+				{{ range .highlights }}
+				<li>{{ . }}</li>
+				{{ end }}
+			</ul>
+			<hr class="bg-light">
+			{{ end }}
+		</div>
+	</div>
 </div>
 {{ end }}

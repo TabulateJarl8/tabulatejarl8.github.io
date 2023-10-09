@@ -1,31 +1,29 @@
 {{ define "main" }}
-<div class="container mt-5">
-	<div class="row mt-4">
-		{{ $length := len (where .Site.RegularPages.ByDate "Section" "setup") }}
-		<div class="col-md-6">
-			{{ range $i, $page := (where .Site.RegularPages.ByDate "Section" "setup") }}
-			{{ if le (add $i 1) (math.Ceil (div $length 2.0)) }}
-			<div class="card mb-4">
-				<div class="card-body">
-					<h3 class="card-title">{{ $page.Title }}</h3>
-					<p>{{ $page.Content }}</p>
-				</div>
+<div class="row mt-4">
+	{{ $length := len (where .Site.RegularPages.ByDate "Section" "setup") }}
+	<div class="col-md-6">
+		{{ range $i, $page := (where .Site.RegularPages.ByDate "Section" "setup") }}
+		{{ if le (add $i 1) (math.Ceil (div $length 2.0)) }}
+		<div class="card mb-4">
+			<div class="card-body">
+				<h3 class="card-title">{{ $page.Title }}</h3>
+				<p>{{ $page.Content }}</p>
 			</div>
-			{{ end }}
-			{{ end }}
 		</div>
-		<div class="col-md-6">
-			{{ range $i, $page := (where .Site.RegularPages.ByDate "Section" "setup") }}
-			{{ if ge $i (math.Floor (div $length 2.0)) }}
-			<div class="card mb-4">
-				<div class="card-body">
-					<h3 class="card-title">{{ $page.Title }}</h3>
-					<p>{{ $page.Content }}</p>
-				</div>
+		{{ end }}
+		{{ end }}
+	</div>
+	<div class="col-md-6">
+		{{ range $i, $page := (where .Site.RegularPages.ByDate "Section" "setup") }}
+		{{ if ge $i (math.Floor (div $length 2.0)) }}
+		<div class="card mb-4">
+			<div class="card-body">
+				<h3 class="card-title">{{ $page.Title }}</h3>
+				<p>{{ $page.Content }}</p>
 			</div>
-			{{ end }}
-			{{ end }}
 		</div>
+		{{ end }}
+		{{ end }}
 	</div>
 </div>
 {{ end }}

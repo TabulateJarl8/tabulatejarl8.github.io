@@ -132,6 +132,10 @@ img.kofiimg {
 	color: #c4c4c4;
 }
 
+.border-white-hover:hover {
+	border-color: #fff;
+}
+
 @import "bootstrap4-neon-glow";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
