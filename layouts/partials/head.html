@@ -4,12 +4,23 @@
 	<meta http-equiv="Refresh" content="0; url='{{ .ctx.Params.link_override }}'" />
 	{{ end }}
 
+	{{ $title := site.Title }}
+	{{ if not .IsHome }}
+	{{ $title = printf "%s | %s" .ctx.Title site.Title }}
+	{{ end }}
+
+	{{ $description := "Versatile programmer with expertise in Rust, Python, and more. Computer Science student at James Madison University, passionate about FOSS, Linux, and music." }}
+	{{ if isset .ctx.Params "layout" }}
+	{{ if eq .ctx.Params.layout "software_page" }}
+	{{ $description = index (split .ctx.Content "</p>") 0 | plainify }}
+	{{ end }}
+	{{ end }}
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name='author' content='Connor Sample' />
-	{{ $description := "Versatile programmer with expertise in Rust, Python, and more. Computer Science student at James Madison University, passionate about FOSS, Linux, and music." }}
 	<meta name='description' content='{{ $description }}' />
 	<meta name="og:description" content="{{ $description }}" />
-	<meta name="og:title" content="tabulate.tech" />
+	<meta name="og:title" content="{{ $title }}" />
 	<meta name="og:type" content="website" />
 
 	<link rel="icon" type="image/png" href="/img/carpetbagger_profile.png" />
@@ -26,9 +37,5 @@
 	<link rel="stylesheet" href="{{ .RelPermalink }}">
 	{{ end }}
 
-	{{ $title := site.Title }}
-	{{ if not .IsHome }}
-	{{ $title = printf "%s | %s" .ctx.Title site.Title }}
-	{{ end }}
 	<title>{{ $title }}</title>
 </head>
