@@ -17,6 +17,11 @@ alts:
   - windows main UI
   - windows table view UI
 buttons:
+  - release:
+    text: Releases
+    button_color: secondary
+    href: https://gitlab.com/TabulateJarl8/anubis/-/releases
+    newtab: false
   - source:
     text: Source Code
     button_color: primary
