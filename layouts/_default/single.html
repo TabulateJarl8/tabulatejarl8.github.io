@@ -2,6 +2,13 @@
 
 <div class="container p-5">
 	<h1>{{ .Title }}</h1>
+	<i class="fa-regular fa-calendar pr-2"></i>{{ .Date.Format "Jan 2 2006" }}
+	<br>
+	<i class="fa-regular fa-clock pr-2"></i>{{ .ReadingTime }} minute read
+	<br>
+	<!-- TODO: make tags actually do something -->
+	<i class="fa-solid fa-tag pr-2"></i>{{ partial "blog_tags.html" . }}
+	<hr class="bg-dark">
 	{{ .Content }}
 </div>
 
