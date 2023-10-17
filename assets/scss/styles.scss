@@ -136,6 +136,10 @@ img.kofiimg {
 	border-color: #fff;
 }
 
+.container img {
+	@extend .mw-100;
+}
+
 @import "bootstrap4-neon-glow";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
