@@ -3,8 +3,8 @@ title: ti842py
 weight: 20
 draft: false
 nav: false
-featured: true
-status: "info"
+featured: false
+status: "warning"
 logo: /img/showcase/ti842py/logo.png
 images:
   - "/img/showcase/ti842py/logo.png"
