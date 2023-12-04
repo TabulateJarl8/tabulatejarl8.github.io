@@ -1,6 +1,6 @@
 ---
 title: Academiic
-weight: 40
+weight: 45
 draft: false
 nav: false
 featured: false
