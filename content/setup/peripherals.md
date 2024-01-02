@@ -13,6 +13,6 @@ draft: false
  - Logitech Driving Force GT
  - Thrustmaster T.Flight HOTAS X
  - Logitech C270 Webcam
- - [ErgoRo Ergonomic Office Chair - Black](https://www.amazon.com/dp/B09HJM8Z5T/ref=cm_sw_r_oth_api_glt_fabc_G071HDVD0JP0599Q63QC?th=1)
+ - ErgoRo Ergonomic Office Chair - Black
  - HUION 420 Drawing tablet
 
