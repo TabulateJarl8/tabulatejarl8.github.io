@@ -5,9 +5,10 @@ draft: false
 ---
 
  - 3 &times; LG 24GN600-B 24" 1920x1080 144Hz Monitor 
- - Logitech G502 HERO Mouse (Primary)
- - Razer Deathadder Elite Mouse
- - Razer Cynosa Chroma Keyboard
+ - Logitech G502 HERO Mouse
+ - Keychron Q6
+   - Carbon Black - A, Knob
+   - Gateron Brown switches lubed with Tribosys 3203 
  - Corsair HS60 Pro Wired Headset
  - Logitech Driving Force GT
  - Thrustmaster T.Flight HOTAS X
