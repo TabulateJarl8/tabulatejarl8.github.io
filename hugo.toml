@@ -1,6 +1,7 @@
 baseURL = 'https://tabulate.tech/'
 languageCode = 'en-us'
 title = 'Tabulate'
+pluralizeListTitles = false
 
 [params]
   statusOrder = ["success", "info", "warning", "danger"]
