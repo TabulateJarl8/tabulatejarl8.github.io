@@ -44,8 +44,8 @@ tech:
       image: /img/tech_logos/latex.png
     - name: Bootstrap
       image: /img/tech_logos/bootstrap.png
-    - name: Java
-      image: /img/tech_logos/java.png
+    - name: NASM
+      image: /img/tech_logos/nasm.svg
     - name: Git
       image: /img/tech_logos/git.png
     - name: Qt
