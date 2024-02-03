@@ -1,0 +1,11 @@
+{{- define "sortDates" -}}
+    {{ $date := .job_end }}
+    {{ if eq $date "Current" }}
+        {{ $date = "December 9999" }} <!-- Set a date far in the future for "Current" -->
+    {{ end }}
+    {{ $parsedDate := time.Parse "January 2006" $date }}
+    {{ if eq $parsedDate.Unix 0 }} <!-- Check if parsing failed -->
+        {{ $parsedDate = time.Now }} <!-- Set the date to the current time if parsing failed -->
+    {{ end }}
+    {{ $parsedDate.Unix }}
+{{- end -}}

@@ -18,6 +18,8 @@
 							target="_blank">https://github.com/TabulateJarl8</a></p>
 					<p class="card-text">GitLab: <a href="https://gitlab.com/TabulateJarl8"
 							target="_blank">https://gitlab.com/TabulateJarl8</a></p>
+					<p class="card-text">LinkedIn: <a href="https://www.linkedin.com/in/connor-sample-4905a922a/"
+							target="_blank">https://www.linkedin.com/in/connor-sample-4905a922a/</a></p>
 				</div>
 			</div>
 		</div>
@@ -67,7 +69,8 @@
 		<div class="card mb-4">
 			<div class="card-body">
 				<h3 class="card-title">💼 Experience</h3>
-				{{ range .Params.experience }}
+				{{ $sortedList := sort .Params.experience (partial "sortDates" "job_end") "desc" }}
+				{{ range $sortedList }}
 				<p><strong>{{ .employer }}</strong>
 					<br>{{ .job_title }}
 					<br><span class="text-muted">{{ .job_start }} - {{ .job_end }}</span>

@@ -25,6 +25,18 @@ experience:
              - Unpaid internship with the Fluvanna County Public Schools IT department.
              - Rewrote the bus pass system used by other schools in the school system.
              - Qt GUI development, SQL database interaction, created a maintainable and well-documented codebase.
+    jmu_it:
+        employer: James Madison University
+        job_title: IT Assistant
+        job_start: January 2024
+        job_end: Current
+        highlights:
+            - Assist in configuring a FOG imaging server.
+            - Prepare new and existing computer setups. Install hardware and software as needed.
+            - Document new automation and imaging techniques.
+            - Assist Scientific Computer Specialist in faculty and staff PC/software support.
+            - Responsible for maintaining printer stock.
+            - Transport hardware as needed. Assist with inventory control.
 tech:
     - name: Rust
       image: /img/tech_logos/rust.png
