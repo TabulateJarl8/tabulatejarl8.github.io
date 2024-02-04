@@ -13,7 +13,7 @@ education:
         name: James Madison University
         degrees:
             - Bachelor's in Computer Science
-            - Minor in General Music
+            - Minor in Music
         graduation: "Expected to Graduate: May 2027"
 experience:
     fcps:
