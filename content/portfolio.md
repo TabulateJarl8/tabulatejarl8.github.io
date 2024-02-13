@@ -29,7 +29,7 @@ experience:
         employer: James Madison University
         job_title: IT Assistant
         job_start: January 2024
-        job_end: Current
+        job_end: Present
         highlights:
             - Assist in configuring a FOG imaging server.
             - Prepare new and existing computer setups. Install hardware and software as needed.
