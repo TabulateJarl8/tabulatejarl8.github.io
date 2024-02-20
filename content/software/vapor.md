@@ -1,9 +1,9 @@
 ---
 title: Vapor
-weight: 40
+weight: 30
 draft: false
 nav: false
-featured: false
+featured: true
 status: "success"
 logo: "/img/showcase/vapor/info.png"
 images:
