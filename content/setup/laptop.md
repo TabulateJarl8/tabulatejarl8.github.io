@@ -21,8 +21,10 @@ draft: false
    - 1 &times; MicroSD
 
 ##### **Upgraded HP Pavilion 15-cs0064st**
- - Dual Boot:
-   - Arch Linux - KDE Plasma (Primary) 
+ - Quad Boot:
+   - Arch Linux - KDE Plasma (Primary)
+   - Fedora 39 - GNOME
+   - Zorin 16 (I dont use this and I'm not really sure why it's on here)
    - Windows 11 (Since lockdown browser doesn't support Linux)
  - 8 &times; Intel Core i7-8550U CPU @ 1.80GHz
  - 16GB RAM
