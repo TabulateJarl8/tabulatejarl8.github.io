@@ -4,7 +4,7 @@ weight: 40
 draft: false
 nav: false
 featured: true
-status: "info"
+status: "success"
 logo: "/img/showcase/jmu_openconnect/logo_static.svg"
 images:
   - "/img/showcase/jmu_openconnect/logo_static.svg"
