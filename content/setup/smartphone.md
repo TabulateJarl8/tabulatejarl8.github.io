@@ -4,7 +4,15 @@ date: 2023-10-04T16:40:04-04:00
 draft: false
 ---
 
- - Samsung Galaxy S10 (Primary)
+ - Samsung Galaxy S24+ (Primary)
+   - Unrooted Android 14
+   - 256GB Internal Storage
+   - 12GB RAM
+   - 2340x1080p 1-120Hz Display
+   - Qualcomm Snapdragon 8 Gen 3
+   - Qualcomm Adreno 750
+   - 4755 mAh battery
+ - Samsung Galaxy S10
    - Unrooted Android 11 
    - 128GB Internal Storage
    - 256GB SD Card
