@@ -16,6 +16,11 @@ buttons:
     button_color: primary
     href: https://github.com/TabulateJarl8/jmu-openconnect
     newtab: false
+  - pypi:
+    text: PyPI Page
+    button_color: secondary
+    href: https://pypi.org/project/jmu-openconnect/
+    newtab: false
 layout: "software_page"
 ---
 
