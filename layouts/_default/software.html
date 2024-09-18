@@ -56,9 +56,8 @@
 				<hr />
 			</div>
 		</div>
-		{{ $pages := where $.Site.RegularPages "Params.layout" "software_page" }}
-		{{ range $pages }}
-			{{ if and (eq .Params.layout "software_page") (eq .Params.status "secondary") }}
+		{{ range $.Site.RegularPages }}
+			{{ if isset .Params "concept_project" }}
 				<div class="col-md-4 mb-4">
 					<div class="card mb-4 h-100 d-flex flex-column">
 						<div class="card-body d-flex flex-column justify-content-end">
@@ -68,10 +67,11 @@
 						</div>
 						<div class="card-footer border-secondary">
 							<a
-								href="{{ .RelPermalink }}"
+								href="{{ .Params.project_page }}"
+								target="_blank"
 								class="btn btn-primary btn-shadow text-mono float-right"
 							>
-								View Project
+								Project Page
 							</a>
 						</div>
 					</div>
