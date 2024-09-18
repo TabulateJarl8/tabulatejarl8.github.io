@@ -1,39 +1,53 @@
 {{ define "main" }}
-<div class="container mt-5">
-	<div class="card p-2 m-3 m-md-5">
-		<div class="card-body">
+	<div class="container mt-5">
+		<div class="card p-2 m-3 m-md-5">
+			<div class="card-body">
+				{{ $colorMapping := dict
+					"info" "Beta"
+					"success" "Active"
+					"warning" "Idle"
+					"danger" "Discontinued"
+				}}
 
-			{{ $colorMapping := dict
-			"info" "Beta"
-			"success" "Active"
-			"warning" "Idle"
-			"danger" "Discontinued"
-			}}
+				{{ $paramColor := .Params.status }}
 
-			{{ $paramColor := .Params.status }}
+				{{ with index $colorMapping $paramColor }}
+					<h1 class="card-title">
+						{{ $.Title }}<span
+							class="badge text-white bg-{{ $paramColor }}-dark float-sm-right"
+							>{{ . }}</span
+						>
+					</h1>
 
-			{{ with index $colorMapping $paramColor }}
-			<h1 class="card-title">{{ $.Title }}<span
-					class="badge text-white bg-{{ $paramColor }}-dark float-sm-right">{{ .
-					}}</span></h1>
-
-			<hr class="bg-{{ $paramColor }}">
-			{{end}}
-			<p class="card-text">{{ .Content }}</p>
-			{{ range .Params.buttons }}
-			<a href="{{ .href }}" class="btn btn-{{ .button_color }} btn-shadow text-mono mb-2" {{ if .newtab }}
-				target="_blank" {{ end }}>{{ .text }}</a>
-			{{ end }}
-		</div>
-		<div class="card-footer">
-			<div class="row g-3 justify-content-center">
-				{{ range $index, $image := .Params.images }}
-				<div class="col-md-12 col-lg-6 align-self-center pb-4">
-					<img src="{{ $image }}" alt="{{ index $.Params.alts $index }}" class="img-fluid">
-				</div>
+					<hr class="bg-{{ $paramColor }}" />
+				{{ end }}
+				<p class="card-text">{{ .Content }}</p>
+				{{ range .Params.buttons }}
+					<a
+						href="{{ .href }}"
+						class="btn btn-{{ .button_color }} btn-shadow text-mono mb-2"
+						{{ if .newtab }}
+							target="_blank"
+						{{ end }}
+						>{{ .text }}</a
+					>
 				{{ end }}
 			</div>
+			{{ if isset .Params "images" }}
+				<div class="card-footer">
+					<div class="row g-3 justify-content-center">
+						{{ range $index, $image := .Params.images }}
+							<div class="col-md-12 col-lg-6 align-self-center pb-4">
+								<img
+									src="{{ $image }}"
+									alt="{{ index $.Params.alts $index }}"
+									class="img-fluid"
+								/>
+							</div>
+						{{ end }}
+					</div>
+				</div>
+			{{ end }}
 		</div>
 	</div>
-</div>
 {{ end }}
