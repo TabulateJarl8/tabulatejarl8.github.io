@@ -13,7 +13,7 @@
 			{{ end }}
 
 			{{ range $sortedPages }}
-				{{ if eq .Params.layout "software_page" }}
+				{{ if and (eq .Params.layout "software_page") (ne .Params.status "secondary") }}
 					<div class="col-md-4 mb-4">
 						<div class="card mb-4 h-100 d-flex flex-column">
 							{{ if .Params.logo }}
@@ -51,21 +51,32 @@
 			needs that I think is interesting or cool. Other miscellaneous
 			repositories may fall under this category as well.
 		</p>
-		<div class="col-md-4 mb-4">
-			<div class="card mb-4 h-100 d-flex flex-column">
-				<div class="card-body d-flex flex-column justify-content-end">
-					<h5 class="card-title">Best Software</h5>
-					<p class="card-text">testing testing 123</p>
-				</div>
-				<div class="card-footer border-secondary">
-					<a
-						href="https://google.com"
-						class="btn btn-primary btn-shadow text-mono float-right"
-					>
-						View Project
-					</a>
-				</div>
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<hr />
 			</div>
 		</div>
+		{{ $pages := where $.Site.RegularPages "Params.layout" "software_page" }}
+		{{ range $pages }}
+			{{ if and (eq .Params.layout "software_page") (eq .Params.status "secondary") }}
+				<div class="col-md-4 mb-4">
+					<div class="card mb-4 h-100 d-flex flex-column">
+						<div class="card-body d-flex flex-column justify-content-end">
+							<h5 class="card-title">{{ .Params.title }}</h5>
+							{{ $summary := index (split .Content "</p>") 0 }}
+							<p class="card-text">{{ $summary | plainify }}</p>
+						</div>
+						<div class="card-footer border-secondary">
+							<a
+								href="{{ .RelPermalink }}"
+								class="btn btn-primary btn-shadow text-mono float-right"
+							>
+								View Project
+							</a>
+						</div>
+					</div>
+				</div>
+			{{ end }}
+		{{ end }}
 	</div>
 {{ end }}
