@@ -1,49 +1,73 @@
 <head>
 	<meta charset="UTF-8" />
 	{{ if isset .ctx.Params "link_override" }}
-	<meta http-equiv="Refresh" content="0; url='{{ .ctx.Params.link_override }}'" />
+		<meta
+			http-equiv="Refresh"
+			content="0; url='{{ .ctx.Params.link_override }}'"
+		/>
 	{{ end }}
 
 	{{ $title := site.Title }}
 	{{ if not .IsHome }}
-	{{ $title = printf "%s | %s" .ctx.Title site.Title }}
+		{{ $title = printf "%s | %s" .ctx.Title site.Title }}
 	{{ end }}
 
 	{{ $description := "Versatile programmer with expertise in Rust, Python, and more. Computer Science student at James Madison University, passionate about FOSS, Linux, and music." }}
 	{{ if isset .ctx.Params "layout" }}
-	{{ if eq .ctx.Params.layout "software_page" }}
-	{{ $description = index (split .ctx.Content "</p>") 0 | plainify }}
-	{{ end }}
+		{{ if eq .ctx.Params.layout "software_page" }}
+			{{ $description = index (split .ctx.Content "</p>") 0 | plainify }}
+		{{ end }}
 	{{ end }}
 
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name='author' content='Connor Sample' />
-	<meta name='description' content='{{ $description }}' />
+	<meta name="author" content="Connor Sample" />
+	<meta name="description" content="{{ $description }}" />
 	<meta name="og:description" content="{{ $description }}" />
 	<meta name="og:title" content="{{ $title }}" />
 	<meta name="og:type" content="website" />
 
-	
-	<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-	<link rel="manifest" href="/favicons/site.webmanifest">
-	<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#32334a">
-	<link rel="shortcut icon" href="/favicons/favicon.ico">
-	<meta name="msapplication-TileColor" content="#603cba">
-	<meta name="msapplication-config" content="/favicons/browserconfig.xml">
-	<meta name="theme-color" content="#ffffff">
+	<link
+		rel="apple-touch-icon"
+		sizes="180x180"
+		href="/favicons/apple-touch-icon.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="32x32"
+		href="/favicons/favicon-32x32.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="16x16"
+		href="/favicons/favicon-16x16.png"
+	/>
+	<link rel="manifest" href="/favicons/site.webmanifest" />
+	<link
+		rel="mask-icon"
+		href="/favicons/safari-pinned-tab.svg"
+		color="#32334a"
+	/>
+	<link rel="shortcut icon" href="/favicons/favicon.ico" />
+	<meta name="msapplication-TileColor" content="#603cba" />
+	<meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+	<meta name="theme-color" content="#ffffff" />
 
 	<!-- JavaScript -->
 	{{ $js := resources.Get "js/scripts.js" | js.Build | resources.Minify }}
 
+
 	<script type="module" src="{{ $js.RelPermalink }}"></script>
 
 	<!-- CSS -->
-	{{ with resources.Get "scss/styles.scss" | resources.ToCSS (dict "targetPath" "css/style.css") | resources.Minify |
-	fingerprint }}
-	<link rel="stylesheet" href="{{ .RelPermalink }}">
+	{{ with resources.Get "scss/styles.scss" | css.Sass (dict "targetPath" "css/style.css") | resources.Minify |
+		fingerprint
+	}}
+		<link rel="stylesheet" href="{{ .RelPermalink }}" />
 	{{ end }}
+
 
 	<title>{{ $title }}</title>
 </head>

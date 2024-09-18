@@ -1,16 +1,18 @@
 {{ define "main" }}
-<div class="container mt-5">
-	<h1 class="mb-3">Blog</h1>
-	{{ range (.Site.GetPage "section" "blog").Pages }}
-	<a class="text-reset text-decoration-none" href='{{ .Permalink }}'>
-		<div class="card border-white-hover w-100 mb-2">
-			<div class="card-body">
-				<h5 class="card-title">{{ .Title }}</h5>
-				<p class="card-text">{{ .Description }}</p>
-				<span class="text-muted font-italic">{{ .Date.Format "January 2, 2006" }}</span>
-			</div>
-		</div>
-	</a>
-	{{ end }}
-</div>
+	<div class="container mt-5">
+		<h1 class="mb-3">Blog</h1>
+		{{ range (.Site.GetPage "section" "blog").Pages }}
+			<a class="text-reset text-decoration-none" href="{{ .Permalink }}">
+				<div class="card border-white-hover w-100 mb-2">
+					<div class="card-body">
+						<h5 class="card-title">{{ .Title }}</h5>
+						<p class="card-text">{{ .Description }}</p>
+						<span class="text-muted font-italic"
+							>{{ .Date.Format "January 2, 2006" }}</span
+						>
+					</div>
+				</div>
+			</a>
+		{{ end }}
+	</div>
 {{ end }}
