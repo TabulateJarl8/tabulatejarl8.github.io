@@ -19,7 +19,7 @@ number 60
 After he told me about this assignment, I thought that it was pretty funny, and I wanted to write it in assembly as a joke. I started off with stealing some integer printing code that I had written for another project.
 
 {{< collapse "The integer printing code" >}}
-{{< highlight asm "linenos=table" >}}
+{{< highlight nasm "linenos=table" >}}
 ; Print "number i" for i in range(5,60)
 section .data
 	str_buffer db 0 ; for printing integers
@@ -143,7 +143,7 @@ _start:
 
 After setting this up, I wrote a quick assembly program to iterate over the numbers 5-40 and print each one:
 
-{{< highlight asm "linenos=table,hl_lines=2-3 15 27-29 43" >}}
+{{< highlight nasm "linenos=table,hl_lines=2-3 15 27-29 43" >}}
 section .data
 	line_text db "number "
 	line_text_len equ $ - line_text
@@ -247,7 +247,7 @@ Next step was to write the program. I had a pretty strong mental image of how th
 
 I started writing, and after a while I came up with a very basic implementation. I had a counter that incremented until it was equal to the length of the data block, and when it was, it exited. However, I realized that I could do some math to replace the counter entirely, and this removed a few lines of code. Here's what I ended up with:
 
-{{< highlight asm "linenos=table,hl_lines=2 8 12-14 19" >}}
+{{< highlight nasm "linenos=table,hl_lines=2 8 12-14 19" >}}
 section .data
 	numbers db 0x6e, 0x75, 0x6d, ...
 	numbers_len equ $ - numbers
@@ -277,7 +277,7 @@ _start:
 
 As you can see, this implementation worked and it was significantly shorter than the previous implementation due to it's hardcoded nature. Line 2 initializes the data, line 8 loads the address of the data into `rsi` before we start the loop, and then we start printing. Lines 12-14 are for bounds checking. We load the address of `numbers` plus the length of that block of data into `rdi`, and then compare it with the address we're currently reading from, `rsi`. If they're equal, that means we've read all of the data, and we can exit. If not, we continue and load data into the appropriate registers in order to print 10 bytes from our current memory address. Think of it as taking 10 bytes at a time from our huge list of bytes. Then, we print these 10 bytes to the screen and end up with something like `number 12`. Then, we check if there's another 10 bytes, available, and if there are, we continue doing this. However, I was really invested now and wanted to try and make it as short as possible, so I looked for ways to optimize it. Even when I remove linebreaks and put labels on the same lines as code, I still end up with this:
 
-{{< highlight asm "linenos=table,hl_lines=2 8 12-14 19" >}}
+{{< highlight nasm "linenos=table,hl_lines=2 8 12-14 19" >}}
 section .data
 	numbers db 0x6e, 0x75, 0x6d, ...
 	numbers_len equ $ - numbers
@@ -300,7 +300,7 @@ _start: lea rsi, [numbers] ; load address of numbers into rsi
 
 This is 18 lines, which is better than 25 but I still felt like I could do even better. I kept analyzing, and then all of a sudden, I saw it in a way I hadn't seen before, and I quickly moved some stuff around. Here's the final product:
 
-{{< highlight asm "linenos=table,hl_lines=2 19-20" >}}
+{{< highlight nasm "linenos=table,hl_lines=2 19-20" >}}
 section .data
 	numbers db 0x6e, 0x75, 0x6d, ..., 0x0
 section .text
