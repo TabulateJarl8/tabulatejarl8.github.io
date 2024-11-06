@@ -153,3 +153,11 @@ img.kofiimg {
 hr {
 	border-top: 1px solid $gray-300;
 }
+
+a {
+	color: #A490E9;
+
+	&:hover {
+		color: #815af5;
+	}
+}
