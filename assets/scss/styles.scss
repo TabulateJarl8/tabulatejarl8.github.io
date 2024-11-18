@@ -161,3 +161,40 @@ a {
 		color: #815af5;
 	}
 }
+
+
+blockquote {
+	position: relative;
+	padding: 1rem;
+	margin: 1rem 0;
+	background: $dark;
+	border-radius: $border-radius;
+	border: none;
+	line-height: 1.6;
+
+	// Left stripe
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 4px;
+		background: $primary;
+		border-radius: $border-radius 0 0 $border-radius;
+	}
+
+	p {
+		margin: 0 0 1em;
+		position: relative;
+		z-index: 1;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+table {
+	@extend .table;
+}

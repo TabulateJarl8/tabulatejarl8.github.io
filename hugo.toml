@@ -4,4 +4,8 @@ title = 'Tabulate'
 pluralizeListTitles = false
 
 [params]
-  statusOrder = ["success", "info", "warning", "danger"]
+statusOrder = ["success", "info", "warning", "danger"]
+
+[markup.highlight]
+lineNos = true
+
