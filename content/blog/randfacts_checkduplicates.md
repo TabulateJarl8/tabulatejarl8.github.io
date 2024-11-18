@@ -153,7 +153,7 @@ The next part is pretty simple. We can take references of the facts to avoid cop
 
 ### CI Caching
 
-The one downfall of the Rust version is that it takes time to compile which can slow down the CI, and that defeats the purpose of having a faster test. To solve this issue, I used GitHub's [action/cache](https://github.com/actions/cache) action. Here's the relevant section of the CI:
+The one downfall of the Rust version is that it takes time to compile which can slow down the CI, and that defeats the purpose of having a faster test. To solve this issue, I used GitHub's [actions/cache](https://github.com/actions/cache) action. Here's the relevant section of the CI:
 
 ```yml {hl_lines=[3,"5-7",12,"14-15",18]}
 - name: Cache checkduplicates binary
