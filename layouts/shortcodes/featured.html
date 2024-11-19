@@ -20,11 +20,8 @@
 
 			</div>
 			<div class="card-body">
-				<blockquote class="card-blockquote">
-					{{ $summary := index (split .Content "</p>") 0 }}
-					<p>{{ $summary | plainify }}</p>
-
-				</blockquote>
+				{{ $summary := index (split .Content "</p>") 0 }}
+				<p>{{ $summary | plainify }}</p>
 			</div>
 			<div class="card-footer bg-dark border-0">
 				<a href='

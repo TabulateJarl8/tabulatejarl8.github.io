@@ -10,7 +10,8 @@
 				<div class="card-body">
 					<div class="d-flex justify-content-between align-items-center" style="margin-bottom: 0.75rem">
 						<h1 class="card-title" style="margin: 0;">Connor Sample</h1>
-						<a class="btn btn-primary btn-shadow text-mono" href="/doc/resume-website.pdf" >Download Resume</a>
+						<!-- Desktop Resume button -->
+						<a class="btn btn-primary btn-shadow text-mono d-none d-md-block" href="/doc/resume-website.pdf">Download Resume</a>
 					</div>
 					<h6 class="card-subtitle mb-2 text-muted">{{ .Params.about_me.job_title }}</h6>
 					<p class="card-text">Location: {{ .Params.about_me.location }}</p>
@@ -23,6 +24,9 @@
 							target="_blank">https://gitlab.com/TabulateJarl8</a></p>
 					<p class="card-text">LinkedIn: <a href="https://www.linkedin.com/in/connor-sample-4905a922a/"
 							target="_blank">https://www.linkedin.com/in/connor-sample-4905a922a/</a></p>
+
+					<!-- Mobile resume button -->
+					<a class="btn btn-primary btn-shadow text-mono d-md-none ml-0 mt-1" href="/doc/resume-website.pdf">Download Resume</a>
 				</div>
 			</div>
 		</div>
