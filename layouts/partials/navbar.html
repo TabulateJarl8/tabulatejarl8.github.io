@@ -1,38 +1,40 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary-dark">
-	<button
-		class="navbar-toggler navbar-toggler-right"
-		type="button"
-		data-toggle="collapse"
-		data-target="#navbarTogglerDemo03"
-		aria-controls="navbarTogglerDemo03"
-		aria-expanded="false"
-		aria-label="Toggle navigation"
-	>
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<a class="navbar-brand" href="/"
-		><img
-			class="rounded-circle"
-			src="/img/carpetbagger_profile.png"
-			width="30"
-			height="30"
-			alt=""
-	/></a>
+	<div class="container-fluid">
+		<button
+			class="navbar-toggler navbar-toggler-right"
+			type="button"
+			data-bs-toggle="collapse"
+			data-bs-target="#navbarToggler"
+			aria-controls="navbarToggler"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="/"
+			><img
+				class="rounded-circle"
+				src="/img/carpetbagger_profile.png"
+				width="30"
+				height="30"
+				alt=""
+		/></a>
 
-	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-		<ul class="navbar-nav mr-auto mt-2 mt-md-0">
-			{{ $currentPage := . }}
-			{{ range where .Site.Pages.ByWeight.Reverse "Params.nav" "==" true }}
-				<li class="nav-item">
-					<a
-						class="nav-link {{ if eq .Permalink $currentPage.Permalink }}
-							active
-						{{ end }}"
-						href="{{ .RelPermalink }}"
-						>{{ .Title }}</a
-					>
-				</li>
-			{{ end }}
-		</ul>
+		<div class="collapse navbar-collapse" id="navbarToggler">
+			<ul class="navbar-nav me-auto mt-2 mt-md-0">
+				{{ $currentPage := . }}
+				{{ range where .Site.Pages.ByWeight.Reverse "Params.nav" "==" true }}
+					<li class="nav-item">
+						<a
+							class="nav-link {{ if eq .Permalink $currentPage.Permalink }}
+								active
+							{{ end }}"
+							href="{{ .RelPermalink }}"
+							>{{ .Title }}</a
+						>
+					</li>
+				{{ end }}
+			</ul>
+		</div>
 	</div>
 </nav>

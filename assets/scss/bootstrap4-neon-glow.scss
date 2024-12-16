@@ -1,4 +1,5 @@
 /*! Bootstrap 4 "Neon Glow" Theme by HackerThemes, https://hackerthemes.com */
+/*! Updated to bootstrap 5 by TabulateJarl8 */
 
 $border-radius: 6px;
 $border-radius-lg: 6px;
@@ -20,10 +21,16 @@ $danger: #ff3c5c;
 $light: #dbebfb;
 $dark: $dark;
 
-$display1-size: 4.5rem !default;
-$display2-size: 3.5rem !default;
-$display3-size: 2.5rem !default;
-$display4-size: 2rem !default;
+// $display1-size: 4.5rem !default;
+// $display2-size: 3.5rem !default;
+// $display3-size: 2.5rem !default;
+// $display4-size: 2rem !default;
+$display-font-sizes: (
+	1: 4.5rem,
+	2: 3.5rem,
+	3: 2.5rem,
+	4: 2rem,
+);
 
 $card-cap-bg: #1e2037;
 $card-bg: #32334a;
@@ -111,11 +118,11 @@ $input-border-color: $gray-800;
 ////$custom-select-focus-box-shadow:   inset 0 1px 2px rgba($black, .075), 0 0 5px rgba($custom-select-focus-border-color, .5) !default;
 //$dropdown-border-color:          rgba($black,.15) !default;
 //$dropdown-box-shadow:            0 .5rem 1rem rgba($black,.175) !default;
-$navbar-light-color:                rgba($white,.65) !default;
-$navbar-light-hover-color:          rgba($white,.9) !default;
-$navbar-light-active-color:         rgba($white,1) !default;
-$navbar-light-disabled-color:       rgba($white,.4) !default;
-$navbar-light-toggler-border-color: rgba($white,.1) !default;
+$navbar-light-color: rgba($white, .65) !default;
+$navbar-light-hover-color: rgba($white, .9) !default;
+$navbar-light-active-color: rgba($white, 1) !default;
+$navbar-light-disabled-color: rgba($white, .4) !default;
+$navbar-light-toggler-border-color: rgba($white, .1) !default;
 //$card-border-color:        rgba($black,.125) !default;
 //$card-cap-bg:              rgba($black, .03) !default;
 //$tooltip-bg:                  $black !default;
@@ -161,7 +168,6 @@ $input-placeholder-color: #a19fb9 !default;
 $nav-tabs-link-active-color: $body-color !default;
 //$pagination-hover-bg:                  $gray-200 !default;
 $pagination-disabled-color: $gray-800 !default;
-//$jumbotron-bg:                   $gray-200 !default;
 //$modal-header-border-color:   $gray-200 !default;
 //$progress-bg:                   $gray-200 !default;
 $list-group-hover-bg: $gray-100 !default;
@@ -344,56 +350,54 @@ $button-shadow-colors: (
 	&:active {
 		color: #c1f8c2;
 	}
-
 }
 
-.vim-caret {
-	animation: vimCaret 1s linear infinite;
-}
+.btn-info {
 
-@keyframes vimCaret {
-	0% {
-		background-color: transparent;
-	}
-
-	49% {
-		background-color: transparent;
-	}
-
-	50% {
-		background-color: rgba(255, 255, 255, .2);
-	}
-
-	100% {
-		background-color: rgba(255, 255, 255, .2);
+	&,
+	&:hover,
+	&:focus,
+	&:active {
+		color: #fff;
 	}
 }
 
 // Regenerate list group items
-@each $color, $value in $theme-colors {
-	@include list-group-item-variant($color, theme-color-level($color, -2), theme-color-level($color, 6));
+// @each $color, $value in $theme-colors {
+// 	@include list-group-item-variant($color, shift-color($color, -2), shift-color($color, 6));
+// }
+
+@each $color in map-keys($theme-colors) {
+	.list-group-item-#{$color} {
+		--#{$prefix}list-group-color: var(--#{$prefix}#{$color}-text-emphasis);
+		--#{$prefix}list-group-bg: var(--#{$prefix}#{$color}-bg-subtle);
+		--#{$prefix}list-group-border-color: var(--#{$prefix}#{$color}-border-subtle);
+		--#{$prefix}list-group-action-hover-color: var(--#{$prefix}emphasis-color);
+		--#{$prefix}list-group-action-hover-bg: var(--#{$prefix}#{$color}-border-subtle);
+		--#{$prefix}list-group-action-active-color: var(--#{$prefix}emphasis-color);
+		--#{$prefix}list-group-action-active-bg: var(--#{$prefix}#{$color}-border-subtle);
+		--#{$prefix}list-group-active-color: var(--#{$prefix}#{$color}-bg-subtle);
+		--#{$prefix}list-group-active-bg: var(--#{$prefix}#{$color}-text-emphasis);
+		--#{$prefix}list-group-active-border-color: var(--#{$prefix}#{$color}-text-emphasis);
+	}
 }
 
 // Regenerate alerts
-@each $color, $value in $theme-colors {
-	.alert-#{$color} {
-		@include alert-variant(theme-color-level($color, -5), theme-color-level($color, -2), theme-color-level($color, 7));
+// @each $color, $value in $theme-colors {
+// 	.alert-#{$color} {
+// 		@include alert-variant(shift-color($color, -5), shift-color($color, -2), shift-color($color, 7));
+// 	}
+// }
+@each $state in map-keys($theme-colors) {
+	.alert-#{$state} {
+		--#{$prefix}alert-color: var(--#{$prefix}#{$state}-text-emphasis);
+		--#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
+		--#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
+		--#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text-emphasis);
 	}
 }
 
 // Regenerate table row variants
 @each $color, $value in $theme-colors {
-	@include table-row-variant($color, theme-color-level($color, -2));
-}
-
-
-// Evil robot
-.hal-9000 {
-	background: #f9d080;
-	border: 12px #ff3c5c solid;
-	border-radius: 90px;
-	box-shadow: 0 0 40px rgb(255, 60, 92);
-	display: inline-block;
-	height: 40px;
-	width: 40px;
+	@include table-variant($color, shift-color($value, -2));
 }
