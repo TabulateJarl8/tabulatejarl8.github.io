@@ -14,7 +14,7 @@
 				{{ with index $colorMapping $paramColor }}
 					<h1 class="card-title">
 						{{ $.Title }}<span
-							class="badge text-white bg-{{ $paramColor }}-dark float-sm-right"
+							class="badge text-white bg-{{ $paramColor }}-dark float-sm-end"
 							>{{ . }}</span
 						>
 					</h1>
@@ -25,7 +25,7 @@
 				{{ range .Params.buttons }}
 					<a
 						href="{{ .href }}"
-						class="btn btn-{{ .button_color }} btn-shadow text-mono mb-2"
+						class="btn btn-{{ .button_color }} btn-shadow text-mono mb-2 ms-0 me-2"
 						{{ if .newtab }}
 							target="_blank"
 						{{ end }}
