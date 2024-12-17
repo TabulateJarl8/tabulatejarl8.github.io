@@ -21,16 +21,42 @@ $danger: #ff3c5c;
 $light: #dbebfb;
 $dark: $dark;
 
-// $display1-size: 4.5rem !default;
-// $display2-size: 3.5rem !default;
-// $display3-size: 2.5rem !default;
-// $display4-size: 2rem !default;
 $display-font-sizes: (
 	1: 4.5rem,
 	2: 3.5rem,
 	3: 2.5rem,
 	4: 2rem,
 );
+
+// disable xxl breakpoint as this allows the container to grow past 1140px, which breaks my homepage layout
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+);
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px
+);
+
+$spacer: 1rem !default;
+$spacers: (
+	0: 0,
+	1: ($spacer * .25),
+	2: ($spacer * .5),
+	3: ($spacer * .75),
+	4: $spacer,
+	5: ($spacer * 1.5),
+	6: ($spacer * 3),
+	7: ($spacer * 5)
+);
+
+$table-color: $body-color;
 
 $card-cap-bg: #1e2037;
 $card-bg: #32334a;
