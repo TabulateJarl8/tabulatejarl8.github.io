@@ -157,9 +157,11 @@ hr {
 a {
 	color: #A490E9;
 	word-break: break-word;
+	text-decoration: none;
 
 	&:hover {
 		color: #815af5;
+		text-decoration: underline;
 	}
 }
 
