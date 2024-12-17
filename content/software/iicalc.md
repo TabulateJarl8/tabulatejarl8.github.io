@@ -33,4 +33,5 @@ ImaginaryInfinity Calculator is a lightweight, but expandable calculator.
 
 ImaginaryInfinity Calculator is an expandable calculator. It's command line interface is designed to resemble that of some graphing calculators. New functionality can easily be added by installing user created plugins
 
-### NOTICE: We are now working on a new, actually functional calculator, which you can find here: https://gitlab.com/ImaginaryInfinity/squiid-calculator/squiid
+### NOTICE: We now have a new, actually functional calculator, which you can find here: https://gitlab.com/ImaginaryInfinity/squiid-calculator/squiid
+

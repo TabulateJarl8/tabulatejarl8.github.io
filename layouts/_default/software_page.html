@@ -12,9 +12,9 @@
 				{{ $paramColor := .Params.status }}
 
 				{{ with index $colorMapping $paramColor }}
-					<h1 class="card-title">
+					<h1 class="card-title d-flex justify-content-between flex-wrap gap-2">
 						{{ $.Title }}<span
-							class="badge text-white bg-{{ $paramColor }}-dark float-sm-end"
+							class="badge text-white bg-{{ $paramColor }}-dark"
 							>{{ . }}</span
 						>
 					</h1>
