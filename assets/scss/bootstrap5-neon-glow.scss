@@ -44,6 +44,7 @@ $container-max-widths: (
 	xl: 1140px
 );
 
+// add extra 0.75rem spacer
 $spacer: 1rem !default;
 $spacers: (
 	0: 0,
@@ -330,7 +331,6 @@ $button-shadow-colors: (
 		&.btn-outline-#{$color} {
 			&:hover {
 				background-color: $value;
-				//border-color: $value;
 			}
 		}
 	}
@@ -392,10 +392,6 @@ $button-shadow-colors: (
 }
 
 // Regenerate list group items
-// @each $color, $value in $theme-colors {
-// 	@include list-group-item-variant($color, shift-color($color, -2), shift-color($color, 6));
-// }
-
 @each $color in map-keys($theme-colors) {
 	.list-group-item-#{$color} {
 		--#{$prefix}list-group-color: var(--#{$prefix}#{$color}-text-emphasis);
@@ -412,11 +408,6 @@ $button-shadow-colors: (
 }
 
 // Regenerate alerts
-// @each $color, $value in $theme-colors {
-// 	.alert-#{$color} {
-// 		@include alert-variant(shift-color($color, -5), shift-color($color, -2), shift-color($color, 7));
-// 	}
-// }
 @each $state in map-keys($theme-colors) {
 	.alert-#{$state} {
 		--#{$prefix}alert-color: var(--#{$prefix}#{$state}-text-emphasis);
