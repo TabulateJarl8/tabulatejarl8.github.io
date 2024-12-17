@@ -167,8 +167,6 @@ $navbar-light-toggler-border-color: rgba($white, .1) !default;
 //<editor-fold desc="grays">
 //$body-color:    $gray-900 !default;
 //$border-color: $gray-200 !default;
-$text-muted: #81839a !default;
-$blockquote-small-color: $text-muted !default;
 //$table-border-color:            $gray-200 !default;
 //$table-head-bg:                 $gray-200 !default;
 //$table-head-color:              $gray-700 !default;
@@ -226,6 +224,10 @@ $table-dark-color: $body-color;
 			color: $value !important;
 		}
 	}
+}
+
+.text-dim {
+	color: #81839a;
 }
 
 .btn-wide {
