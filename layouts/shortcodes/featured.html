@@ -3,7 +3,7 @@
 	{{ range where .Site.RegularPages.ByWeight "Params.featured" "==" true }}
 	<div class="col-md-4 mb-4">
 		<div class="card border-primary h-100">
-			<div class="card-header py-3 d-flex align-items-center justify-content-between">
+			<div class="card-header py-75 d-flex align-items-center justify-content-between">
 				{{ .Title }}
 				{{ $colorMapping := dict
 				"info" "Beta"

@@ -199,3 +199,7 @@ blockquote {
 table {
 	@extend .table;
 }
+
+tbody {
+	@extend .table-group-divider
+}

@@ -49,11 +49,11 @@ $spacers: (
 	0: 0,
 	1: ($spacer * .25),
 	2: ($spacer * .5),
-	3: ($spacer * .75),
-	4: $spacer,
-	5: ($spacer * 1.5),
-	6: ($spacer * 3),
-	7: ($spacer * 5)
+	3: $spacer,
+	4: ($spacer * 1.5),
+	5: ($spacer * 3),
+	6: ($spacer * 5),
+	75: ($spacer * .75),
 );
 
 $table-color: $body-color;
@@ -378,7 +378,8 @@ $button-shadow-colors: (
 	}
 }
 
-.btn-info {
+.btn-info,
+.btn-secondary {
 
 	&,
 	&:hover,

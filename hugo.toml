@@ -8,4 +8,3 @@ statusOrder = ["success", "info", "warning", "danger"]
 
 [markup.highlight]
 lineNos = true
-
