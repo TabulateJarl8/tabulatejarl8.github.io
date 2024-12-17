@@ -1,2 +1,2 @@
-import * as $ from 'jquery'
-import 'bootstrap'
+import "bootstrap";
+

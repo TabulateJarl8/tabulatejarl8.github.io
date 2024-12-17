@@ -13,7 +13,7 @@
 						<!-- Desktop Resume button -->
 						<a class="btn btn-primary btn-shadow text-mono d-none d-md-block" href="/doc/resume-website.pdf">Download Resume</a>
 					</div>
-					<h6 class="card-subtitle mb-2 text-muted">{{ .Params.about_me.job_title }}</h6>
+					<h6 class="card-subtitle mb-2 text-dim">{{ .Params.about_me.job_title }}</h6>
 					<p class="card-text">Location: {{ .Params.about_me.location }}</p>
 					<p class="card-text">Website: <a href="https://tabulate.tech"
 							target="_blank">https://tabulate.tech</a>
@@ -26,7 +26,7 @@
 							target="_blank">https://www.linkedin.com/in/connor-sample-4905a922a/</a></p>
 
 					<!-- Mobile resume button -->
-					<a class="btn btn-primary btn-shadow text-mono d-md-none ml-0 mt-1" href="/doc/resume-website.pdf">Download Resume</a>
+					<a class="btn btn-primary btn-shadow text-mono d-md-none ms-0 mt-1" href="/doc/resume-website.pdf">Download Resume</a>
 				</div>
 			</div>
 		</div>
@@ -80,7 +80,7 @@
 				{{ range $sortedList }}
 				<p><strong>{{ .employer }}</strong>
 					<br>{{ .job_title }}
-					<br><span class="text-muted">{{ .job_start }} - {{ .job_end }}</span>
+					<br><span class="text-dim">{{ .job_start }} - {{ .job_end }}</span>
 				</p>
 				<ul>
 					{{ range .highlights }}

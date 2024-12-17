@@ -132,6 +132,10 @@ img.kofiimg {
 	color: #c4c4c4;
 }
 
+footer {
+	color: #81839A;
+}
+
 .border-white-hover:hover {
 	border-color: #fff;
 }
@@ -144,7 +148,7 @@ img.kofiimg {
 	overflow-x: scroll;
 }
 
-@import "bootstrap4-neon-glow";
+@import "bootstrap5-neon-glow";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
@@ -154,15 +158,16 @@ hr {
 	border-top: 1px solid $gray-300;
 }
 
-a {
+a:not([class]) {
 	color: #A490E9;
 	word-break: break-word;
+	text-decoration: none;
 
 	&:hover {
 		color: #815af5;
+		text-decoration: underline;
 	}
 }
-
 
 blockquote {
 	position: relative;
@@ -198,4 +203,8 @@ blockquote {
 
 table {
 	@extend .table;
+}
+
+tbody {
+	@extend .table-group-divider
 }
