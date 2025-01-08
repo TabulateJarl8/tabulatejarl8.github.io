@@ -104,28 +104,19 @@ img.kofiimg {
 	font-display: swap;
 }
 
-.bg-info-dark {
-	background-color: #236fd8 !important;
-}
+$dark-colors: (
+	"primary": #544091,
+	"secondary": #1180ad,
+	"success": #14965b,
+	"info": #236fd8,
+	"warning": #c25b10,
+	"danger": #c22e46,
+);
 
-.bg-success-dark {
-	background-color: #14965b !important;
-}
-
-.bg-danger-dark {
-	background-color: #c22e46 !important;
-}
-
-.bg-warning-dark {
-	background-color: #c25b10 !important;
-}
-
-.bg-secondary-dark {
-	background-color: #1180ad !important;
-}
-
-.bg-primary-dark {
-	background-color: #544091 !important;
+@each $color, $value in $dark-colors {
+	.bg-#{$color}-dark {
+		background-color: #{$value} !important;
+	}
 }
 
 .footer-icon-hover:hover {
@@ -206,5 +197,18 @@ table {
 }
 
 tbody {
-	@extend .table-group-divider
+	@extend .table-group-divider;
+}
+
+@each $color, $value in $theme-colors {
+	hr.hr-#{$color} {
+		opacity: 1;
+		@extend .border-top;
+		@extend .border-#{$color};
+		@extend .bg-#{$color};
+	}
+}
+
+hr.hr-thick {
+	@extend .border-2;
 }
