@@ -55,10 +55,18 @@ tech:
     image: /img/tech_logos/latex.svg
   - name: Bootstrap
     image: /img/tech_logos/bootstrap.svg
-  - name: NASM
-    image: /img/tech_logos/nasm.svg
+  - name: C
+    image: /img/tech_logos/c.svg
   - name: Git
     image: /img/tech_logos/git.svg
   - name: Qt
     image: /img/tech_logos/qt.svg
+  - name: NASM
+    image: /img/tech_logos/nasm.svg
+  - name: Java
+    image: /img/tech_logos/java.svg
+  - name: Neovim
+    image: /img/tech_logos/nvim.svg
+  - name: Docker
+    image: /img/tech_logos/docker.svg
 ---
