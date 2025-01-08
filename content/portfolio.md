@@ -38,27 +38,27 @@ experience:
       - Debug complex networking issues.
 tech:
   - name: Rust
-    image: /img/tech_logos/rust.png
+    image: /img/tech_logos/rust.svg
   - name: Python
-    image: /img/tech_logos/python.png
+    image: /img/tech_logos/python.svg
   - name: JavaScript
-    image: /img/tech_logos/javascript.png
+    image: /img/tech_logos/javascript.svg
   - name: Linux
-    image: /img/tech_logos/linux.png
+    image: /img/tech_logos/linux.svg
   - name: Bash
-    image: /img/tech_logos/bash.png
+    image: /img/tech_logos/bash.svg
   - name: HTML5
-    image: /img/tech_logos/html5.png
+    image: /img/tech_logos/html5.svg
   - name: CSS3
-    image: /img/tech_logos/css3.png
+    image: /img/tech_logos/css3.svg
   - name: LaTeX
-    image: /img/tech_logos/latex.png
+    image: /img/tech_logos/latex.svg
   - name: Bootstrap
-    image: /img/tech_logos/bootstrap.png
+    image: /img/tech_logos/bootstrap.svg
   - name: NASM
     image: /img/tech_logos/nasm.svg
   - name: Git
-    image: /img/tech_logos/git.png
+    image: /img/tech_logos/git.svg
   - name: Qt
     image: /img/tech_logos/qt.svg
 ---
