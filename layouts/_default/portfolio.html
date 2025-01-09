@@ -38,9 +38,13 @@
 				<div class="card-body">
 					<h3 class="card-title">🎓 Education</h3>
 					{{ range .Params.education }}
-					<p><strong>{{.name}}</strong>
+					<p>
+						<div class="d-flex justify-content-between">
+							<strong>{{.name}}</strong>
+							<p class="text-dim mb-0">GPA: {{.gpa}}</p>
+						</div>
 						{{ range .degrees }}
-						<br>{{.}}
+						{{.}}<br>
 						{{ end }}
 					</p>
 					<p>{{ .graduation }}</p>
