@@ -16,4 +16,5 @@ draft: false
   - Intel&reg; Xeon&reg; CPU E5-1620 v2 @ 3.70GHz
   - 256GB T-FORCE SSD
   - 4&times; Seagate Barracuda Pro 12TB 7.2K RPM SATA HDD
+    - RAIDz1 for a total usage space of 30.6TB
   - 64GB DDR3 RAM
