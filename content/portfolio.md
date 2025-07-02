@@ -32,7 +32,7 @@ experience:
     job_start: January 2024
     job_end: Present
     highlights:
-      - Implement network-based computer management and imaging for over 250 desktops across campus.
+      - Implement network-based computer management and imaging for over 350 desktops across campus.
       - Prepare new and existing computer setups. Install hardware and software as needed.
       - Create comprehensive documentation for new automation and imaging techniques, server maintenance, and other critical services.
       - Architect the workflow of, set up, and deploy a Flask/React application with Docker on a remote server.
