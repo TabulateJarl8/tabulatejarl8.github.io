@@ -9,7 +9,7 @@ Recently, I was working on a Python web backend project for work, and I noticed 
 
 > This is a language service feature that is included in pylance, Microsoft's premium Python language server for VS Code. We don't have plans to port it to pyright. If you want this functionality, please switch to pylance.
 
-This was pretty annoying, as I have switched to Neovim as my primary editor, and I didn't want to switch back to VSCode. Fortunately, I learned about basedpyright in the same issue, and the author commented that they had pushed an update to the LSP which added this feature. Along with this, it also seemed to give more warnings about typing issues in the code, so I started going through some of my projects and transitioning them to be fully typed. Eventually, I got my randfacts Python module and this is where the story really begins.
+This was pretty annoying, as I have switched to Neovim as my primary editor, and I didn't want to switch back to VSCode. Fortunately, I learned about basedpyright in the same issue, and the author commented that they had pushed an update to the LSP which added this feature. Along with this, it also seemed to give more warnings about typing issues in the code, so I started going through some of my projects and transitioning them to be fully typed. Eventually, I got to my randfacts Python module and this is where the story really begins.
 
 ## Some Background
 
