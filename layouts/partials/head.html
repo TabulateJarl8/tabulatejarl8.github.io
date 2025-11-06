@@ -56,10 +56,10 @@
 	<meta name="theme-color" content="#ffffff" />
 
 	<!-- JavaScript -->
-	{{ $js := resources.Get "js/scripts.js" | js.Build | resources.Minify }}
+	{{ $js := resources.Get "js/scripts.js" | js.Build | resources.Minify | fingerprint }}
 
 
-	<script type="module" src="{{ $js.RelPermalink }}"></script>
+	<script type="module" src="{{ $js.RelPermalink }}" defer></script>
 
 	<!-- CSS -->
 	{{ with resources.Get "scss/styles.scss" | css.Sass (dict "targetPath" "css/style.css") | resources.Minify |

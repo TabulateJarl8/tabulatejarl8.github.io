@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
+
 Sitemap: https://tabulate.tech/sitemap.xml
