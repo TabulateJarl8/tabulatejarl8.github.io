@@ -16,7 +16,7 @@ buttons:
   - get:
     text: PyPI Page
     button_color: secondary
-    href: http://pypi.org/project/randfacts
+    href: https://pypi.org/project/randfacts
     newtab: false
   - source:
     text: Source Code
