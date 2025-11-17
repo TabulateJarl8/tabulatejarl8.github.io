@@ -1,6 +1,16 @@
 {{ define "main" }}
 	<div class="container mt-5">
-		<h1 class="mb-3">Blog</h1>
+		<h1 class="mb-3">
+			Blog
+			<a
+				href="{{ (.OutputFormats.Get "rss").Permalink }}"
+				class="text-dim ms-1 fa-xs align-middle"
+				aria-label="Subscribe to RSS Feed"
+				title="Subscribe to RSS Feed"
+			>
+				<i class="fas fa-rss fa-xs footer-icon-hover" aria-hidden="true"></i>
+			</a>
+		</h1>
 		{{ range (.Site.GetPage "section" "blog").Pages }}
 			<a class="text-reset text-decoration-none" href="{{ .Permalink }}">
 				<div class="card border-grey-hover w-100 mb-2">

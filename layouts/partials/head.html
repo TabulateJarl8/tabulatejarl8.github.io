@@ -55,6 +55,11 @@
 	<meta name="msapplication-config" content="/favicons/browserconfig.xml" />
 	<meta name="theme-color" content="#ffffff" />
 
+	{{ with .OutputFormats.Get "rss" }}
+		{{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+	{{ end }}
+
+
 	<!-- JavaScript -->
 	{{ $js := resources.Get "js/scripts.js" | js.Build | resources.Minify | fingerprint }}
 
