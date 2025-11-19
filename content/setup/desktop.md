@@ -17,4 +17,3 @@ draft: false
 - Corsair RMx 750W PSU
 - Antec NX400 Case
 - CyberPower ST900U UPS - 900VA
-

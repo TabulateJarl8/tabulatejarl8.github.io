@@ -37,3 +37,4 @@ layout: "software_page"
 Create a sketch-like version of an image.
 
 Sketchify is a simple program with a terrible UI made in Rust which converts images to a sketch-looking copy of that image.
+

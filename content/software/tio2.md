@@ -14,4 +14,5 @@ buttons:
 layout: "software_page"
 ---
 
-TiO2 an interpreter, compiler, and decompiler for TI-BASIC programs. 
+TiO2 an interpreter, compiler, and decompiler for TI-BASIC programs.
+

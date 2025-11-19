@@ -27,3 +27,4 @@ layout: "software_page"
 Rust program to help find the wordle word.
 
 Wordle Finder is a simple command line and GUI tool to help you find the wordle word.
+

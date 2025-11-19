@@ -20,4 +20,3 @@ layout: "software_page"
 ---
 
 Small Python utility that uses xrandr to adjust screen brightness.
-
