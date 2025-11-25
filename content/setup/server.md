@@ -12,7 +12,7 @@ draft: false
   - Microsoft Hyper-V virtual VGA
 - Local
   - Dell Precision T3610
-  - Debian 12
+  - Debian 13
   - Intel&reg; Xeon&reg; CPU E5-1620 v2 @ 3.70GHz
   - 256GB T-FORCE SSD
   - 4&times; Seagate Barracuda Pro 12TB 7.2K RPM SATA HDD
