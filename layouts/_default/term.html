@@ -1,0 +1,22 @@
+{{ define "main" }}
+	<div class="container mt-5">
+		<h1 class="mb-3">
+			<span class="text-muted">Tag:</span> {{ .Title }}
+
+			{{ with .OutputFormats.Get "rss" }}
+				<a
+					href="{{ .RelPermalink }}index.xml"
+					class="text-dim ms-1 fa-xs align-middle"
+					aria-label="RSS Feed"
+					title="RSS Feed"
+				>
+					<i class="fas fa-rss fa-xs footer-icon-hover" aria-hidden="true"></i>
+				</a>
+			{{ end }}
+		</h1>
+
+		{{ range .Pages }}
+			{{ partial "blog_post_card.html" . }}
+		{{ end }}
+	</div>
+{{ end }}

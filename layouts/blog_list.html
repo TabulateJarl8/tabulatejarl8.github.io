@@ -12,17 +12,7 @@
 			</a>
 		</h1>
 		{{ range (.Site.GetPage "section" "blog").Pages }}
-			<a class="text-reset text-decoration-none" href="{{ .RelPermalink }}">
-				<div class="card border-grey-hover w-100 mb-2">
-					<div class="card-body">
-						<h5 class="card-title">{{ .Title }}</h5>
-						<p class="card-text">{{ .Description }}</p>
-						<span class="text-dim font-italic"
-							>{{ .Date.Format "January 2, 2006" }}</span
-						>
-					</div>
-				</div>
-			</a>
+			{{ partial "blog_post_card.html" . }}
 		{{ end }}
 	</div>
 {{ end }}
