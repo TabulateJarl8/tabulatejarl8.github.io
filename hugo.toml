@@ -6,6 +6,9 @@ pluralizeListTitles = false
 [params]
 statusOrder = ["success", "info", "warning", "danger"]
 
+[params.author]
+name = 'Connor Sample'
+
 [markup.highlight]
 lineNos = true
 
