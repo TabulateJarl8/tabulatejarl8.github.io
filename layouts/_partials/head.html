@@ -27,6 +27,13 @@
 	<meta name="og:title" content="{{ $title }}" />
 	<meta name="og:type" content="website" />
 
+	{{ $isConcept := .ctx.Params.concept_project }}
+	{{ $isSetupComponent := and (eq .ctx.Type "setup") .ctx.IsPage }}
+	{{ if and (.ctx.IsPage) (not $isConcept) (not $isSetupComponent) }}
+		{{ partial "og-image.html" .ctx }}
+	{{ end }}
+
+
 	<link
 		rel="apple-touch-icon"
 		sizes="180x180"
