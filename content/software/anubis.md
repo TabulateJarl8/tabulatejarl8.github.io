@@ -27,7 +27,7 @@ buttons:
     button_color: primary
     href: https://gitlab.com/TabulateJarl8/anubis
     newtab: false
-software_page: true
+layout: software_page
 ---
 
 Bus Pass Management and Printing System.

@@ -21,7 +21,7 @@ buttons:
     button_color: primary
     href: https://github.com/TabulateJarl8/modpackSwitcher
     newtab: false
-software_page: true
+layout: software_page
 ---
 
 Utility to allow for having multiple minecraft worlds/modpacks using one server host.

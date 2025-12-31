@@ -31,7 +31,7 @@ buttons:
     button_color: primary
     href: https://gitlab.com/TabulateJarl8/sketchify
     newtab: false
-software_page: true
+layout: software_page
 ---
 
 Create a sketch-like version of an image.

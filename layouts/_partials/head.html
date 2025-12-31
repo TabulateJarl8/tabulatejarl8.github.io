@@ -13,7 +13,7 @@
 	{{ end }}
 
 	{{ $description := "Versatile programmer with expertise in Rust, Python, and more. Computer Science student at James Madison University, passionate about FOSS, Linux, and music." }}
-	{{ if .ctx.Params.software_page }}
+	{{ if eq .ctx.Params.layout "software_page" }}
 		{{ $description = index (split .ctx.Content "</p>") 0 | plainify }}
 	{{ end }}
 

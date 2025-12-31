@@ -23,7 +23,7 @@ buttons:
     button_color: primary
     href: https://github.com/TabulateJarl8/vapor
     newtab: false
-software_page: true
+layout: software_page
 ---
 
 TUI program to check the ProtonDB compatibility of all the games of a Steam user.

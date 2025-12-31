@@ -27,7 +27,7 @@ buttons:
     button_color: primary
     href: https://gitlab.com/ImaginaryInfinity/academiic
     newtab: false
-software_page: true
+layout: software_page
 ---
 
 Manage assignments from several learning management systems in one convenient place.

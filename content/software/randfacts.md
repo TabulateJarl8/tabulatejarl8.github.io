@@ -23,7 +23,7 @@ buttons:
     button_color: primary
     href: https://github.com/TabulateJarl8/randfacts
     newtab: false
-software_page: true
+layout: software_page
 ---
 
 Randfacts is a Python module that generates random facts.

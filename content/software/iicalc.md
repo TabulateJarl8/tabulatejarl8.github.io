@@ -26,7 +26,7 @@ buttons:
     button_color: primary
     href: https://gitlab.com/TurboWafflz/ImaginaryInfinity-Calculator
     newtab: false
-software_page: true
+layout: software_page
 ---
 
 ImaginaryInfinity Calculator is a lightweight, but expandable calculator.

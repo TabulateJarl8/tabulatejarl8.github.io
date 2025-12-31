@@ -21,7 +21,7 @@ buttons:
     button_color: primary
     href: https://github.com/TabulateJarl8/ti842py
     newtab: false
-software_page: true
+layout: software_page
 ---
 
 ti842py is a TI-BASIC to Python 3 transpiler.

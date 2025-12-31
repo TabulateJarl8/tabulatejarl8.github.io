@@ -3,7 +3,7 @@
 {{ $fontReg := resources.Get "fonts/TitilliumWeb-Regular.ttf" }}
 {{ $favicon := resources.Get "img/fav-circular.png" }}
 
-{{ $software_page := .Params.software_page | default false }}
+{{ $software_page := (eq .Params.layout "software_page") | default false }}
 
 {{ $dynamic := or $software_page (eq .Type "blog") }}
 

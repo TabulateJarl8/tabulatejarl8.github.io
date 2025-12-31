@@ -11,7 +11,7 @@ buttons:
     button_color: primary
     href: https://github.com/TabulateJarl8/mediabot
     newtab: false
-software_page: true
+layout: software_page
 ---
 
 Mediabot is an open source discord bot that can speak user-sent media (audio files, PDFs, Images, text) in a voice channel.

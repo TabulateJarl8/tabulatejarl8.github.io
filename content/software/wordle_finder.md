@@ -21,7 +21,7 @@ buttons:
     button_color: primary
     href: https://github.com/TabulateJarl8/wordle-finder
     newtab: false
-software_page: true
+layout: software_page
 ---
 
 Rust program to help find the wordle word.
