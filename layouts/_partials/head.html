@@ -13,10 +13,8 @@
 	{{ end }}
 
 	{{ $description := "Versatile programmer with expertise in Rust, Python, and more. Computer Science student at James Madison University, passionate about FOSS, Linux, and music." }}
-	{{ if isset .ctx.Params "layout" }}
-		{{ if .ctx.Params.software_page }}
-			{{ $description = index (split .ctx.Content "</p>") 0 | plainify }}
-		{{ end }}
+	{{ if .ctx.Params.software_page }}
+		{{ $description = index (split .ctx.Content "</p>") 0 | plainify }}
 	{{ end }}
 
 
@@ -29,7 +27,7 @@
 
 	{{ $isConcept := .ctx.Params.concept_project }}
 	{{ $isSetupComponent := and (eq .ctx.Type "setup") .ctx.IsPage }}
-	{{ if and (.ctx.IsPage) (not $isConcept) (not $isSetupComponent) }}
+	{{ if and (or .ctx.IsPage .ctx.IsHome .ctx.IsSection) (not $isConcept) (not $isSetupComponent) }}
 		{{ partial "og-image.html" .ctx }}
 	{{ end }}
 

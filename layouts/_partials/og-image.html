@@ -8,7 +8,7 @@
 {{ $dynamic := or $software_page (eq .Type "blog") }}
 
 {{/* title should be bare on software and blog pages */}}
-{{ $ogTitle := .Title | default "tabulate.tech" }}
+{{ $ogTitle := .Title }}
 {{ if not $dynamic }}
 	{{ $ogTitle = printf "%s - tabulate.tech" .Title }}
 {{ end }}
