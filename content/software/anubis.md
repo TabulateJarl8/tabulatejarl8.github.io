@@ -27,10 +27,9 @@ buttons:
     button_color: primary
     href: https://gitlab.com/TabulateJarl8/anubis
     newtab: false
-layout: "software_page"
+software_page: true
 ---
 
 Bus Pass Management and Printing System.
 
 AnuBIS (A new Bus Information System) is a program that can generate and print bus passes using a DYMO LabelWriter 450 Turbo. It is highly configurable and lightweight. Designed for and used by FCPS.
-

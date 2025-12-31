@@ -7,13 +7,13 @@
 
 			{{ $sortedPages := slice }}
 			{{ range $i, $val := $customOrder }}
-				{{ $pages := where $.Site.RegularPages "Params.layout" "software_page" }}
+				{{ $pages := where $.Site.RegularPages "Params.software_page" true }}
 				{{ $pages = where $pages "Params.status" $val }}
 				{{ $sortedPages = union $sortedPages $pages }}
 			{{ end }}
 
 			{{ range $sortedPages }}
-				{{ if and (eq .Params.layout "software_page") (ne .Params.status "secondary") }}
+				{{ if and (.Params.software_page) (ne .Params.status "secondary") }}
 					<div class="col-md-4 mb-4">
 						<div class="card mb-4 h-100 d-flex flex-column">
 							{{ if .Params.logo }}

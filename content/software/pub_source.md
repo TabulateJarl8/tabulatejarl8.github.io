@@ -16,7 +16,7 @@ buttons:
     button_color: primary
     href: https://github.com/TabulateJarl8/pub_source
     newtab: false
-layout: "software_page"
+software_page: true
 ---
 
 A Rust proc macro to make everything public.

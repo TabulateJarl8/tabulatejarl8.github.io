@@ -19,6 +19,7 @@ buttons:
     href: https://gitlab.com/TabulateJarl8/castify
     newtab: false
 layout: "software_page"
+software_page: true
 ---
 
 Castify is an open source utility that allows you to easily find out if two different movies or TV shows share any cast.

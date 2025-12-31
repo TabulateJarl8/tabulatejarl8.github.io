@@ -21,7 +21,7 @@ buttons:
     button_color: secondary
     href: https://pypi.org/project/jmu-openconnect/
     newtab: false
-layout: "software_page"
+software_page: true
 ---
 
 Wrapper script around openconnect for JMU VPN authentication on Linux.

@@ -16,7 +16,7 @@ buttons:
     button_color: primary
     href: https://github.com/TabulateJarl8/screen-brightness
     newtab: false
-layout: "software_page"
+software_page: true
 ---
 
 Small Python utility that uses xrandr to adjust screen brightness.

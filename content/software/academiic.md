@@ -27,10 +27,9 @@ buttons:
     button_color: primary
     href: https://gitlab.com/ImaginaryInfinity/academiic
     newtab: false
-layout: "software_page"
+software_page: true
 ---
 
 Manage assignments from several learning management systems in one convenient place.
 
 Academiic is a website that aims to connect to user accounts from a bunch of different learning management systems, like google classroom and canvas, and bring it all into one location for organizational and convenience purposes.
-

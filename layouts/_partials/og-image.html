@@ -2,10 +2,13 @@
 {{ $fontBold := resources.Get "fonts/TitilliumWeb-Bold.ttf" }}
 {{ $fontReg := resources.Get "fonts/TitilliumWeb-Regular.ttf" }}
 {{ $favicon := resources.Get "img/fav-circular.png" }}
-{{ $dynamic := or (eq .Params.layout "software_page") (eq .Type "blog") }}
+
+{{ $software_page := .Params.software_page | default false }}
+
+{{ $dynamic := or $software_page (eq .Type "blog") }}
 
 {{/* title should be bare on software and blog pages */}}
-{{ $ogTitle := .Title }}
+{{ $ogTitle := .Title | default "tabulate.tech" }}
 {{ if not $dynamic }}
 	{{ $ogTitle = printf "%s - tabulate.tech" .Title }}
 {{ end }}
@@ -13,7 +16,7 @@
 {{/* extract description */}}
 {{ $description := "Versatile programmer with expertise in Rust, Python, and more." }}
 {{ if $dynamic }}
-	{{ if eq .Params.layout "software_page" }}
+	{{ if $software_page }}
 		{{ $description = index (split .Content "</p>") 0 | plainify | truncate 100 }}
 	{{ else if .Description }}
 		{{ $description = .Description | truncate 100 }}

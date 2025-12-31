@@ -8,7 +8,7 @@ featured: true
 status: "success"
 logo: /img/showcase/squiid/logo.png
 link_override: "https://imaginaryinfinity.net/projects/squiid/"
-layout: "software_page"
+software_page: true
 ---
 
 Squiid is a modular calculator written in Rust. It is the successor to our previous calculator, ImaginaryInfinity Calculator.

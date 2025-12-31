@@ -11,8 +11,7 @@ buttons:
     button_color: primary
     href: https://github.com/TabulateJarl8/tio2
     newtab: false
-layout: "software_page"
+software_page: true
 ---
 
 TiO2 an interpreter, compiler, and decompiler for TI-BASIC programs.
-

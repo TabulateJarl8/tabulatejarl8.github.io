@@ -31,10 +31,9 @@ buttons:
     button_color: primary
     href: https://gitlab.com/TabulateJarl8/sketchify
     newtab: false
-layout: "software_page"
+software_page: true
 ---
 
 Create a sketch-like version of an image.
 
 Sketchify is a simple program with a terrible UI made in Rust which converts images to a sketch-looking copy of that image.
-

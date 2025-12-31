@@ -23,10 +23,9 @@ buttons:
     button_color: primary
     href: https://github.com/TabulateJarl8/vapor
     newtab: false
-layout: "software_page"
+software_page: true
 ---
 
 TUI program to check the ProtonDB compatibility of all the games of a Steam user.
 
 Vapor is a Python package built on [Textual](https://github.com/textualize/textual/) which offers a simple Terminal User Interface for checking ProtonDB compatibility ratings of games in a Steam user's library. The tool seamlessly integrates Steam and ProtonDB APIs to provide insightful compatibility information.
-
