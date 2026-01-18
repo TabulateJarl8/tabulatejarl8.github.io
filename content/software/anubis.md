@@ -5,7 +5,7 @@ draft: false
 nav: false
 featured: false
 status: "success"
-logo: /img/showcase/anubis/main_ui.png
+logo: /img/showcase/anubis/logo.svg
 images:
   - /img/showcase/anubis/main_ui.png
   - /img/showcase/anubis/table_ui.png
