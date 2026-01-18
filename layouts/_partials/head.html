@@ -72,9 +72,9 @@
 	<script type="module" src="{{ $js.RelPermalink }}" defer></script>
 
 	<!-- CSS -->
-	{{ with resources.Get "scss/styles.scss" | css.Sass (dict "targetPath" "css/style.css") | resources.Minify |
-		fingerprint
-	}}
+	{{/* WARN: bootstrap dependency deprecations are silenced here until v6 */}}
+	{{ $opts := dict "transpiler" "dartsass" "silenceDependencyDeprecations" "true" "targetPath" "css/style.css" }}
+	{{ with resources.Get "scss/styles.scss" | toCSS $opts | minify | fingerprint }}
 		<link rel="stylesheet" href="{{ .RelPermalink }}" />
 	{{ end }}
 

@@ -1,108 +1,13 @@
-img.kofiimg {
-	height: 15px !important;
-	width: 22px !important;
-	display: initial;
-	animation: kofi-wiggle 3s infinite;
-}
+@use "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@use "../../node_modules/@fortawesome/fontawesome-free/scss/fa" as fa;
+@use "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss" as
+	fa-brands;
+@use "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss" as
+	fa-solid;
+@use "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss" as
+	fa-regular;
 
-@font-face {
-	font-family: 'Titillium Web';
-	src: url('/fonts/TitilliumWeb-SemiBoldItalic.woff2') format('woff2'),
-		url('/fonts/TitilliumWeb-SemiBoldItalic.woff') format('woff');
-	font-weight: 600;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Titillium Web';
-	src: url('/fonts/TitilliumWeb-BoldItalic.woff2') format('woff2'),
-		url('/fonts/TitilliumWeb-BoldItalic.woff') format('woff');
-	font-weight: bold;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Titillium Web';
-	src: url('/fonts/TitilliumWeb-SemiBold.woff2') format('woff2'),
-		url('/fonts/TitilliumWeb-SemiBold.woff') format('woff');
-	font-weight: 600;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Titillium Web';
-	src: url('/fonts/TitilliumWeb-Bold.woff2') format('woff2'),
-		url('/fonts/TitilliumWeb-Bold.woff') format('woff');
-	font-weight: bold;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Titillium Web';
-	src: url('/fonts/TitilliumWeb-Black.woff2') format('woff2'),
-		url('/fonts/TitilliumWeb-Black.woff') format('woff');
-	font-weight: 900;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Titillium Web';
-	src: url('/fonts/TitilliumWeb-Italic.woff2') format('woff2'),
-		url('/fonts/TitilliumWeb-Italic.woff') format('woff');
-	font-weight: normal;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Titillium Web';
-	src: url('/fonts/TitilliumWeb-ExtraLight.woff2') format('woff2'),
-		url('/fonts/TitilliumWeb-ExtraLight.woff') format('woff');
-	font-weight: 200;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Titillium Web';
-	src: url('/fonts/TitilliumWeb-Light.woff2') format('woff2'),
-		url('/fonts/TitilliumWeb-Light.woff') format('woff');
-	font-weight: 300;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Titillium Web';
-	src: url('/fonts/TitilliumWeb-Regular.woff2') format('woff2'),
-		url('/fonts/TitilliumWeb-Regular.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Titillium Web';
-	src: url('/fonts/TitilliumWeb-LightItalic.woff2') format('woff2'),
-		url('/fonts/TitilliumWeb-LightItalic.woff') format('woff');
-	font-weight: 300;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Titillium Web';
-	src: url('/fonts/TitilliumWeb-ExtraLightItalic.woff2') format('woff2'),
-		url('/fonts/TitilliumWeb-ExtraLightItalic.woff') format('woff');
-	font-weight: 200;
-	font-style: italic;
-	font-display: swap;
-}
+@import "bootstrap5-neon-glow";
 
 $dark-colors: (
 	"primary": #544091,
@@ -113,44 +18,36 @@ $dark-colors: (
 	"danger": #c22e46,
 );
 
-@each $color, $value in $dark-colors {
-	.bg-#{$color}-dark {
-		background-color: #{$value} !important;
+// SETUP FONTS
+
+@mixin font-face($weight, $style, $filename) {
+	@font-face {
+		font-family: "Titillium Web";
+		src:
+			url("/fonts/TitilliumWeb-#{$filename}.woff2") format("woff2"),
+			url("/fonts/TitilliumWeb-#{$filename}.woff") format("woff");
+		font-weight: $weight;
+		font-style: $style;
+		font-display: swap;
 	}
 }
 
-.footer-icon-hover:hover {
-	color: #c4c4c4;
-}
+@include font-face(200, normal, "ExtraLight");
+@include font-face(200, italic, "ExtraLightItalic");
+@include font-face(300, normal, "Light");
+@include font-face(300, italic, "LightItalic");
+@include font-face(normal, normal, "Regular");
+@include font-face(normal, italic, "Italic");
+@include font-face(600, normal, "SemiBold");
+@include font-face(600, italic, "SemiBoldItalic");
+@include font-face(bold, normal, "Bold");
+@include font-face(bold, italic, "BoldItalic");
+@include font-face(900, normal, "Black");
 
-footer {
-	color: #81839A;
-}
-
-.border-grey-hover:hover {
-	border-color: grey;
-}
-
-.container img {
-	@extend .mw-100;
-}
-
-.highlight {
-	overflow-x: auto;
-}
-
-@import "bootstrap5-neon-glow";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
-
-hr {
-	border-top: 1px solid $gray-300;
-}
+// GLOBAL OVERRIDES
 
 a:not([class]) {
-	color: #A490E9;
+	color: #a490e9;
 	word-break: break-word;
 	text-decoration: none;
 
@@ -159,6 +56,24 @@ a:not([class]) {
 		text-decoration: underline;
 	}
 }
+
+table {
+	@extend .table;
+}
+
+tbody {
+	@extend .table-group-divider;
+}
+
+hr {
+	border-top: 1px solid $gray-300;
+}
+
+.container img {
+	@extend .mw-100;
+}
+
+// COMPONENTS
 
 blockquote {
 	position: relative;
@@ -171,7 +86,7 @@ blockquote {
 
 	// Left stripe
 	&::before {
-		content: '';
+		content: "";
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -192,14 +107,27 @@ blockquote {
 	}
 }
 
-table {
-	@extend .table;
+footer {
+	color: #81839a;
 }
 
-tbody {
-	@extend .table-group-divider;
+img.kofiimg {
+	height: 15px !important;
+	width: 22px !important;
+	display: initial;
+	animation: kofi-wiggle 3s infinite;
 }
 
+// UTILITIES
+
+// loop for dark backgrounds
+@each $color, $value in $dark-colors {
+	.bg-#{$color}-dark {
+		background-color: #{$value} !important;
+	}
+}
+
+// loop for hr colors using bootstrap's $theme-colors
 @each $color, $value in $theme-colors {
 	hr.hr-#{$color} {
 		opacity: 1;
@@ -211,4 +139,48 @@ tbody {
 
 hr.hr-thick {
 	@extend .border-2;
+}
+
+.border-grey-hover:hover {
+	border-color: grey;
+}
+
+.highlight {
+	overflow-x: auto;
+}
+
+// FONTAWESOME CLASSES
+
+.social-icon {
+	@include fa.fa-icon;
+	@extend .text-dim;
+	@extend .fa-xl;
+
+	&:hover {
+		color: #c4c4c4;
+	}
+
+	&.github {
+		@include fa-brands.icon(fa.$var-github);
+	}
+
+	&.gitlab {
+		@include fa-brands.icon(fa.$var-gitlab);
+	}
+
+	&.reddit {
+		@include fa-brands.icon(fa.$var-reddit);
+	}
+
+	&.mastodon {
+		@include fa-brands.icon(fa.$var-mastodon);
+	}
+
+	&.stack-overflow {
+		@include fa-brands.icon(fa.$var-stack-overflow);
+	}
+
+	&.linkedin {
+		@include fa-brands.icon(fa.$var-linkedin-in);
+	}
 }

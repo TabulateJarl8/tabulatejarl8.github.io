@@ -34,27 +34,39 @@ $grid-breakpoints: (
 	sm: 576px,
 	md: 768px,
 	lg: 992px,
-	xl: 1200px
+	xl: 1200px,
 );
 
 $container-max-widths: (
 	sm: 540px,
 	md: 720px,
 	lg: 960px,
-	xl: 1140px
+	xl: 1140px,
 );
 
 // add extra 0.75rem spacer
 $spacer: 1rem !default;
 $spacers: (
 	0: 0,
-	1: ($spacer * .25),
-	2: ($spacer * .5),
+	1: (
+		$spacer * 0.25,
+	),
+	2: (
+		$spacer * 0.5,
+	),
 	3: $spacer,
-	4: ($spacer * 1.5),
-	5: ($spacer * 3),
-	6: ($spacer * 5),
-	75: ($spacer * .75),
+	4: (
+		$spacer * 1.5,
+	),
+	5: (
+		$spacer * 3,
+	),
+	6: (
+		$spacer * 5,
+	),
+	75: (
+		$spacer * 0.75,
+	),
 );
 
 $table-color: $body-color;
@@ -101,20 +113,24 @@ $code-color: #2983fe !default;
 
 //<editor-fold desc="White">
 $component-active-color: $dark !default;
-$table-dark-accent-bg: rgba($dark, .05) !default;
-$table-dark-hover-bg: rgba($dark, .075) !default;
-$btn-box-shadow: inset 0 1px 0 rgba($dark, .15), 0 1px 1px rgba($black, .075) !default;
+$table-dark-accent-bg: rgba($dark, 0.05) !default;
+$table-dark-hover-bg: rgba($dark, 0.075) !default;
+$btn-box-shadow:
+	inset 0 1px 0 rgba($dark, 0.15),
+	0 1px 1px rgba($black, 0.075) !default;
 $input-bg: $gray-400 !default;
 $custom-control-indicator-checked-color: $dark !default;
 $custom-control-indicator-active-color: $dark !default;
 $custom-select-bg: $dark !default;
-$custom-file-focus-box-shadow: 0 0 0 .075rem $dark, 0 0 0 .2rem theme-color('primary') !default;
+$custom-file-focus-box-shadow:
+	0 0 0 0.075rem $dark,
+	0 0 0 0.2rem theme-color("primary") !default;
 $dropdown-bg: $dark !default;
-$navbar-dark-color: rgba($dark, .5) !default;
-$navbar-dark-hover-color: rgba($dark, .75) !default;
+$navbar-dark-color: rgba($dark, 0.5) !default;
+$navbar-dark-hover-color: rgba($dark, 0.75) !default;
 $navbar-dark-active-color: rgba($dark, 1) !default;
-$navbar-dark-disabled-color: rgba($dark, .25) !default;
-$navbar-dark-toggler-border-color: rgba($dark, .1) !default;
+$navbar-dark-disabled-color: rgba($dark, 0.25) !default;
+$navbar-dark-toggler-border-color: rgba($dark, 0.1) !default;
 $pagination-bg: $dark !default;
 $pagination-active-color: $white !default;
 $pagination-disabled-bg: $dark !default;
@@ -145,11 +161,11 @@ $input-border-color: $gray-800;
 ////$custom-select-focus-box-shadow:   inset 0 1px 2px rgba($black, .075), 0 0 5px rgba($custom-select-focus-border-color, .5) !default;
 //$dropdown-border-color:          rgba($black,.15) !default;
 //$dropdown-box-shadow:            0 .5rem 1rem rgba($black,.175) !default;
-$navbar-light-color: rgba($white, .65) !default;
-$navbar-light-hover-color: rgba($white, .9) !default;
+$navbar-light-color: rgba($white, 0.65) !default;
+$navbar-light-hover-color: rgba($white, 0.9) !default;
 $navbar-light-active-color: rgba($white, 1) !default;
-$navbar-light-disabled-color: rgba($white, .4) !default;
-$navbar-light-toggler-border-color: rgba($white, .1) !default;
+$navbar-light-disabled-color: rgba($white, 0.4) !default;
+$navbar-light-toggler-border-color: rgba($white, 0.1) !default;
 //$card-border-color:        rgba($black,.125) !default;
 //$card-cap-bg:              rgba($black, .03) !default;
 //$tooltip-bg:                  $black !default;
@@ -215,11 +231,10 @@ $table-dark-color: $body-color;
 //$thumbnail-bg:                $body-bg !default;
 //</editor-fold>
 
-@import '../../node_modules/bootstrap/scss/bootstrap';
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 @each $color, $value in $theme-colors {
 	.btn-hover-text-#{$color} {
-
 		&:hover,
 		&:active {
 			color: $value !important;
@@ -269,7 +284,18 @@ $table-dark-color: $body-color;
 }
 
 // Vibrant Sea
-$font-family-display: 'Hack', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-family-display:
+	"Hack",
+	-apple-system,
+	BlinkMacSystemFont,
+	"Segoe UI",
+	Roboto,
+	"Helvetica Neue",
+	Arial,
+	sans-serif,
+	"Apple Color Emoji",
+	"Segoe UI Emoji",
+	"Segoe UI Symbol";
 
 $button-shadow-colors: (
 	primary: #986edf,
@@ -279,7 +305,7 @@ $button-shadow-colors: (
 	warning: #f99511,
 	danger: #ff707f,
 	light: #9ea9b6,
-	dark: #191a2d
+	dark: #191a2d,
 );
 
 @mixin btn-shadow($color) {
@@ -289,36 +315,35 @@ $button-shadow-colors: (
 	&,
 	&.focus,
 	&:focus {
-		box-shadow: 3px 3px 0 $color,
+		box-shadow:
+			3px 3px 0 $color,
 			2px 2px 0 $color,
 			1px 1px 0 $color;
 	}
 
 	&:hover {
-		box-shadow: 5px 5px 0 $color,
+		box-shadow:
+			5px 5px 0 $color,
 			4px 4px 0 $color,
 			3px 3px 0 $color,
 			2px 2px 0 $color,
 			1px 1px 0 $color;
 		transform: translate(-2px, -2px);
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 		//border: 1px solid yellow;
-
 	}
 
 	&:active {
 		box-shadow: none;
 		transform: translate(4px, 4px) !important;
-		transition: all .1s ease;
+		transition: all 0.1s ease;
 	}
-
 }
 
 .btn-shadow {
 	margin-left: 8px;
 
 	@each $color, $value in $button-shadow-colors {
-
 		&.btn-#{$color},
 		&.btn-outline-#{$color} {
 			@include btn-shadow($value);
@@ -326,7 +351,6 @@ $button-shadow-colors: (
 	}
 
 	@each $color, $value in $theme-colors {
-
 		&.btn-#{$color},
 		&.btn-outline-#{$color} {
 			&:hover {
@@ -346,12 +370,12 @@ $button-shadow-colors: (
 
 	.text-white &,
 	&.text-white {
-		text-shadow: -1px -1px rgba(255, 255, 255, .2);
+		text-shadow: -1px -1px rgba(255, 255, 255, 0.2);
 	}
 }
 
 .text-reduced-opacity {
-	opacity: .5;
+	opacity: 0.5;
 }
 
 .text-grey {
@@ -371,7 +395,6 @@ $button-shadow-colors: (
 }
 
 .btn-success {
-
 	&,
 	&:hover,
 	&:focus,
@@ -382,7 +405,6 @@ $button-shadow-colors: (
 
 .btn-info,
 .btn-secondary {
-
 	&,
 	&:hover,
 	&:focus,
@@ -396,14 +418,22 @@ $button-shadow-colors: (
 	.list-group-item-#{$color} {
 		--#{$prefix}list-group-color: var(--#{$prefix}#{$color}-text-emphasis);
 		--#{$prefix}list-group-bg: var(--#{$prefix}#{$color}-bg-subtle);
-		--#{$prefix}list-group-border-color: var(--#{$prefix}#{$color}-border-subtle);
+		--#{$prefix}list-group-border-color: var(
+			--#{$prefix}#{$color}-border-subtle
+		);
 		--#{$prefix}list-group-action-hover-color: var(--#{$prefix}emphasis-color);
-		--#{$prefix}list-group-action-hover-bg: var(--#{$prefix}#{$color}-border-subtle);
+		--#{$prefix}list-group-action-hover-bg: var(
+			--#{$prefix}#{$color}-border-subtle
+		);
 		--#{$prefix}list-group-action-active-color: var(--#{$prefix}emphasis-color);
-		--#{$prefix}list-group-action-active-bg: var(--#{$prefix}#{$color}-border-subtle);
+		--#{$prefix}list-group-action-active-bg: var(
+			--#{$prefix}#{$color}-border-subtle
+		);
 		--#{$prefix}list-group-active-color: var(--#{$prefix}#{$color}-bg-subtle);
 		--#{$prefix}list-group-active-bg: var(--#{$prefix}#{$color}-text-emphasis);
-		--#{$prefix}list-group-active-border-color: var(--#{$prefix}#{$color}-text-emphasis);
+		--#{$prefix}list-group-active-border-color: var(
+			--#{$prefix}#{$color}-text-emphasis
+		);
 	}
 }
 
