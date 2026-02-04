@@ -30,3 +30,5 @@ Once we establish a similarity threshold that works best (turned out to be `0.70
 - hashing/tokenizing for integer comparison
 - linear intersect calculation with sorting
 - length diff ratio
+
+<!-- TODO: find links to each version, table of comparisons -->
