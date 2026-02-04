@@ -14,3 +14,23 @@ lineNos = true
 
 [minify]
 minifyOutput = true
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.extensions]
+[markup.goldmark.extensions.passthrough]
+enable = true
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['$$', '$$'], ['\[', '\]']]
+inline = [['\(', '\)']]
+
+[module]
+[[module.mounts]]
+source = "assets"
+target = "assets"
+[[module.mounts]]
+source = "node_modules/katex/dist/katex.min.css"
+target = "assets/katex/katex.min.css"
+[[module.mounts]]
+source = "node_modules/katex/dist/fonts"
+target = "assets/katex/fonts"

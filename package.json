@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "katex": "^0.16.28"
   },
   "devDependencies": {
     "prettier-plugin-go-template": "^0.0.15"
