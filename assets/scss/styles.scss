@@ -6,6 +6,7 @@
 	fa-solid;
 @use "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss" as
 	fa-regular;
+@use "sass:color";
 
 @import "bootstrap5-neon-glow";
 
@@ -129,7 +130,7 @@ a.blog-tag {
 
 		&:hover {
 			@extend .text-decoration-underline;
-			color: lighten($success, 15%) !important;
+			color: color.adjust($success, $lightness: 15%) !important;
 		}
 	}
 }
