@@ -118,6 +118,22 @@ img.kofiimg {
 	animation: kofi-wiggle 3s infinite;
 }
 
+a.blog-tag {
+	@extend .text-decoration-none;
+
+	span {
+		@extend .badge;
+		@extend .bg-dark;
+		@extend .text-success;
+		transition: color 0.15s ease-in-out;
+
+		&:hover {
+			@extend .text-decoration-underline;
+			color: lighten($success, 15%) !important;
+		}
+	}
+}
+
 // UTILITIES
 
 // loop for dark backgrounds

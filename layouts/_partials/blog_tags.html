@@ -1,5 +1,5 @@
 {{ range .Params.tags }}
-	<a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="text-decoration-none">
-		<span class="badge bg-dark text-success">{{ . }}</span>
+	<a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="blog-tag">
+		<span>{{ . }}</span>
 	</a>
 {{ end }}
