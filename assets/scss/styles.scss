@@ -129,15 +129,13 @@ a.blog-tag {
 	@extend .text-decoration-none;
 
 	span {
-		@extend .badge;
-		@extend .bg-dark;
-		@extend .text-success;
+		@extend .badge, .bg-dark, .text-success;
 		transition: color 0.15s ease-in-out;
+	}
 
-		&:hover {
-			@extend .text-decoration-underline;
-			color: color.adjust($success, $lightness: 15%) !important;
-		}
+	&:hover span {
+		@extend .text-decoration-underline;
+		color: color.adjust($success, $lightness: 15%) !important;
 	}
 }
 
