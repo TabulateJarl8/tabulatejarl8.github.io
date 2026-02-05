@@ -12,7 +12,7 @@ As a brief historical overview, the checkduplicates test finds any facts that ar
 - **Python**: I implemented this first version with the [`fuzzywuzzy`](https://github.com/seatgeek/fuzzywuzzy) module, but this was pretty slow because it's all Python.
 - **Python/C++**: After a few years of using this, I rewrote it to use [`rapidfuzz`](https://github.com/rapidfuzz/RapidFuzz), which is a much faster C++ based implementation of Levenshtein. This worked decently well for a while, but I again got tired of the slowdown.
 - **Rust #1**: The third time around I had recently learned Rust and wanted to try that out, so I did. However, if I remember correctly it was actually originally slower than the C++ version, probably because there's not much speedup you can do when using a recursive algorithm. This is when I discovered [Wagner-Fischer](https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm), which is a dynamic programming approach to Levenshtein distance. My initial implementation was already drastically faster, and I go over the particular optimizations that I did in [my other blog post]({{< ref "blog/randfacts_checkduplicates" >}}).
-- **Rust #2**: This is my fourth and most decent development, and on my personal desktop I've increased the speed from ~17.10s to ~165.52ms, which is about a 196% increase in speed, and this ratio seems to be similar on my laptop.
+- **Rust #2**: This is my fourth and most recent development, and on my personal desktop I've increased the speed from ~17.10s to ~165.52ms, which is about a 196% increase in speed, and this ratio seems to be similar on my laptop.
 
 ## Dice-S&#248;rensen
 
@@ -26,7 +26,7 @@ $$\frac{2\cdot 3}{3+5}=0.75$$
 
 Once we establish a similarity threshold that works best (turned out to be `0.70` for me), then we can just use this to compare similarity without having to do recursion or complex matrix edit distance calculations.
 
-The actual base algorithm itself ended up being fairly simple, as it is provided a sorted array of `u64`s (we'll discuss why a `u64` in a moment), so we're able to calculate the intersection in one linear pass:
+The actual base algorithm itself ended up being fairly simple, as it is provided a sorted array of `u64`s (we'll discuss why/how `u64` in a moment), so we're able to calculate the intersection in one linear pass:
 
 ```rs
 #[inline(always)]
@@ -65,7 +65,7 @@ I mentioned in the last section that the algorithm is provided a list (set) of `
 
 ## Length Difference Ratio Termination
 
-The other huge optimization that this approach allowed us to do is the fact that we're not able to calculate the mathematical limit at which two facts could not possibly be considered similar if their lengths differ by \(x\) amount. This was a little bit complex to do but I'll try to annotate the math here:
+The other huge optimization that this approach allowed us to do is the fact that we're now able to calculate the mathematical limit at which two facts could not possibly be considered similar if their lengths differ by \(x\) amount. This was a little bit complex to do but I'll try to annotate the math here:
 
 We already know the following formula for calculating the coefficient:
 
@@ -132,7 +132,7 @@ facts
 | Approximate Iterations/second | ~60,000-70,000                | ~400,000                   | ~1,550,000                 | ~50,000[^1]                |
 | Source Code Permalink         | [Link][python test permalink] | [Link][c++ test permalink] | [Link][old rust permalink] | [Link][new rust permalink] |
 
-I found this comparison kind of interesting because the new Rust version is so fast, but it by far has the least number of iterations/second. This is due to the test having far less comparisons to do than any of the other implementations due to the new ability to only compare facts that could possibly be similar. I've actually found this new implementation to have picked up duplicate facts that the Levenshtein and Wagner-Fischer implementations missed, while also having almost no false positives. Overall, this has been a very worthwhile investment and I had a lot of fun learning about this new algorithm.
+I found this comparison kind of interesting because the new Rust version is so fast, but it by far has the least number of iterations/second. While this may seem like it'd be slower at first, the speed is due to the test having far less comparisons to do than any of the other implementations because of the new ability to only compare facts that could possibly be similar. I've actually found this new implementation to have picked up duplicate facts that the Levenshtein and Wagner-Fischer implementations missed, while also having almost no false positives. Overall, this has been a very worthwhile investment and I had a lot of fun learning about this new algorithm.
 
 [python test permalink]: https://github.com/TabulateJarl8/randfacts/blob/021bd555f1b1931343acc7dfe7e0746af9003afe/tests/checkduplicates.py
 [c++ test permalink]: https://github.com/TabulateJarl8/randfacts/blob/de5f66ff1eb4545de82c14c62405fd33c7cd07e7/tests/checkduplicates.py
