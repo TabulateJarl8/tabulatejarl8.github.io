@@ -11,13 +11,11 @@ name = 'Connor Sample'
 
 [markup.highlight]
 lineNos = true
+style = "catppuccin-mocha"
 
 [minify]
 minifyOutput = true
 
-[markup]
-[markup.goldmark]
-[markup.goldmark.extensions]
 [markup.goldmark.extensions.passthrough]
 enable = true
 [markup.goldmark.extensions.passthrough.delimiters]

@@ -58,6 +58,12 @@ a:not([class]) {
 	}
 }
 
+// dont make footnote links purple
+a.footnote-ref,
+a.footnote-backref {
+	color: #b8b0d1 !important;
+}
+
 table {
 	@extend .table;
 }
@@ -164,6 +170,13 @@ hr.hr-thick {
 
 .highlight {
 	overflow-x: auto;
+
+	// this feels wrong (im sure nothing bad will ever happen)
+	// overrides the default highlight color of highlighted lines
+	// in code blocks to be less bright (catppuccin-mocha)
+	pre code span[style*="background-color"] {
+		background-color: #303240 !important;
+	}
 }
 
 // FONTAWESOME CLASSES
