@@ -141,6 +141,12 @@ a.blog-tag {
 	}
 }
 
+// scroll on viewport overflow
+.katex-display {
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
 // UTILITIES
 
 // loop for dark backgrounds
