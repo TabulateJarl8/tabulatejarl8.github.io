@@ -74,22 +74,35 @@
 	<!-- CSS -->
 	{{/* WARN: bootstrap dependency deprecations are silenced here until v6 */}}
 	{{ $opts := dict "transpiler" "dartsass" "silenceDependencyDeprecations" "true" "targetPath" "css/style.css" }}
-	{{ with resources.Get "scss/styles.scss" | toCSS $opts | minify | fingerprint }}
-		<link
-			rel="stylesheet"
-			href="{{ .RelPermalink }}"
-			integrity="{{ .Data.Integrity }}"
-		/>
+
+	{{ with resources.Get "scss/styles.scss" | toCSS $opts }}
+		{{ if hugo.IsDevelopment }}
+			<link rel="stylesheet" href="{{ .RelPermalink }}" />
+		{{ else }}
+			{{ with . | postCSS | minify | fingerprint | resources.PostProcess }}
+				<link
+					rel="stylesheet"
+					href="{{ .RelPermalink }}"
+					integrity="{{ .Data.Integrity }}"
+				/>
+			{{ end }}
+		{{ end }}
 	{{ end }}
 
 
 	<!-- KaTeX stylesheet -->
-	{{ with resources.Get "katex/katex.min.css" | fingerprint }}
-		<link
-			rel="stylesheet"
-			href="{{ .RelPermalink }}"
-			integrity="{{ .Data.Integrity }}"
-		/>
+	{{ with resources.Get "katex/katex.min.css" }}
+		{{ if hugo.IsDevelopment }}
+			<link rel="stylesheet" href="{{ .RelPermalink }}" />
+		{{ else }}
+			{{ with . | fingerprint }}
+				<link
+					rel="stylesheet"
+					href="{{ .RelPermalink }}"
+					integrity="{{ .Data.Integrity }}"
+				/>
+			{{ end }}
+		{{ end }}
 	{{ end }}
 
 

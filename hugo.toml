@@ -22,6 +22,10 @@ enable = true
 block = [['$$', '$$'], ['\[', '\]']]
 inline = [['\(', '\)']]
 
+[build]
+[build.buildStats]
+enable = true
+
 [module]
 # default
 [[module.mounts]]
