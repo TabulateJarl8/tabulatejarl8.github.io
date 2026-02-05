@@ -84,7 +84,7 @@
 
 
 	<!-- KaTeX stylesheet -->
-	{{ with resources.Get "katex/katex.min.css" | minify | fingerprint }}
+	{{ with resources.Get "katex/katex.min.css" | fingerprint }}
 		<link
 			rel="stylesheet"
 			href="{{ .RelPermalink }}"
