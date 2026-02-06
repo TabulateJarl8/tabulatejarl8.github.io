@@ -4,6 +4,12 @@
 			Blog
 			{{ partial "rss_subscribe.html" . }}
 		</h1>
+
+		<div class="mb-4">
+			{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+				{{ partial "blog_tag.html" $name }}
+			{{ end }}
+		</div>
 		{{ range (.Site.GetPage "section" "blog").Pages }}
 			{{ partial "blog_post_card.html" . }}
 		{{ end }}

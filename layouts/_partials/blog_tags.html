@@ -1,5 +1,6 @@
+{{ if not .Params }}
+	{{ errorf "The partial 'blog_tags.html' requires a context argument" }}
+{{ end }}
 {{ range .Params.tags }}
-	<a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="blog-tag">
-		<span>{{ . }}</span>
-	</a>
+	{{ partial "blog_tag.html" . }}
 {{ end }}

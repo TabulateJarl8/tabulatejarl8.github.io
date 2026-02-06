@@ -1,0 +1,6 @@
+{{ if not . }}
+	{{ errorf "The partial 'blog_tag.html' requires a context argument" }}
+{{ end }}
+<a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="blog-tag">
+	<span>{{ . }}</span>
+</a>

@@ -1,0 +1,11 @@
+{{ if not (.OutputFormats.Get "rss") }}
+	{{ errorf "The partial 'rss_subscribe.html' requires a context argument with an rss output format" }}
+{{ end }}
+<a
+	href="{{ (.OutputFormats.Get "rss").RelPermalink }}"
+	class="hover-icon ms-1 fa-xs align-middle"
+	aria-label="Subscribe to RSS Feed"
+	title="Subscribe to RSS Feed"
+>
+	<i class="fas fa-rss fa-xs footer-icon-hover" aria-hidden="true"></i>
+</a>
