@@ -131,12 +131,15 @@ a.blog-tag {
 
 	span {
 		@extend .badge, .bg-dark, .text-success;
-		transition: color 0.15s ease-in-out;
+		transition:
+			background-color 0.15s ease-in-out,
+			color 0.15s ease-in-out;
 	}
 
 	&:hover span {
 		@extend .text-decoration-underline;
 		color: color.adjust($success, $lightness: 15%) !important;
+		background-color: color.adjust($dark, $lightness: 15%) !important;
 	}
 }
 
