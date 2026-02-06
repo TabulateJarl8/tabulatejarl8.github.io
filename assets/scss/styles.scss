@@ -7,6 +7,7 @@
 @use "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss" as
 	fa-regular;
 @use "sass:color";
+@use "sass:map";
 
 @import "bootstrap5-neon-glow";
 
@@ -189,36 +190,29 @@ hr.hr-thick {
 
 // FONTAWESOME CLASSES
 
-.social-icon {
-	@include fa.fa-icon;
+.hover-icon {
 	@extend .text-dim;
-	@extend .fa-xl;
 
 	&:hover {
 		color: #c4c4c4;
 	}
+}
 
-	&.github {
-		@include fa-brands.icon(fa.$var-github);
-	}
+.social-icon {
+	@extend .hover-icon, .fa-xl;
 
-	&.gitlab {
-		@include fa-brands.icon(fa.$var-gitlab);
-	}
+	$brands: (
+		"github": fa.$var-github,
+		"gitlab": fa.$var-gitlab,
+		"reddit": fa.$var-reddit,
+		"mastodon": fa.$var-mastodon,
+		"stack-overflow": fa.$var-stack-overflow,
+		"linkedin": fa.$var-linkedin-in,
+	);
 
-	&.reddit {
-		@include fa-brands.icon(fa.$var-reddit);
-	}
-
-	&.mastodon {
-		@include fa-brands.icon(fa.$var-mastodon);
-	}
-
-	&.stack-overflow {
-		@include fa-brands.icon(fa.$var-stack-overflow);
-	}
-
-	&.linkedin {
-		@include fa-brands.icon(fa.$var-linkedin-in);
+	@each $name, $icon in $brands {
+		&.#{$name} {
+			@include fa-brands.icon($icon);
+		}
 	}
 }

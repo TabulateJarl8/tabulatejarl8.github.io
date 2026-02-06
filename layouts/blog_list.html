@@ -2,14 +2,7 @@
 	<div class="container mt-5">
 		<h1 class="mb-3">
 			Blog
-			<a
-				href="{{ (.OutputFormats.Get "rss").RelPermalink }}"
-				class="text-dim ms-1 fa-xs align-middle"
-				aria-label="Subscribe to RSS Feed"
-				title="Subscribe to RSS Feed"
-			>
-				<i class="fas fa-rss fa-xs footer-icon-hover" aria-hidden="true"></i>
-			</a>
+			{{ partial "rss_subscribe.html" . }}
 		</h1>
 		{{ range (.Site.GetPage "section" "blog").Pages }}
 			{{ partial "blog_post_card.html" . }}
