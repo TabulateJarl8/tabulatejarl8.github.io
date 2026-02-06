@@ -1,30 +1,21 @@
-{{/* <a class="text-reset text-decoration-none" href="{{ .RelPermalink }}"> */}}
-{{/* 	<div class="card border-grey-hover w-100 mb-2"> */}}
-{{/* 		<div class="card-body"> */}}
-{{/* 			<h5 class="card-title">{{ .Title }}</h5> */}}
-{{/* 			<p class="card-text">{{ .Description }}</p> */}}
-{{/* 			<span class="text-dim font-italic" */}}
-{{/* 				>{{ .Date.Format "January 2, 2006" }}</span */}}
-{{/* 			> */}}
-{{/* 		</div> */}}
-{{/* 	</div> */}}
-{{/* </a> */}}
-
 <div class="card border-grey-hover w-100 mb-2">
 	<div class="card-body">
 		<h5 class="card-title mb-3">
-			<a class="text-reset text-decoration-none stretched-link" href="{{ .RelPermalink }}">
+			<a
+				class="text-reset text-decoration-none stretched-link"
+				href="{{ .RelPermalink }}"
+			>
 				{{ .Title }}
 			</a>
 		</h5>
-		
+
 		<div class="d-flex justify-content-between align-items-center flex-wrap">
 			<span class="text-dim font-italic">
 				{{ .Date.Format "January 2, 2006" }}
 			</span>
 
 			<div class="mt-2 mt-sm-0 position-relative" style="z-index: 2;">
-				{{ partial "blog_tags.html" . }}
+				{{ partial "blog_tags.html" (dict "ctx" . "shadow" true) }}
 			</div>
 		</div>
 	</div>

@@ -5,8 +5,8 @@
 		<br />
 		<i class="fa-regular fa-clock pe-2"></i>{{ .ReadingTime }} minute read
 		<br />
-		<!-- TODO: make tags actually do something -->
-		<i class="fa-solid fa-tag pe-2"></i>{{ partial "blog_tags.html" . }}
+		<i class="fa-solid fa-tag pe-2"></i
+		>{{ partial "blog_tags.html" (dict "ctx" .) }}
 		<hr class="hr-dark" />
 		{{ .Content }}
 	</div>

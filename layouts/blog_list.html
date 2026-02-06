@@ -7,7 +7,7 @@
 
 		<div class="mb-4">
 			{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-				{{ partial "blog_tag.html" $name }}
+				{{ partial "blog_tag.html" (dict "name" $name) }}
 			{{ end }}
 		</div>
 		{{ range (.Site.GetPage "section" "blog").Pages }}

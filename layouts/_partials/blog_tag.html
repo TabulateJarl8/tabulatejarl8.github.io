@@ -1,6 +1,11 @@
-{{ if not . }}
-	{{ errorf "The partial 'blog_tag.html' requires a context argument" }}
+{{ if not .name }}
+	{{ errorf "The partial 'blog_tag.html' requires a name argument" }}
 {{ end }}
-<a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="blog-tag">
-	<span>{{ . }}</span>
+
+
+<a
+	href="{{ "tags/" | relURL }}{{ .name | urlize }}"
+	class="blog-tag {{ if .shadow }}shadow-tag{{ end }}"
+>
+	<span>{{ .name }}</span>
 </a>

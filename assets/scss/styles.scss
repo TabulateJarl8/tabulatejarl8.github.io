@@ -11,6 +11,32 @@
 
 @import "bootstrap5-neon-glow";
 
+// small version of btn-shadow
+@mixin btn-shadow-sm($color) {
+	border: 1px solid $color;
+	transition: none;
+
+	&,
+	&.focus,
+	&:focus {
+		box-shadow: 1px 1px 0 $color;
+	}
+
+	&:hover {
+		box-shadow:
+			2px 2px 0 $color,
+			1px 1px 0 $color;
+		transform: translate(-1px, -1px);
+		transition: all 0.3s ease;
+	}
+
+	&:active {
+		box-shadow: none;
+		transform: translate(1px, 1px) !important;
+		transition: all 0.1s ease;
+	}
+}
+
 $dark-colors: (
 	"primary": #544091,
 	"secondary": #1180ad,
@@ -140,6 +166,12 @@ a.blog-tag {
 		@extend .text-decoration-underline;
 		color: color.adjust($success, $lightness: 15%) !important;
 		background-color: color.adjust($dark, $lightness: 15%) !important;
+	}
+
+	&.shadow-tag span {
+		@include btn-shadow-sm(map.get($button-shadow-colors, "dark"));
+		display: inline-block;
+		margin: 2px;
 	}
 }
 

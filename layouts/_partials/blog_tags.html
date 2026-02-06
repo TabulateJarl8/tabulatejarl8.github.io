@@ -1,6 +1,6 @@
-{{ if not .Params }}
-	{{ errorf "The partial 'blog_tags.html' requires a context argument" }}
+{{ if not .ctx.Params }}
+	{{ errorf "The partial 'blog_tags.html' requires a ctx argument with Params" }}
 {{ end }}
-{{ range .Params.tags }}
-	{{ partial "blog_tag.html" . }}
+{{ range .ctx.Params.tags }}
+	{{ partial "blog_tag.html" (dict "name" . "shadow" $.shadow) }}
 {{ end }}
