@@ -50,8 +50,8 @@ tech:
     image: /img/tech_logos/bash.svg
   - name: HTML5
     image: /img/tech_logos/html5.svg
-  - name: CSS3
-    image: /img/tech_logos/css3.svg
+  - name: CSS
+    image: /img/tech_logos/css.svg
   - name: LaTeX
     image: /img/tech_logos/latex.svg
   - name: Bootstrap
