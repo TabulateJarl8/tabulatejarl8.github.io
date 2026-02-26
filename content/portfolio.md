@@ -24,7 +24,7 @@ experience:
     job_end: March 2023
     highlights:
       - Unpaid internship with the Fluvanna County Public Schools IT department.
-      - Rewrote the bus pass system used by other schools in the school system.
+      - Modernized the bus pass system used by other schools in the school system.
       - Qt GUI development, SQL database interaction, created a maintainable and well-documented codebase.
   jmu_it:
     employer: James Madison University
