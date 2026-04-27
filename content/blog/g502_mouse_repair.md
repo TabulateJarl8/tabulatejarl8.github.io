@@ -16,4 +16,3 @@ First, I tried cleaning it with Isopropyl Alcohol and drying it with compressed 
 ## Results
 
 After my repair, I was able to fix both the scrolling issue as well as the middle mouse click issue. I did end up having to order new bottom pads for the mouse, however they were only around $12 so it wasn't too bad. Overall, it was a pretty fun experience to take one of these apart.
-

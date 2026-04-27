@@ -17,13 +17,17 @@
 {{ $description := "Versatile programmer with expertise in Rust, Python, and more." }}
 {{ if $dynamic }}
 	{{ if $software_page }}
-		{{ $description = index (split .Content "</p>") 0 | plainify | truncate 100 }}
+		{{ $description = index (split .Content "</p>") 0 | plainify }}
 	{{ else if .Description }}
-		{{ $description = .Description | truncate 100 }}
+		{{ $description = .Description }}
+	{{ else if .Summary }}
+		{{ $description = .Summary | plainify }}
 	{{ end }}
 {{ else if .Description }}
-	{{ $description = .Description | truncate 100 }}
+	{{ $description = .Description }}
 {{ end }}
+
+{{ $description = $description | htmlUnescape | truncate 100 }}
 
 {{/* favicon in top left */}}
 {{ $img := $bg }}

@@ -21,6 +21,8 @@ enable = true
 [markup.goldmark.extensions.passthrough.delimiters]
 block = [['$$', '$$'], ['\[', '\]']]
 inline = [['\(', '\)']]
+[markup.goldmark.extensions.typographer]
+disable = true
 
 [build]
 [build.buildStats]
