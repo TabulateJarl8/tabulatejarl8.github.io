@@ -24,6 +24,7 @@
 	<meta name="og:description" content="{{ $description }}" />
 	<meta name="og:title" content="{{ $title }}" />
 	<meta name="og:type" content="website" />
+	<meta name="twitter:card" content="summary_large_image" />
 
 	{{ $isConcept := .ctx.Params.concept_project }}
 	{{ $isSetupComponent := and (eq .ctx.Type "setup") .ctx.IsPage }}
