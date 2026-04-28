@@ -3,6 +3,7 @@ title: "Trying Out Typst"
 date: 2023-12-05T00:51:22-05:00
 draft: false
 tags: ["markup", "latex", "typst"]
+description: "An exploration of the Typst markup language in comparison to LaTeX"
 ---
 
 Recently, I came across a new project, [Typst](https://typst.app/). From their GitHub, "Typst is a new markup-based typesetting system that is designed to be as powerful as LaTeX while being much easier to learn and use". It's written in Rust which I was immediately a fan of, and I was super interested in an alternative to LaTeX as I use it heavily for school papers, and while it's super powerful, it can be annoying to set up and the compile times can start to get slow when you start compiling 70 page documents. I started checking out their examples, and I couldn't find an APA template, so I figured that was a great way to start learning.

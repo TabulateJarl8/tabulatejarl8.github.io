@@ -3,6 +3,7 @@ title: "Python Bug"
 date: 2025-02-24T01:03:22-05:00
 draft: false
 tags: ["python"]
+description: "Discovering a generic type hinting bug in Python 3.9"
 ---
 
 I was recently working on my [Vapor](/software/vapor/) project, which is a TUI program written in Python using [Textual](https://github.com/Textualize/textual). I was updating the project's typing to utilize newer features which were introduced in Python 3.10, such as using the bitwise OR operator instead of `Union`. This involved rewriting things like `x: Union[str, int]` as `x: str | int`. In this process, I came across the following piece of code:

@@ -3,6 +3,7 @@ title: "G502 Hero Mouse Repair"
 date: 2023-10-17T00:24:15-04:00
 draft: false
 tags: ["repair", "hardware"]
+description: "A hardware repair overview detailing the fix of my G502 mouse after a very good mistake"
 ---
 
 This is the first blog post I've made so it might be a little strange until I get used to it. I use the G502 Hero mouse made by Logitech, and it's the best mouse I've ever used. I won't get too far into the details as of why but it's just really good. Anyway, I was in my dorm and I was doing things on my computer like normal, when I reached out for my mouse and accidentally knocked over my cup full of ramen water which subsequently spilled all over my entire desk and everything on it, including my mouse. I dried everything off and my mouse seemed to work still which was nice, and I didn't think much of it. A bit later when I was programming, I noticed something a bit odd. My scroll wheel would stop scrolling for a few lines every now and then, and I needed to fix that.

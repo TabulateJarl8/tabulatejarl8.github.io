@@ -3,6 +3,7 @@ title: "More Randfacts Testing"
 date: 2026-02-04T15:57:04-05:00
 draft: false
 tags: ["randfacts", "rust", "python", "math"]
+description: "Further optimizing the randfacts duplicate fact checker tests using the Dice-S&#248;rensen coefficient"
 ---
 
 I've covered this topic before in a [previous post]({{< ref "blog/randfacts_checkduplicates" >}}), but I've recently gotten back into improving [randfacts](https://github.com/TabulateJarl8/randfacts) after switching it from poetry to uv. I'm really not sure why, but after improving the unit tests, I had an urge to see how much faster I could make the checkduplicates test.

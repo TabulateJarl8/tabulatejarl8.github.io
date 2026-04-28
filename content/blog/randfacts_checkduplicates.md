@@ -3,6 +3,7 @@ title: "Rewriting the randfacts duplicate facts test"
 date: 2024-11-18T14:44:19-05:00
 draft: false
 tags: ["randfacts", "rust", "python"]
+description: "Rewriting the randfacts checkduplicates test from Python to Rust"
 ---
 
 Recently, I was working on a Python web backend project for work, and I noticed something strange with the LSP I was using, Pyright. For some reason, it couldn't automatically detect and import modules that I referenced. This seemed like a pretty standard and basic feature, so after a quick search, I stumbled upon [microsoft/pyright#4263](https://github.com/microsoft/pyright/issues/4263). Someone posted an issue asking Microsoft about why this feature wasn't available in Pyright, and they responded with this:

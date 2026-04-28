@@ -3,6 +3,7 @@ title: "College Range Assignment"
 date: 2024-01-17T19:10:05-05:00
 draft: false
 tags: ["assembly", "python"]
+description: "Over-engineering a simple college programming assignment in assembly to prove a point"
 ---
 
 A friend of mine is enrolled in a college intro to programming course. This course had a very simple entrance test: they needed to write a program in any language to display the numbers 5-60 prefixed with "number ", like so:

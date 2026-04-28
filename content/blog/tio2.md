@@ -3,6 +3,7 @@ title: "TiO2"
 date: 2023-10-20T00:29:03-04:00
 draft: false
 tags: ["programming", "parsing", "rust", "python"]
+description: "TiO2: a Rust compiler, decompiler, and interpreter implementation for TI-BASIC"
 ---
 
 Some of you may know of my TI-BASIC to Python transpiler, [ti842py](/software/ti842py). While not very practical, this project was pretty fun for me to work on because I was having to find all of these different ways to implement TI-BASIC functions in Python. This project was based on a project that I found by [thenaterhood](https://github.com/thenaterhood) called basically-ti-basic, which could decompile and (almost) compile the TI calculator .8XP files. He did a lot of the hard work of reverse engineering the bytecode, and his program helped me out a lot. I forked his project, reverse engineered some instructions that he missed, and then packaged it for PyPI so I could more easily use it in ti842py.
