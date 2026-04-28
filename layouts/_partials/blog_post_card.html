@@ -1,6 +1,6 @@
 <div class="card border-grey-hover w-100 mb-2">
 	<div class="card-body">
-		<h5 class="card-title mb-3">
+		<h5 class="card-title mb-3 fw-bold">
 			<a
 				class="text-reset text-decoration-none stretched-link"
 				href="{{ .RelPermalink }}"
@@ -8,6 +8,8 @@
 				{{ .Title }}
 			</a>
 		</h5>
+
+		<p class="card-text">{{ .Description | htmlUnescape }}</p>
 
 		<div
 			class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center"
