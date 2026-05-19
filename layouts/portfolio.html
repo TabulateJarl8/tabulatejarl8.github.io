@@ -41,7 +41,7 @@
 					<p>
 						<div class="d-flex justify-content-between">
 							<strong>{{.name}}</strong>
-							<p class="text-dim mb-0">GPA: {{.gpa}}</p>
+							<p class="text-dim mb-0">GPA: {{ printf "%.3f" .gpa }}</p>
 						</div>
 						{{ range .degrees }}
 						{{.}}<br>
