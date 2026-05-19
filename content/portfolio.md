@@ -15,7 +15,7 @@ education:
       - Bachelor's in Computer Science
       - Minor in Music
     graduation: "Expected to Graduate: May 2027"
-    gpa: 3.917
+    gpa: 3.930
 experience:
   fcps:
     employer: FCPS IT Department
