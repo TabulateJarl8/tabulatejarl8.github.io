@@ -5,7 +5,7 @@ draft: false
 ---
 
 - Samsung Galaxy S24+ (Primary)
-  - Unrooted Android 14
+  - Unrooted Android 16
   - 256GB Internal Storage
   - 12GB RAM
   - 2340x1080p 1-120Hz Display
