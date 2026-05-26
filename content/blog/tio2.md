@@ -2,7 +2,7 @@
 title: "TiO2"
 date: 2023-10-20T00:29:03-04:00
 draft: false
-tags: ["programming", "parsing", "rust", "python"]
+tags: ["programming", "rust", "python"]
 description: "TiO2: a Rust compiler, decompiler, and interpreter implementation for TI-BASIC"
 ---
 

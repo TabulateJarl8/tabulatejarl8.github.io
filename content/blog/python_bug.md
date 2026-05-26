@@ -2,7 +2,7 @@
 title: "Python Bug"
 date: 2025-02-24T01:03:22-05:00
 draft: false
-tags: ["python"]
+tags: ["python", "programming"]
 description: "Discovering a generic type hinting bug in Python 3.9"
 ---
 

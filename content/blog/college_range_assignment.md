@@ -2,7 +2,7 @@
 title: "College Range Assignment"
 date: 2024-01-17T19:10:05-05:00
 draft: false
-tags: ["assembly", "python"]
+tags: ["assembly", "python", "programming"]
 description: "Over-engineering a simple college programming assignment in assembly to prove a point"
 ---
 

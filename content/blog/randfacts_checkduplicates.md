@@ -2,7 +2,7 @@
 title: "Rewriting the randfacts duplicate facts test"
 date: 2024-11-18T14:44:19-05:00
 draft: false
-tags: ["randfacts", "rust", "python"]
+tags: ["randfacts", "rust", "python", "programming"]
 description: "Rewriting the randfacts checkduplicates test from Python to Rust"
 ---
 

@@ -2,7 +2,7 @@
 title: "Trying Out Typst"
 date: 2023-12-05T00:51:22-05:00
 draft: false
-tags: ["markup", "latex", "typst"]
+tags: ["latex", "typst", "programming"]
 description: "An exploration of the Typst markup language in comparison to LaTeX"
 ---
 
