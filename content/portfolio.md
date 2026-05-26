@@ -20,8 +20,8 @@ experience:
   fcps:
     employer: FCPS IT Department
     job_title: Software Developer
-    job_start: August 2022
-    job_end: March 2023
+    job_start: 01 Aug 2022
+    job_end: 01 Mar 2023
     highlights:
       - Unpaid internship with the Fluvanna County Public Schools IT department.
       - Modernized the bus pass system used by other schools in the school system.
@@ -29,7 +29,7 @@ experience:
   jmu_it:
     employer: James Madison University
     job_title: IT Assistant
-    job_start: January 2024
+    job_start: 01 Jan 2024
     job_end: Present
     highlights:
       - Implement network-based computer management and imaging for over 350 desktops across campus.
@@ -37,6 +37,11 @@ experience:
       - Create comprehensive documentation for new automation and imaging techniques, server maintenance, and other critical services.
       - Architect the workflow of, set up, and deploy a Flask/React application with Docker on a remote server.
       - Debug complex networking issues.
+  caci_intern:
+    employer: CACI
+    job_title: Software Engineer Intern
+    job_start: 01 May 2026
+    job_end: Present
 tech:
   - name: Rust
     image: /img/tech_logos/rust.svg
