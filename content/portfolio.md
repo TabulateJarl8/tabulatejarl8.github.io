@@ -16,6 +16,11 @@ education:
       - Minor in Music
     graduation: "Expected to Graduate: May 2027"
     gpa: 3.930
+    major_gpa: 4.0
+    orgs:
+      - JMU Unix User's Group - President
+      - JMU Marching Royal Dukes
+      - Upsilon Pi Epsilon
 experience:
   fcps:
     employer: FCPS IT Department

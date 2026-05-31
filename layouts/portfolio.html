@@ -38,16 +38,29 @@
 				<div class="card-body">
 					<h3 class="card-title">🎓 Education</h3>
 					{{ range .Params.education }}
-					<p>
-						<div class="d-flex justify-content-between">
+					<div class="mb-2">
+						<div class="d-flex justify-content-lg-between flex-column flex-lg-row">
 							<strong>{{.name}}</strong>
-							<p class="text-dim mb-0">GPA: {{ printf "%.3f" .gpa }}</p>
+							<p class="text-dim mb-0">GPA: {{ printf "%.3f" .gpa }} | Major: {{ printf "%.2f" .major_gpa }}</p>
 						</div>
-						{{ range .degrees }}
-						{{.}}<br>
-						{{ end }}
-					</p>
-					<p>{{ .graduation }}</p>
+						<div class="ms-1 ps-3 border-start border-2 border-dim">
+							<p class="mb-1">
+								{{ range .degrees }}
+								{{.}}<br>
+								{{ end }}
+							</p>
+							<p class="mb-2 text-dim">{{ .graduation }}</p>
+
+							{{ if .orgs }}
+							<p class="mb-0"><strong>Organizations</strong></p>
+							<ul>
+								{{ range .orgs }}
+									<li>{{.}}</li>
+								{{ end }}
+							</ul>
+							{{ end }}
+						</div>
+					</div>
 					{{ end }}
 				</div>
 			</div>

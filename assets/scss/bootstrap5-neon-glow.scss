@@ -246,6 +246,10 @@ $table-dark-color: $body-color;
 	color: #81839a;
 }
 
+.border-dim {
+	--bs-border-color: rgba(128, 128, 128, 0.25);
+}
+
 .btn-wide {
 	padding-left: 50px;
 	padding-right: 50px;

@@ -24,6 +24,9 @@ inline = [['\(', '\)']]
 [markup.goldmark.extensions.typographer]
 disable = true
 
+[security]
+allowContent = ['.*']
+
 [build]
 [build.buildStats]
 enable = true
