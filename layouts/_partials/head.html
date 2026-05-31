@@ -94,16 +94,30 @@
 
 
 	<!-- KaTeX stylesheet -->
-	{{ with resources.Get "katex/katex.min.css" }}
-		{{ if hugo.IsDevelopment }}
-			<link rel="stylesheet" href="{{ .RelPermalink }}" />
-		{{ else }}
-			{{ with . | fingerprint }}
-				<link
-					rel="stylesheet"
-					href="{{ .RelPermalink }}"
-					integrity="{{ .Data.Integrity }}"
-				/>
+	{{/* check if page has math or if it was explicitely set */}}
+	{{ $hasMath := false }}
+	{{ if .ctx.Params.math }}
+		{{ $hasMath = true }}
+	{{ end }}
+
+	{{ if and (not $hasMath) .ctx.RawContent }}
+		{{ if or (strings.Contains .ctx.RawContent "$$") (strings.Contains .ctx.RawContent "\\[") (strings.Contains .ctx.RawContent "\\(") }}
+			{{ $hasMath = true }}
+		{{ end }}
+	{{ end }}
+
+	{{ if $hasMath }}
+		{{ with resources.Get "katex/katex.min.css" }}
+			{{ if hugo.IsDevelopment }}
+				<link rel="stylesheet" href="{{ .RelPermalink }}" />
+			{{ else }}
+				{{ with . | fingerprint }}
+					<link
+						rel="stylesheet"
+						href="{{ .RelPermalink }}"
+						integrity="{{ .Data.Integrity }}"
+					/>
+				{{ end }}
 			{{ end }}
 		{{ end }}
 	{{ end }}
