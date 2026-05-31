@@ -223,6 +223,27 @@ hr.hr-thick {
 	overflow-x: scroll;
 }
 
+.heading-anchor {
+	text-decoration: none;
+	color: #4d4d74;
+	transition:
+		opacity 0.2s ease-in-out,
+		color 0.2s ease-in-out;
+	opacity: 0;
+
+	&:focus,
+	&:hover {
+		opacity: 1;
+		color: #81839a;
+	}
+
+	@for $i from 1 through 6 {
+		h#{$i}:hover & {
+			opacity: 1;
+		}
+	}
+}
+
 // FONTAWESOME CLASSES
 
 .hover-icon {
