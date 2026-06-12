@@ -52,8 +52,8 @@ tech:
     image: /img/tech_logos/rust.svg
   - name: Python
     image: /img/tech_logos/python.svg
-  - name: JavaScript
-    image: /img/tech_logos/javascript.svg
+  - name: TypeScript
+    image: /img/tech_logos/typescript.svg
   - name: Linux
     image: /img/tech_logos/linux.svg
   - name: Bash
