@@ -47,6 +47,10 @@ experience:
     job_title: Software Engineer Intern
     job_start: 01 May 2026
     job_end: Present
+    highlights:
+      - Designed and implemented a full-stack feature for an existing application using Spring Boot, Kafka, and Vue.
+      - Learned how to interact with distributed development environments using Kubernetes on ArgoCD.
+      - Worked in a fast-paced Agile environment, participating in daily standups and collaborating with the team to ensure a high-quality product.
 tech:
   - name: Rust
     image: /img/tech_logos/rust.svg
