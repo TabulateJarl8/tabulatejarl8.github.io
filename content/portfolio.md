@@ -48,7 +48,7 @@ experience:
     job_start: 01 May 2026
     job_end: Present
     highlights:
-      - Designed and implemented a full-stack feature for an existing application using Spring Boot, PostgreSQL, Kafka, and Vue.
+      - Designed and implemented a full-stack feature for an existing application using Spring Boot, PostgreSQL, TypeScript, and Vue.js.
       - Learned how to interact with distributed development environments using Kubernetes on ArgoCD.
       - Worked in a fast-paced Agile environment, participating in daily standups and collaborating with the team to ensure a high-quality product.
 tech:
