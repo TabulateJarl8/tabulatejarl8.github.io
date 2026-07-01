@@ -1,6 +1,3 @@
 <h{{ .Level }} id="{{ .Anchor }}" {{- with .Attributes.class }} class="{{ . }}" {{- end }}>
-  {{ .Text }}
-  {{ if eq .Page.Type "blog" }}
-  <a class="heading-anchor" href="#{{ .Anchor }}">#</a>
-  {{ end }}
+  {{- .Text | safeHTML -}} {{- if eq .Page.Type "blog" -}} <a class="heading-anchor" href="#{{ .Anchor }}">#</a> {{- end -}}
 </h{{ .Level }}>
