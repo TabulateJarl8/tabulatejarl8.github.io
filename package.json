@@ -1,13 +1,13 @@
 {
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.2.0",
+    "@fortawesome/fontawesome-free": "^7.3.0",
     "bootstrap": "^5.3.8",
     "katex": "^0.17.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^8.0.0",
-    "autoprefixer": "^10.5.0",
-    "postcss": "^8.5.15",
+    "autoprefixer": "^10.5.2",
+    "postcss": "^8.5.16",
     "postcss-cli": "^11.0.1",
     "prettier-plugin-go-template": "^0.0.15"
   },
