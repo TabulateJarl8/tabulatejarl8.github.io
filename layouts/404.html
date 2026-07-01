@@ -18,9 +18,11 @@
 	</div>
 <script>
 	var pages = [
-		{{ range(where .Site.RegularPages "Section" "software") }}
-	"{{.RelPermalink}}",
-		{{ end }}
+		{{- range where .Site.RegularPages "Section" "software" -}}
+			{{- if not .Params.concept_project -}}
+				"{{- .RelPermalink -}}",
+			{{- end -}}
+		{{- end -}}
 	];
 	document.getElementById('random-page').addEventListener('click', () => {
 		window.location.href = pages.sort(() => 0.5 - Math.random())[0];
