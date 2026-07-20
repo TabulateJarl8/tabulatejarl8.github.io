@@ -7,14 +7,13 @@ draft: false
 - Local
   - Dell Precision T3610
   - Debian 13
-  - Intel&reg; Xeon&reg; CPU E5-1620 v2 @ 3.70GHz
+  - Intel Xeon CPU E5-1620 v2 @ 3.70GHz
   - 256GB T-FORCE SSD
   - 4&times; Seagate Barracuda Pro 12TB 7.2K RPM SATA HDD
     - RAIDz1 for a total usable space of 30.6TB
   - 64GB DDR3 RAM
 - Remote
-  - Ubuntu 20.04.1 LTS
-  - Intel Xeon Platinum 8171M CPU @ 2.60GHz
-  - 62GB Storage
-  - 1GB RAM
-  - Microsoft Hyper-V virtual VGA
+  - Ubuntu 24.04.4 LTS
+  - Ampere Altra (ARM Neoverse-N1, 1 vCPU) @ 3.0GHz
+  - 46.6GB Storage
+  - 6GB RAM
