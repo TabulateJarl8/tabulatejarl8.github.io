@@ -398,22 +398,19 @@ $button-shadow-colors: (
 	font-family: $font-family-display;
 }
 
-.btn-success {
-	&,
-	&:hover,
-	&:focus,
-	&:active {
-		color: #c1f8c2;
+// override all button text colors to be white
+@each $color, $value in $theme-colors {
+	.btn-#{$color} {
+		--bs-btn-color: #fff;
+		--bs-btn-hover-color: #fff;
+		--bs-btn-focus-color: #fff;
+		--bs-btn-active-color: #fff;
 	}
-}
 
-.btn-info,
-.btn-secondary {
-	&,
-	&:hover,
-	&:focus,
-	&:active {
-		color: #fff;
+	.btn-outline-#{$color} {
+		--bs-btn-hover-color: #fff;
+		--bs-btn-focus-color: #fff;
+		--bs-btn-active-color: #fff;
 	}
 }
 
