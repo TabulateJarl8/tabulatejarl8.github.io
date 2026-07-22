@@ -233,15 +233,6 @@ $table-dark-color: $body-color;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-@each $color, $value in $theme-colors {
-	.btn-hover-text-#{$color} {
-		&:hover,
-		&:active {
-			color: $value !important;
-		}
-	}
-}
-
 .text-dim {
 	color: #81839a;
 }
@@ -400,17 +391,19 @@ $button-shadow-colors: (
 
 // override all button text colors to be white
 @each $color, $value in $theme-colors {
-	.btn-#{$color} {
-		--bs-btn-color: #fff;
-		--bs-btn-hover-color: #fff;
-		--bs-btn-focus-color: #fff;
-		--bs-btn-active-color: #fff;
-	}
+	@if $color != "light" {
+		.btn-#{$color} {
+			--bs-btn-color: #fff;
+			--bs-btn-hover-color: #fff;
+			--bs-btn-focus-color: #fff;
+			--bs-btn-active-color: #fff;
+		}
 
-	.btn-outline-#{$color} {
-		--bs-btn-hover-color: #fff;
-		--bs-btn-focus-color: #fff;
-		--bs-btn-active-color: #fff;
+		.btn-outline-#{$color} {
+			--bs-btn-hover-color: #fff;
+			--bs-btn-focus-color: #fff;
+			--bs-btn-active-color: #fff;
+		}
 	}
 }
 
