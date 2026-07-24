@@ -21,6 +21,9 @@ importers:
       '@fullhuman/postcss-purgecss':
         specifier: ^8.0.0
         version: 8.0.0(postcss@8.5.16)
+      '@htnabe/prettier-plugin-go-template':
+        specifier: ^0.0.2
+        version: 0.0.2(prettier@3.9.6)
       autoprefixer:
         specifier: ^10.5.2
         version: 10.5.2(postcss@8.5.16)
@@ -30,9 +33,9 @@ importers:
       postcss-cli:
         specifier: ^11.0.1
         version: 11.0.1(postcss@8.5.16)
-      prettier-plugin-go-template:
-        specifier: ^0.0.15
-        version: 0.0.15(prettier@3.6.2)
+      prettier:
+        specifier: ^3.9.6
+        version: 3.9.6
 
 packages:
 
@@ -44,6 +47,12 @@ packages:
     resolution: {integrity: sha512-fSRaBGf6+DYdfQMxedWfnIW8FSYE1LBpgy16jpK1L2vNb1HgeBRRZ+UX4UokNmW7YEAwPdvwkKdYtlkYpH+Aqg==}
     peerDependencies:
       postcss: ^8.0.0
+
+  '@htnabe/prettier-plugin-go-template@0.0.2':
+    resolution: {integrity: sha512-4TlMemZ7TcqZNDH6qNQ+dElxz06yed2Xyei4NbCoAykcBGy54qbur3Ri/4IXHqiQ3dwTHlPN6ZBGvSiIb+KPbw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      prettier: ^3.0.0
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -296,14 +305,8 @@ packages:
     resolution: {integrity: sha512-vuwillviilfKZsg0VGj5R/YwwcHx4SLsIOI/7K6mQkWx+l5cUHTjj5g0AasTBcyXsbfTgrwsUNmVUb5xVwyPwg==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier-plugin-go-template@0.0.15:
-    resolution: {integrity: sha512-WqU92E1NokWYNZ9mLE6ijoRg6LtIGdLMePt2C7UBDjXeDH9okcRI3zRqtnWR4s5AloiqyvZ66jNBAa9tmRY5EQ==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      prettier: ^3.0.0
-
-  prettier@3.6.2:
-    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+  prettier@3.9.6:
+    resolution: {integrity: sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -363,8 +366,8 @@ packages:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
 
-  ulid@2.4.0:
-    resolution: {integrity: sha512-fIRiVTJNcSRmXKPZtGzFQv9WRrZ3M9eoptl/teFJvjOzmpU+/K/JH6HZ8deBfb5vMEpicJcLn7JmvdknlMq7Zg==}
+  ulid@3.0.2:
+    resolution: {integrity: sha512-yu26mwteFYzBAot7KVMqFGCVpsF6g8wXfJzQUHvu1no3+rRRSFcSV2nKeYvNPLD2J4b08jYBDhHUjeH0ygIl9w==}
     hasBin: true
 
   universalify@2.0.1:
@@ -409,6 +412,11 @@ snapshots:
     dependencies:
       postcss: 8.5.16
       purgecss: 8.0.0
+
+  '@htnabe/prettier-plugin-go-template@0.0.2(prettier@3.9.6)':
+    dependencies:
+      prettier: 3.9.6
+      ulid: 3.0.2
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -634,12 +642,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  prettier-plugin-go-template@0.0.15(prettier@3.6.2):
-    dependencies:
-      prettier: 3.6.2
-      ulid: 2.4.0
-
-  prettier@3.6.2: {}
+  prettier@3.9.6: {}
 
   pretty-hrtime@1.0.3: {}
 
@@ -693,7 +696,7 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
-  ulid@2.4.0: {}
+  ulid@3.0.2: {}
 
   universalify@2.0.1: {}
 

@@ -21,6 +21,12 @@ education:
       - JMU Unix User's Group - President
       - JMU Marching Royal Dukes
       - Upsilon Pi Epsilon
+certifications:
+  lfcs:
+    name: LFCS
+    description: Linux Foundation Certified System Administrator
+    id: LF-3x36tjsqkk
+    link: https://www.credly.com/badges/fb6db1eb-09a2-4921-95e4-fa5db5fd053b/
 experience:
   fcps:
     employer: FCPS IT Department

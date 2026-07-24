@@ -175,6 +175,23 @@ a.blog-tag {
 	}
 }
 
+a.cert-badge {
+	@extend .text-decoration-none;
+
+	span {
+		@extend .badge, .bg-primary, .text-white;
+		transition:
+			background-color 0.15s ease-in-out,
+			color 0.15s ease-in-out;
+	}
+
+	&:hover span {
+		@extend .text-decoration-underline;
+		color: color.adjust(#fff, $lightness: -10%) !important;
+		background-color: color.adjust($primary, $lightness: -10%) !important;
+	}
+}
+
 // scroll on viewport overflow
 .katex-display {
 	overflow-x: scroll;
