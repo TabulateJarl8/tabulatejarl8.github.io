@@ -5,9 +5,9 @@ draft: false
 nav: false
 featured: true
 status: "info"
-logo: /img/showcase/velour/demo.png
+logo: /img/showcase/velour/icon.svg
 images:
-  - "/img/showcase/velour/demo.png"
+  - /img/showcase/velour/demo.png
 alts:
   - velour demo
 buttons:
