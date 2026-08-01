@@ -4,7 +4,7 @@ weight: 30
 draft: false
 nav: false
 featured: true
-status: "info"
+status: "success"
 logo: /img/showcase/velour/icon.svg
 images:
   - /img/showcase/velour/demo.png
