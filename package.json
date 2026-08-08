@@ -8,7 +8,7 @@
     "@fullhuman/postcss-purgecss": "^8.0.0",
     "@htnabe/prettier-plugin-go-template": "^0.0.2",
     "autoprefixer": "^10.5.2",
-    "postcss": "^8.5.16",
+    "postcss": "^8.5.18",
     "postcss-cli": "^11.0.1",
     "prettier": "^3.9.6"
   },
