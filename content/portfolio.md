@@ -52,7 +52,7 @@ experience:
     employer: CACI
     job_title: Software Engineer Intern
     job_start: 01 May 2026
-    job_end: Present
+    job_end: 01 Aug 2026
     highlights:
       - Designed and implemented a full-stack feature for an existing application using Spring Boot, PostgreSQL, Kafka, TypeScript, and Vue.js.
       - Learned how to interact with distributed development environments using Kubernetes on ArgoCD.
