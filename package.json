@@ -1,16 +1,16 @@
 {
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.3.1",
-    "bootstrap": "^5.3.8",
-    "katex": "^0.17.0"
-  },
-  "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^8.0.0",
-    "@htnabe/prettier-plugin-go-template": "^0.0.2",
-    "autoprefixer": "^10.5.4",
-    "postcss": "^8.5.26",
-    "postcss-cli": "^11.0.1",
-    "prettier": "^3.9.6"
-  },
-  "packageManager": "pnpm@11.3.0"
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^7.3.1",
+		"bootstrap": "^5.3.8",
+		"katex": "^0.17.0"
+	},
+	"devDependencies": {
+		"@fullhuman/postcss-purgecss": "^8.0.0",
+		"@htnabe/prettier-plugin-go-template": "^0.0.6",
+		"autoprefixer": "^10.6.1",
+		"postcss": "^8.5.31",
+		"postcss-cli": "^11.0.1",
+		"prettier": "^3.9.10"
+	},
+	"packageManager": "pnpm@11.3.0"
 }
