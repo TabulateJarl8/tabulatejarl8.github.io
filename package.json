@@ -2,7 +2,7 @@
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^7.3.1",
 		"bootstrap": "^5.3.8",
-		"katex": "^0.17.0"
+		"katex": "^0.18.2"
 	},
 	"devDependencies": {
 		"@fullhuman/postcss-purgecss": "^8.0.0",
