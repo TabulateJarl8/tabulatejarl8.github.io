@@ -1,41 +1,45 @@
-baseURL = 'https://tabulate.tech/'
-locale = 'en-us'
-title = 'Tabulate'
+baseURL = "https://tabulate.tech/"
+locale = "en-us"
+title = "Tabulate"
 pluralizeListTitles = false
 
 [params]
 statusOrder = ["success", "info", "warning", "danger"]
 
 [params.author]
-name = 'Connor Sample'
+name = "Connor Sample"
 
 [markup.highlight]
 lineNos = true
 style = "catppuccin-mocha"
 
-[minify]
-minifyOutput = true
-
 [markup.goldmark.extensions.passthrough]
 enable = true
+
 [markup.goldmark.extensions.passthrough.delimiters]
-block = [['$$', '$$'], ['\[', '\]']]
+block = [["$$", "$$"], ['\[', '\]']]
 inline = [['\(', '\)']]
+
 [markup.goldmark.extensions.typographer]
 disable = true
 
+[minify]
+minifyOutput = true
+
 [security]
-allowContent = ['.*']
+allowContent = [".*"]
 
 [build]
 [build.buildStats]
 enable = true
 
 [module]
+
 # default
 [[module.mounts]]
 source = "assets"
 target = "assets"
+
 [[module.mounts]]
 source = "static"
 target = "static"
@@ -44,6 +48,7 @@ target = "static"
 [[module.mounts]]
 source = "node_modules/katex/dist/katex.min.css"
 target = "assets/katex/katex.min.css"
+
 [[module.mounts]]
 source = "node_modules/katex/dist/fonts"
 target = "static/katex/fonts"
