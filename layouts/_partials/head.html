@@ -73,23 +73,8 @@
 	<script type="module" src="{{ $js.RelPermalink }}"></script>
 
 	<!-- CSS -->
-	{{/* WARN: bootstrap dependency deprecations are silenced here until v6 */}}
-	{{ $opts := dict "transpiler" "dartsass" "silenceDependencyDeprecations" "true" "targetPath" "css/style.css" }}
-
-	{{ with resources.Get "scss/styles.scss" | toCSS $opts }}
-		{{ if hugo.IsDevelopment }}
-			{{ with . | fingerprint }}
-				<link rel="stylesheet" href="{{ .RelPermalink }}" />
-			{{ end }}
-		{{ else }}
-			{{ with . | postCSS | minify | fingerprint | resources.PostProcess }}
-				<link
-					rel="stylesheet"
-					href="{{ .RelPermalink }}"
-					integrity="{{ .Data.Integrity }}"
-				/>
-			{{ end }}
-		{{ end }}
+	{{ with (templates.Defer (dict "key" "global")) }}
+		{{ partial "css.html" . }}
 	{{ end }}
 
 

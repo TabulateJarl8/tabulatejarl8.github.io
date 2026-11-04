@@ -1,0 +1,17 @@
+{{/* WARN: bootstrap dependency deprecations are silenced here until v6 */}}
+{{ $opts := dict "transpiler" "dartsass" "silenceDependencyDeprecations" "true" "targetPath" "css/style.css" }}
+
+{{ with resources.Get "scss/styles.scss" | toCSS $opts }}
+	{{ if hugo.IsDevelopment }}
+		<link rel="stylesheet" href="{{ .RelPermalink }}" />
+	{{ else }}
+		{{ with . | postCSS | minify | fingerprint }}
+			<link
+				rel="stylesheet"
+				href="{{ .RelPermalink }}"
+				integrity="{{ .Data.Integrity }}"
+				crossorigin="anonymous"
+			/>
+		{{ end }}
+	{{ end }}
+{{ end }}
